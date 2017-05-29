@@ -1,0 +1,230 @@
+// |--------------------------------------------------------------------------
+// | Banner
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .banner
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Banner
+.banner {
+  @include card-border-radius($card-border-radius);
+  margin-bottom: $card-spacer-y;
+
+  .banner-wrapper {
+    padding: 30px 50px;
+
+    .banner-headline {
+      font-family: $headings-font-family;
+      font-weight: $headings-font-weight-bold;
+      @extend .heading-h1;
+    }
+
+    .banner-text {
+      font-size: $font-size-large;
+    }
+
+    &.color-1 {
+      color: #FFF;
+    }
+
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+}
+.img-container {
+    
+    -webkit-box-shadow: inset 101px -88px 230px 0px rgba(32,86,146,1);
+-moz-box-shadow: inset 101px -88px 230px 0px rgba(32,86,146,1);
+box-shadow: inset 10px -28px 330px 0px rgba(32,86,146,1);
+}
+
+.views-field-view-node-1 {
+    
+    display: flex;
+}
+
+.views-slideshow-controls-bottom {
+    
+    display: none!important;
+}
+
+.pager-first {
+    
+    display: none!important;
+}
+
+.pager-last {
+    
+  display: none!important;  
+}
+
+ul.pagination {
+    
+    width: 100%;
+    right: 20px;
+    display: flex;
+    position: absolute;
+    top: 290px;
+    justify-content: flex-end;
+}
+
+.pagination li {
+    
+    position: relative;
+    right: 50px;
+    top: 190px;
+}
+.pagination .next {
+    
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.pagination li {
+    
+    color: transparent!important;
+    
+}
+
+.pagination span {
+    
+    color: transparent!important;
+}
+
+.pagination a {
+    
+    color: transparent!important;
+}
+
+.pagination .prev {
+    
+    position: absolute;
+    left: 60px;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.prev a {
+    
+    width: 70px!important;
+    height: 70px!important;
+    opacity: 1!important;
+}
+
+.next a {
+    
+    width: 70px!important;
+    height: 70px!important;
+    opacity: 1!important;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Print
+@media print {
+
+  // Banner
+  .banner {
+  }
+}
+
+// Touch
+.touchevents {
+
+  // Banner
+  .banner {
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  // Banner
+  .banner {
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Banner mixin
+@mixin banner-mixin() {
+}
