@@ -11,9 +11,9 @@ validate_sitename() {
     echo "ERROR: Domain not valid"
     exit 10
   fi
-  # hardcoded that the domain must end in subsites.syddjurs.dk
-  if [[ ! "$SITENAME" =~ subsites.syddjurs.dk$ ]]; then
-    echo "ERROR: Domain not valid (doesn't end with subsites.syddjurs.dk)"
+  # hardcoded that the domain must end in subsites.ballerup.dk
+  if [[ ! "$SITENAME" =~ subsites.ballerup.dk$ ]]; then
+    echo "ERROR: Domain not valid (doesn't end with subsites.ballerup.dk)"
     exit 10
   fi
 }
@@ -197,28 +197,29 @@ create_vhost() {
   perl -p -i -e "s/\[domain\]/$SITENAME/g" "/etc/apache2/sites-available/$SITENAME.conf"
   a2ensite "$SITENAME" >/dev/null
   debug "Reloading Apache2"
-  /etc/init.d/apache2 reload >/dev/null
+  apachectl graceful >/dev/null
+#  /etc/init.d/apache2 reload >/dev/null
 }
 
 install_drupal() {
   debug "Installing drupal ($SITENAME)"
   # Do a drush site install
-  /usr/bin/drush -q -y -r $MULTISITE site-install $PROFILE --locale=da --db-url="mysql://$DBUSER:$DBPASS@localhost/$DBNAME" --sites-subdir="$SITENAME" --account-mail="$EMAIL" --site-mail="$EMAIL" --site-name="$SITENAME" --account-pass="$ADMINPASS"
+  /usr/local/bin/drush -q -y -r $MULTISITE site-install $PROFILE --locale=da --db-url="mysql://$DBUSER:$DBPASS@localhost/$DBNAME" --sites-subdir="$SITENAME" --account-mail="$EMAIL" --site-mail="$EMAIL" --site-name="$SITENAME" --account-pass="$ADMINPASS"
 
   # Set tmp
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset file_temporary_path "$TMPDIR"
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset file_temporary_path "$TMPDIR"
 
   # Do some drupal setup here. Could also be done in the install profile.
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset user_register 0
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset error_level 1
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_css 1
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_js 1
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset cache 1
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset page_cache_maximum_age 10800
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset user_register 0
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset error_level 1
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_css 1
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_js 1
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset cache 1
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset page_cache_maximum_age 10800
   # translation updates - takes a long time
-  #/usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update-refresh
-  #/usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" dis update
+  #/usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update-refresh
+  #/usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" dis update
 }
 
 set_permissions() {
@@ -238,7 +239,7 @@ add_to_crontab() {
   else
     CRONMINUTE=0
   fi
-  CRONKEY=$(/usr/bin/drush -r "$MULTISITE" --uri="$SITENAME" vget cron_key | cut -d \' -f 2)
+  CRONKEY=$(/usr/local/bin/drush -r "$MULTISITE" --uri="$SITENAME" vget cron_key | cut -d \' -f 2)
   CRONLINE="$CRONMINUTE */2 * * * /usr/bin/wget -O - -q -t 1 http://$SITENAME/cron.php?cron_key=$CRONKEY"
   (/usr/bin/crontab -u www-data -l; echo "$CRONLINE") | /usr/bin/crontab -u www-data -
 }
@@ -250,11 +251,11 @@ mail_status() {
 add_subsiteadmin() {
   debug "Create subsiteadmin user with email ($USEREMAIL)"
   # Create user with email specified in subsitecreator.
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-create subsiteadmin --mail="$USEREMAIL"
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-create subsiteadmin --mail="$USEREMAIL"
   # Add the role "Administrator"
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-add-role subsiteadmin subsiteadmin
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-add-role subsiteadmin subsiteadmin
   # Send single-use login link.
-  /usr/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" ev "_user_mail_notify('password_reset', user_load_by_mail('$USEREMAIL'));"
+  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" ev "_user_mail_notify('password_reset', user_load_by_mail('$USEREMAIL'));"
 }
 
 delete_vhost() {
