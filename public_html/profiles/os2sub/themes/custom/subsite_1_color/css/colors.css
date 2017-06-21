@@ -1,0 +1,15 @@
+
+body {
+  background-image: none !important; 
+  /*background-color: #ffe6ff !important;*/
+  color: #331100 !important;
+}
+.content{
+  background: #ffe6ff !important;
+}
+/*.inner-wrapper{
+  background-color: #eee1f2 !important;
+}*/
+a{
+  color: #1a1aff !important;
+}
