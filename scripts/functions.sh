@@ -4,6 +4,24 @@ debug() {
   fi
 }
 
+validate_drush() {
+  debug "Checking if drush is installed"
+  if [ ! -d "$(command -v drush)" ]
+  then
+    echo "ERROR: drush not found"
+    exit 10
+  fi
+}
+
+validate_mysql() {
+  debug "Checking if mysql is installed"
+  if [ ! -d "$(command -v mysql)" ]
+  then
+    echo "ERROR: mysql not found"
+    exit 10
+  fi
+}
+
 validate_sitename() {
   local SITENAME="$1"
   debug "Checking site name ($SITENAME)"
@@ -11,9 +29,11 @@ validate_sitename() {
     echo "ERROR: Domain not valid"
     exit 10
   fi
-  # hardcoded that the domain must end in subsites.ballerup.dk
-  if [[ ! "$SITENAME" =~ subsites.ballerup.dk$ ]]; then
-    echo "ERROR: Domain not valid (doesn't end with subsites.ballerup.dk)"
+  # hardcoded that the domain must end in test.subsites.ballerup.dk ($SUBSITENAME)
+#  if [[ ! "$SITENAME" =~ test.subsites.ballerup.dk$ ]]; then
+  if [[ ! "$SITENAME" =~ $SUBSITENAME$ ]]; then
+#    echo "ERROR: Domain not valid (doesn't end with test.subsites.ballerup.dk)"
+    echo "ERROR: Domain not valid (doesn't end with $SUBSITENAME)"
     exit 10
   fi
 }
@@ -178,8 +198,10 @@ create_db() {
   command -v pwgen >/dev/null 2>&1 || { echo >&2 "ERROR: pwgen is required but not installed. Aborting."; exit 20; }
   DBPASS=$(pwgen -s 10 1)
   # this requires a /root/.my.cnf with password set
-  /usr/bin/mysql -u root -e "CREATE DATABASE $DBNAME;"
-  /usr/bin/mysql -u root -e "GRANT ALL ON $1.* TO $DBUSER@localhost IDENTIFIED BY \"$DBPASS\"";
+#  /usr/bin/mysql -u lev_bellcom -e "CREATE DATABASE $DBNAME;"
+  /usr/bin/mysql -u $SQLADMIN -e "CREATE DATABASE $DBNAME;"
+#  /usr/bin/mysql -u lev_bellcom -e "GRANT ALL ON $1.* TO $DBUSER@localhost IDENTIFIED BY \"$DBPASS\"";
+  /usr/bin/mysql -u $SQLADMIN -e "GRANT ALL ON $1.* TO $DBUSER@localhost IDENTIFIED BY \"$DBPASS\"";
 }
 
 create_dirs() {
@@ -189,12 +211,14 @@ create_dirs() {
   mkdir -p "$TMPDIR"
   mkdir -p "$LOGDIR"
   mkdir -p "$SESSIONDIR"
+  touch $LOGDIRBASE/php.log
 }
 
 create_vhost() {
   debug "Adding and enabling $SITENAME vhost"
   cp "$VHOSTTEMPLATE" "/etc/apache2/sites-available/$SITENAME.conf"
   perl -p -i -e "s/\[domain\]/$SITENAME/g" "/etc/apache2/sites-available/$SITENAME.conf"
+  perl -p -i -e "s*\[sitepath\]*$BASEDIR*g" "/etc/apache2/sites-available/$SITENAME.conf"
   a2ensite "$SITENAME" >/dev/null
   debug "Reloading Apache2"
   apachectl graceful >/dev/null
@@ -204,22 +228,22 @@ create_vhost() {
 install_drupal() {
   debug "Installing drupal ($SITENAME)"
   # Do a drush site install
-  /usr/local/bin/drush -q -y -r $MULTISITE site-install $PROFILE --locale=da --db-url="mysql://$DBUSER:$DBPASS@localhost/$DBNAME" --sites-subdir="$SITENAME" --account-mail="$EMAIL" --site-mail="$EMAIL" --site-name="$SITENAME" --account-pass="$ADMINPASS"
+  drush -y -r $MULTISITE site-install $PROFILE --locale=da --db-url="mysql://$DBUSER:$DBPASS@localhost/$DBNAME" --sites-subdir="$SITENAME" --account-mail="$EMAIL" --site-mail="$EMAIL" --site-name="$SITENAME" --account-pass="$ADMINPASS"
 
   # Set tmp
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset file_temporary_path "$TMPDIR"
+  drush -y -r "$MULTISITE" --uri="$SITENAME" vset file_temporary_path "$TMPDIR"
 
   # Do some drupal setup here. Could also be done in the install profile.
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset user_register 0
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset error_level 1
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_css 1
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_js 1
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset cache 1
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" vset page_cache_maximum_age 10800
+  drush -y -r "$MULTISITE" --uri="$SITENAME" vset user_register 0
+  drush -y -r "$MULTISITE" --uri="$SITENAME" vset error_level 1
+  drush -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_css 1
+  drush -y -r "$MULTISITE" --uri="$SITENAME" vset preprocess_js 1
+#  drush -y -r "$MULTISITE" --uri="$SITENAME" vset cache 1
+  drush -y -r "$MULTISITE" --uri="$SITENAME" vset page_cache_maximum_age 10800
   # translation updates - takes a long time
-  #/usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update-refresh
-  #/usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" dis update
+  #drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update-refresh
+  #drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update
+  drush -y -r "$MULTISITE" --uri="$SITENAME" dis update
 }
 
 set_permissions() {
@@ -239,7 +263,7 @@ add_to_crontab() {
   else
     CRONMINUTE=0
   fi
-  CRONKEY=$(/usr/local/bin/drush -r "$MULTISITE" --uri="$SITENAME" vget cron_key | cut -d \' -f 2)
+  CRONKEY=$(drush -r "$MULTISITE" --uri="$SITENAME" vget cron_key | cut -d \' -f 2)
   CRONLINE="$CRONMINUTE */2 * * * /usr/bin/wget -O - -q -t 1 http://$SITENAME/cron.php?cron_key=$CRONKEY"
   (/usr/bin/crontab -u www-data -l; echo "$CRONLINE") | /usr/bin/crontab -u www-data -
 }
@@ -251,11 +275,11 @@ mail_status() {
 add_subsiteadmin() {
   debug "Create subsiteadmin user with email ($USEREMAIL)"
   # Create user with email specified in subsitecreator.
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-create subsiteadmin --mail="$USEREMAIL"
+  drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-create subsiteadmin --mail="$USEREMAIL"
   # Add the role "Administrator"
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-add-role subsiteadmin subsiteadmin
+  drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-add-role subsiteadmin subsiteadmin
   # Send single-use login link.
-  /usr/local/bin/drush -q -y -r "$MULTISITE" --uri="$SITENAME" ev "_user_mail_notify('password_reset', user_load_by_mail('$USEREMAIL'));"
+  drush -q -y -r "$MULTISITE" --uri="$SITENAME" ev "_user_mail_notify('password_reset', user_load_by_mail('$USEREMAIL'));"
 }
 
 delete_vhost() {
@@ -276,8 +300,10 @@ delete_db() {
   debug "Backing up, then deleting database ($DBNAME) and database user ($DBUSER)"
   # backup first, just in case
   /usr/local/sbin/mysql_backup.sh "$DBNAME"
-  /usr/bin/mysql -u root -e "DROP DATABASE $DBNAME;"
-  /usr/bin/mysql -u root -e "DROP USER $DBUSER@localhost";
+#  /usr/bin/mysql -u lev_bellcom -e "DROP DATABASE $DBNAME;"
+  /usr/bin/mysql -u $SQLADMIN -e "DROP DATABASE $DBNAME;"
+#  /usr/bin/mysql -u lev_bellcom -e "DROP USER $DBUSER@localhost";
+  /usr/bin/mysql -u $SQLADMIN -e "DROP USER $DBUSER@localhost";
 }
 
 delete_dirs() {
