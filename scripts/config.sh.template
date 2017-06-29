@@ -1,0 +1,24 @@
+#Set of new config variables
+#This should be the only editable part
+SUBSITENAME=test.subsites.ballerup.dk
+SQLADMIN=
+SITEADMIN=
+
+#OLD PART OF THE CONFIG
+#BASEDIR="/var/www/test.subsites.ballerup.dk"
+BASEDIR="/var/www/$SUBSITENAME"
+SERVERIP=""
+PROFILE="os2sub"
+EMAIL="drupal@bellcom.dk"
+SCRIPTDIR="$(dirname "$0")"
+#ADMINPASS=
+ADMINPASS=$SITEADMIN
+VHOSTTEMPLATE="$BASEDIR/scripts/vhost-template.txt"
+MULTISITE="$BASEDIR/public_html"
+SITESFILE="$MULTISITE/sites/sites.php"
+TMPDIRBASE="$BASEDIR/tmp"
+LOGDIRBASE="$BASEDIR/logs"
+SESSIONDIRBASE="$BASEDIR/sessions"
+DBDIR="/var/lib/mysql"
+DBUSER=
+NOW=$(date +"%d/%m/%y %H:%M:%S")
