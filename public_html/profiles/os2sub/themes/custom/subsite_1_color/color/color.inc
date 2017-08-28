@@ -8,9 +8,15 @@ $info = array(
     // Available colors and color labels used in theme.
     'fields' => array(
         'background' => t('Main background (body)'),
-//        'block_background' => t('Background (block)'),
-        'menu_link' => t('Menu links'),
+        'content_background' => t('Background (content)'),
+        'menu_bg' =>  t('Background (navigation)'),
         'text' => t('Text'),
+        'menu_link' => t('Menu links'),
+        'menu_link_hover' =>  t('Menu links (hover)'),
+        'menu_link_active_col' =>  t('Active Menu links'),
+        'menu_link_active_bg' =>  t('Active Menu links (background)'),
+        'spot_text' =>  t('Spotbox Text'),
+        'spot_text_bg' =>  t('Spotbox Text Background'),
     ),
     // Pre-defined color schemes.
     'schemes' => array(
@@ -18,9 +24,16 @@ $info = array(
             'title' => t('Default colors'),
             'colors' => array(
                 'background' => '#ffe6ff', //main background color
-//                'block_background' => '#eee1f2', //block background color
-                'menu_link' => '#1a1aff', //menu link
+                'content_background' => '#ffffff', //block background color
                 'text' => '#331100', //text color
+                'link' => '#331100', //link color
+                'menu_link' => '#1a1aff', //menu link
+                'menu_bg' => '#331100', //menu background color
+                'menu_link_hover' => '#331100', //menu link hover color
+                'menu_link_active_bg' => '#331100', //active menu link background color
+                'menu_link_active_col' => '#331100', //active menu link color
+                'spot_text' => '#331100', //spotbox text color
+                'spot_text_bg' => '#331100', //spotbox text background color
             ),
         ),
     ),
