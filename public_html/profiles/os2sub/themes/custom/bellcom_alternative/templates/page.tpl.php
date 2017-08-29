@@ -54,40 +54,28 @@
 
     <!-- Begin - content -->
     <div class="content">
-      <!-- Begin - main navigation -->
-        <nav class="main-navigation-wrapper" role="navigation">
-          <div class="main-navigation-bar">
-            <div class="container">
-              <div class="row">
-  	            
-                <!-- Begin - content -->
-                  <?php if ($secondary_navigation): ?>
-                <div class="col-md-9">
-  		            <?php else : ?>
-                    <div class="col-md-12">  
-  		            <?php endif; ?>
-  
-        			  	<?php if ($logo): ?>
-    	                <a href='<?php print $front_page; ?>' class="main-navigation-logo-link">
-    	                  <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-    	                </a>
-        				<?php endif; ?>
-                                 
-                  <?php if (isset($primary_navigation)): ?>
-                    <!-- Begin - navigation -->
-                    <?php print render($primary_navigation); ?>
-                    <!-- End - navigation -->
-                  <?php endif; ?>
-  
-                </div>
-                <!-- End - content -->
-  
-                <!-- Begin - content -->
-              <?php if ($secondary_navigation): ?>
-                <div class="col-md-3">
-                 <?php print render($secondary_navigation); ?>
-                 
-                 <ul class="main-navigation-list main-navigation-lang">
+      <div class="container header-container">
+        <div class="row">
+          <div class="col-md-6">
+            <?php if ($logo && !$site_name): ?>
+              <a href='<?php print $front_page; ?>' class="main-navigation-logo-link">
+                <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+              </a>
+            <?php elseif ($logo && $site_name): ?>
+              <a href='<?php print $front_page; ?>' class="main-navigation-logo-link">
+                <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> 
+                <span class="site-name"><?php print $site_name; ?></span>
+                <?php if ($slogan): ?>
+                  <span class="site-slogan"><?php print $slogan; ?></span>
+                <?php endif; ?>
+              </a>
+            <?php endif; ?>          
+          </div>  		  	
+        <section class="col-md-6" role="navigation">
+          <?php if ($secondary_navigation): ?>
+             <?php print render($secondary_navigation); ?>
+           <?php endif; ?>
+          <ul class="main-navigation-list main-navigation-lang">
                     <?php if ($theme_settings['languages']['lang_german']['active']): ?>
                     <li class="main-navigation-list-link">
                       <a href="<?php print $theme_settings['languages']['lang_german']['url']; ?>" 
@@ -154,17 +142,37 @@
                     </li>
                     <?php endif; ?>
                   </ul>
+        </section>
+        </div>
+      </div>
+      <!-- Begin - main navigation -->
+        <div class="main-navigation-wrapper">
+          <div class="main-navigation-bar" id="main-navigation-bar">
+            <div class="container nav-container">
+              <div class="row">
+                <nav class="col-md-10" role="navigation">  
+                                 
+                  <?php if (isset($primary_navigation)): ?>
+                    <!-- Begin - navigation -->
+                    <?php print render($primary_navigation); ?>
                     <!-- End - navigation -->
-                </div>
-   		            <?php endif; ?>
-                <!-- End - content -->
+                  <?php endif; ?>
+  
+                </nav>
+                <section role="search" class="col-md-2">
+                  <?php print $search_box; ?>
+                </section>
               </div>
             </div>
           </div>
-        </nav>
+        </div>
         <!-- End - main navigation -->
 
-      <div class="container">
+        <?php if (!empty($page['highlighted'])): ?>
+          <div class="highlighted"><?php print render($page['highlighted']); ?></div>
+        <?php endif; ?>
+
+      <div class="container main-container">
         <?php print $messages; ?>
 
 
@@ -172,9 +180,6 @@
           <?php print render($page['help']); ?>
         <?php endif; ?>
 
-        <?php if (!empty($page['highlighted'])): ?>
-          <div class="highlighted"><?php print render($page['highlighted']); ?></div>
-        <?php endif; ?>
 
         <?php if (!empty($action_links)): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>

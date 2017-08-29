@@ -38,8 +38,6 @@
     height: @bs3-main-navigation-height;
     min-height: @bs3-main-navigation-height;
     line-height: @bs3-main-navigation-height;
-    background-color: @bs3-main-navigation-background-color;
-    background-color: @bs3-main-navigation-background-color-rgba;
     border-radius: @bs3-main-navigation-border-radius;
   }
 
@@ -92,10 +90,12 @@
     padding: 0;
     margin: 0;
     display: inline-block;
+    width: 100%;
+    text-align: right;
 
     > li {
       line-height: inherit;
-      float: left;
+      display: inline-block;
     }
 
     a {

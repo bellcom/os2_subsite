@@ -8,32 +8,17 @@ $info = array(
     // Available colors and color labels used in theme.
     'fields' => array(
         'background' => t('Main background (body)'),
-        'content_background' => t('Background (content)'),
-        'menu_bg' =>  t('Background (navigation)'),
-        'text' => t('Text'),
-        'menu_link' => t('Menu links'),
-        'menu_link_hover' =>  t('Menu links (hover)'),
-        'menu_link_active_col' =>  t('Active Menu links'),
-        'menu_link_active_bg' =>  t('Active Menu links (background)'),
-        'spot_text' =>  t('Spotbox Text'),
-        'spot_text_bg' =>  t('Spotbox Text Background'),
+        'menu_bg' =>  t('Links and nav background'),
+        'menu_links' => t('Text'),
     ),
     // Pre-defined color schemes.
     'schemes' => array(
         'default' => array(
             'title' => t('Default colors'),
             'colors' => array(
-                'background' => '#ffe6ff', //main background color
-                'content_background' => '#ffffff', //block background color
-                'text' => '#331100', //text color
-                'link' => '#331100', //link color
-                'menu_link' => '#1a1aff', //menu link
-                'menu_bg' => '#331100', //menu background color
-                'menu_link_hover' => '#331100', //menu link hover color
-                'menu_link_active_bg' => '#331100', //active menu link background color
-                'menu_link_active_col' => '#331100', //active menu link color
-                'spot_text' => '#331100', //spotbox text color
-                'spot_text_bg' => '#331100', //spotbox text background color
+                'background' => '#F5F3EF', //main background color
+                'menu_links' => '#FFFFFF', //text color
+                'menu_bg' => '#981B6E', //menu background color
             ),
         ),
     ),

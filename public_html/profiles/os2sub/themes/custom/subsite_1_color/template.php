@@ -6,6 +6,8 @@ function subsite_1_color_process_html(&$variables) {
 }
 
 function subsite_1_color_process_page(&$variables, $hook) {
+  $search_box = drupal_render(drupal_get_form('search_form'));
+  $variables['search_box'] = $search_box;
  if (module_exists('color')) {
  _color_page_alter($variables);
  }
