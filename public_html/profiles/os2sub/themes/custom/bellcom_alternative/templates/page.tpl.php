@@ -252,6 +252,7 @@
       <!-- Begin - footer -->
       <div class="footer-dark">
         <div class="container footer-dark-container">
+          <div class="row">
   	        
   	        <?php print render($page['footer2']); ?>
   	
@@ -392,6 +393,7 @@
     	        <?php print render($page['footer3']); ?>
     
           </div>
+        </div>
 
         </div>
       </footer>
