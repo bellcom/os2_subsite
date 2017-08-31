@@ -304,7 +304,7 @@
           <?php if (!empty($page['footer5'])) : ?>
             <div class="col-sm-4">
               <section role="complementary">
-      	        <div class="container footer-container">
+      	        <div class="footer5">
         	        <?php print render($page['footer5']); ?>
         	     </div>
               </section>
@@ -313,7 +313,7 @@
           <?php if (!empty($page['footer6'])) : ?>
             <div class="col-sm-4">
               <section role="complementary">
-      	        <div class="container footer-container">
+      	        <div class="footer6">
         	        <?php print render($page['footer6']); ?>
         	     </div>
               </section>
