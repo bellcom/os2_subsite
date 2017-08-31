@@ -23,6 +23,8 @@ regions[footer]         = 'Content Footer'
 regions[footer2]        = 'Footer Dark'
 regions[footer3]        = 'Footer Social'
 regions[footer4]        = 'Footer Branding'
+regions[footer5]        = 'Footer Info Ceter'
+regions[footer6]        = 'Footer Info right'
 regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 

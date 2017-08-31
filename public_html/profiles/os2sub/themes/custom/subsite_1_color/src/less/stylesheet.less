@@ -118,7 +118,6 @@ section[role=navigation] .main-navigation-right {
     justify-content: space-between;
     font-size: 1.15em!important;
 }
-
 .field-name-field-distrikt {
     font-weight: bold;
     margin-bottom: 20px;
@@ -243,7 +242,22 @@ section .main-navigation-list-link a {
     align-items: center;
 }
 .footer {
-    padding: @padding-base-horizontal;
+  .footer-branding {
+    padding: 20px;
+    background-color: #981B6E;
+    color: #FFF;
+    text-transform: uppercase;
+    .branding-logo {
+      background-image: balklogo.png;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+      .branding-text {
+        padding-left: 100px;
+        display: block;
+      }
+    }
+  }
+
     color: #ccc;
     border-radius: 3px 3px 0 0;
     .contact-information {
