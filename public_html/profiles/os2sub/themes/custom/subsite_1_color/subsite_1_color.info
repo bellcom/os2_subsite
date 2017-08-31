@@ -7,6 +7,7 @@ description = 'Beautiful theme for use with subsites.'
 core        = '7.x'
 screenshot  = 'dist/img/screenshot.png'
 base theme  = 'bellcom_alternative'
+engine = 'phptemplate'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Regions

@@ -71,11 +71,17 @@
 }
 .node-os2web-spotbox-box {overflow: hidden!important;}
 
+.node-os2web-spotbox-box {
+    margin-bottom: 15px;
+}
+
 .pail-section {
     width: 100%;
     background: #fff;
     padding: 20px;
     margin-top: 70px;
+        padding-top: 50px;
+    padding-bottom: 60px;
 }
 .main-container .col-sm-8 {
     margin: 0;
@@ -109,14 +115,20 @@ section[role=navigation] .main-navigation-right {
 .field-name-field-distrikt .field-label {
     display: none;
 }
+.field-name-field-youtube-video .field-label {
+    display: none;
+}
+.field-name-field-video-placeholder .field-label {
+    display: none;
+}
 .related-links {
-    margin-top: 20px;
+    margin-top: 80px;
 }
 
 .kontaktblok-wrapper {
     display: flex;
     justify-content: space-between;
-    font-size: 1.15em!important;
+    font-size: 1.2em!important;
 }
 
 .field-name-field-distrikt {
@@ -133,10 +145,14 @@ section[role=navigation] .main-navigation-right {
     font-weight: inherit;
 }
 
+
 .field-name-field-os2web-contact-field-addr .field-label { display: none; }
 .field-name-field-medarbejder .field-label {display: none;}
 .field-name-field-os2web-contact-field-mail .field-label { display: none; }
-.field-name-field-medarbejder-tlf .field-label { display: none;}
+
+.field-name-field-medarbejder-tlf {display: flex;}
+.field-name-field-medarbejder-tlf .field-label { font-weight: inherit;}
+
 .field-name-field-medarbejder-title .field-label { display: none; }
 .field-name-field-os2web-contact-field-zip .field-label { display: none; }
 .field-name-field-os2web-contact-field-info .field-item {
@@ -492,4 +508,99 @@ section .main-navigation-list-link a {
 
 .view-ballerup-subsites-spots .col-sm-6 {
     padding-left: 0px;
+}
+.subsite-teaser-heading-title {
+    margin-bottom: 20px;
+}
+h3.subsite-teaser-heading-title a {
+    color: #4f5b67!important;
+    text-decoration: none!important;
+}
+.subsite-teaser-body-content {
+    font-size: 1.15em;
+}
+.subsite-teaser-body-content {
+    margin-bottom: 20px;
+}
+
+.view-ballerup-subsites-spots {
+    padding: 30px;
+    padding-top: 0px;
+    padding-right: 0px;
+}
+
+.subsite-teaser-body-content .field-name-body .field-label {
+    display: none!important;
+}
+
+// Youtube
+
+.field-name-field-video-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.field.field-name-field-video-placeholder.field-type-image.field-label-above:before {
+    display: inline-block;
+    content: "\f16a";
+    font-family: fontawesome;
+    color: #fff;
+    font-size: 80px;
+    position: absolute;
+  
+}
+.Modal-overlay {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  padding-top: 10%;
+  z-index: 99999;
+}
+
+.Modal-box {
+  width: 87%;
+  max-width: 860px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+}
+.Modal-box > .video-container {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+.Modal-box > .video-container > iframe,
+.Modal-box > .video-container > object,
+.Modal-box > .video-container > embed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  max-width: 860px;
+}
+
+.Modal-close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 50px;
+  z-index: 100000;
+  color: #fff;
+}
+
+.Modal-cancel-overflow {
+  overflow: hidden;
 }
