@@ -689,6 +689,70 @@ function os2web_base_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2web_base_contentpage-field_os2sub_menuheader'.
+  $field_instances['node-os2web_base_contentpage-field_os2sub_menuheader'] = array(
+    'bundle' => 'os2web_base_contentpage',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 22,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2sub_menuheader',
+    'label' => 'Overskrift over undersider',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 49,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2web_base_contentpage-field_os2web_base_banner'.
   $field_instances['node-os2web_base_contentpage-field_os2web_base_banner'] = array(
     'bundle' => 'os2web_base_contentpage',
@@ -772,7 +836,7 @@ function os2web_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 14,
+      'weight' => 52,
     ),
   );
 
@@ -931,7 +995,7 @@ function os2web_base_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 50,
     ),
   );
 
@@ -946,8 +1010,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2sub_normal_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -1559,7 +1625,7 @@ function os2web_base_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 51,
     ),
   );
 
@@ -1705,8 +1771,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => 'gallery',
           'photoswipe_node_style' => 'os2sub_small_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -5303,6 +5371,7 @@ function os2web_base_field_default_field_instances() {
   t('Organisation');
   t('Organistation');
   t('Overordnet placering');
+  t('Overskrift over undersider');
   t('PDF Filer');
   t('PDF filer');
   t('Politik');
