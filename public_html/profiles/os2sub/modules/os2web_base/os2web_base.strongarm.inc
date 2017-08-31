@@ -363,6 +363,9 @@ function os2web_base_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'os2sub_teaser_mini' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'display' => array(
