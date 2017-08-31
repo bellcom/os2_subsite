@@ -1,6 +1,6 @@
 <?php
 
-function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
+function _theme_subsite_1_color_settings_form(&$form, $form_state) {
 
   // Vertical tabs
   $form['options'] = array(
@@ -903,7 +903,7 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
  * Collect and assemble theme settings.
  * @return array
  */
-function _bellcom_collect_theme_settings() {
+function _subsite_1_color_collect_theme_settings() {
   $settings = array();
 
   // Contact information
@@ -998,7 +998,7 @@ function _bellcom_collect_theme_settings() {
 /*
  * Sidebar classes
  */
-function _bellcom_sidebar_classes($viewmode) {
+function _subsite_1_color_sidebar_classes($viewmode) {
   $classes = array();
 
   // Settings
