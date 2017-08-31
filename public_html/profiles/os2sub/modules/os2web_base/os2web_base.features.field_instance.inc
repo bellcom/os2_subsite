@@ -1007,14 +1007,12 @@ function os2web_base_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'photoswipe',
+        'module' => 'image',
         'settings' => array(
-          'photoswipe_caption' => '',
-          'photoswipe_image_style' => '',
-          'photoswipe_node_style' => 'os2sub_normal_imagesize',
-          'photoswipe_view_mode' => '',
+          'image_link' => '',
+          'image_style' => 'os2sub_normal_imagesize',
         ),
-        'type' => 'photoswipe',
+        'type' => 'image',
         'weight' => 0,
       ),
       'related_block' => array(
