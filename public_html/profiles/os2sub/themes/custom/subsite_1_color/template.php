@@ -1,4 +1,8 @@
 <?php
+include( dirname(__FILE__) . '/include/helpers.inc');
+include( dirname(__FILE__) . '/include/menu.inc');
+include( dirname(__FILE__) . '/include/settings.inc');
+
 function subsite_1_color_process_html(&$variables) {
  if (module_exists('color')) {
  _color_html_alter($variables);
