@@ -228,7 +228,7 @@
       </div>
     </div>
     <?php if (!empty($page['footer'])) : ?>
-    <section role="complementary">
+    <section role="complementary" class="pail-section">
       <div class="container footer-container">
         <?php print render($page['footer']); ?>        
       </div>
