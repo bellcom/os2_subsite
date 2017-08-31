@@ -10,5 +10,5 @@ function bellcom_form_system_theme_settings_alter(&$form, $form_state, $form_id 
   }
 
   // Settings form.
-  _theme_settings_form($form, $form_state);
+  _theme_bellcom_settings_form($form, $form_state);
 }
