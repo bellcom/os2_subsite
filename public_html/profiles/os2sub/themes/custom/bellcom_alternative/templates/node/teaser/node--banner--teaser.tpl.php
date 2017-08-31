@@ -8,7 +8,7 @@ banner
 		style="background: url(<?php print file_create_url($style_url); ?>) no-repeat scroll ;height:400px;background-size: cover;">
     <div class="container" role="banner">
     	<div class="row">
-    		<div class="col-md-6 ">
+    		<div class="col-sm-12">
         	<div class="banner-wrapper color-<?php print $node->field_hvid_tekst['und']['0']['value']; ?>">
         		<div class="banner-headline"><?php print render($content['field_banner_headline']); ?></div>
         		<div class="banner-text"><?php print render($content['field_banner_text']); ?></div>
