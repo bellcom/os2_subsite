@@ -900,6 +900,29 @@ function os2web_base_default_page_manager_handlers() {
   $display->content['new-b398e1ac-858e-43e3-872f-2d6f3524454d'] = $pane;
   $display->panels['content'][1] = 'new-b398e1ac-858e-43e3-872f-2d6f3524454d';
   $pane = new stdClass();
+  $pane->pid = 'new-803cee29-2acf-4481-98e3-6eec9346c096';
+  $pane->panel = 'content';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'ballerup_afsnit-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+    'template_suggestion' => 'plain',
+  );
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '803cee29-2acf-4481-98e3-6eec9346c096';
+  $display->content['new-803cee29-2acf-4481-98e3-6eec9346c096'] = $pane;
+  $display->panels['content'][2] = 'new-803cee29-2acf-4481-98e3-6eec9346c096';
+  $pane = new stdClass();
   $pane->pid = 'new-efe47bd7-7e22-40e3-8e08-2dcd60c8c2bb';
   $pane->panel = 'sidebar-right';
   $pane->type = 'entity_field';
