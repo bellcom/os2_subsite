@@ -16,9 +16,9 @@ $info = array(
         'default' => array(
             'title' => t('Default colors'),
             'colors' => array(
-                'background' => '#F5F3EF', //main background color
-                'menu_links' => '#FFFFFF', //text color
-                'menu_bg' => '#981B6E', //menu background color
+                'background' => '#f5f5ef', //main background color
+                'menu_links' => '#ffffff', //text color
+                'menu_bg' => '#981b6e', //menu background color
             ),
         ),
     ),

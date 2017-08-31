@@ -1,6 +1,6 @@
 <?php
 
-function _theme_settings_form(&$form, $form_state) {
+function _theme_bellcom_settings_form(&$form, $form_state) {
 
   // Vertical tabs
   $form['options'] = array(
