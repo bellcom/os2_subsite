@@ -498,3 +498,41 @@ section .main-navigation-list-link a {
 .js-to_expand[data-hidden=true] {
   display: none;
 }
+
+.view-id-ballerup_afsnit {
+  margin-top: 20px;
+  border-top: 3px solid #243544;
+  .row {
+    border-bottom: 1px solid 1px;
+  }
+}
+.js-expandmore {
+  cursor: pointer;
+}
+
+.expandmore__button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
+}
+/* optional */
+.expandmore__button:before {
+  content : '+ ';
+  display: inline-block;
+width: 34px;
+height: 34px;
+margin-top: -17px;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+background-color: #f5f7f8;
+border: 1px solid #243544;
+text-align: center;
+line-height: 23px;
+}
+.expandmore__button[aria-expanded=true]:before,
+.expandmore__button[data-expanded=true]:before {
+  content : '- ';
+}
+
+

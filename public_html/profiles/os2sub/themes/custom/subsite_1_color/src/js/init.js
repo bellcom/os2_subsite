@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
                 $to_expand = $this.next(".js-to_expand"),
                 $expandmore_text = $this.html();
 
-            $this.html('<button type="button" class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button">' + $expandmore_text + '</button>');
+            $this.html('<span type="button" class="' + $hideshow_prefix_classes + 'expandmore__button js-expandmore-button"><span class="buttontext">' + $expandmore_text + '</span></span>');
             var $button = $this.children('.js-expandmore-button');
 
             $to_expand.addClass($hideshow_prefix_classes + 'expandmore__to_expand').stop().delay(delay).queue(function() {
