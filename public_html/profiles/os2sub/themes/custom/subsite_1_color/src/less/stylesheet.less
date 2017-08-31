@@ -1,6 +1,16 @@
 @import 'variables/loader';
 @import 'vendor/loader';
 @import 'template/loader';
+// Alert hidden
+.main-container .alert-danger {display: none;}
+
+
+// Container
+
+.main-container {
+    padding-top: 50px;
+}
+
 .banner {
     border-radius: 0px;
     .banner-wrapper {
@@ -336,6 +346,9 @@
 }
 .main-navigation-bar input[type="text"]:-moz-placeholder { /* Firefox 18- */
   color: #fff;
+}
+.main-navigation-wrapper .search-form .btn .icon:before {
+    font-size: 14px;
 }
 
 .photoswipe-gallery {
