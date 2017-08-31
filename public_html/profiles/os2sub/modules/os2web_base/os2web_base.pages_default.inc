@@ -959,7 +959,11 @@ function os2web_base_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+    'template_suggestion' => 'plain',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -977,15 +981,15 @@ function os2web_base_default_page_manager_handlers() {
     'parent' => 'main-menu:0',
     'title_link' => 1,
     'admin_title' => '',
-    'level' => '2',
-    'follow' => 0,
+    'level' => '1',
+    'follow' => 'child',
     'depth' => '0',
     'depth_relative' => 0,
     'expanded' => 0,
     'sort' => 0,
     'menu_name' => 'main-menu',
     'parent_mlid' => '0',
-    'override_title' => 0,
+    'override_title' => 1,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
