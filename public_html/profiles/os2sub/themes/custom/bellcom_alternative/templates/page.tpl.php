@@ -257,7 +257,7 @@
   	
   	        <?php if (!empty($theme_settings['contact_information'])): ?>
   	
-  			<div class="contact-information">
+  			<div class="contact-information col-sm-4">
   
   	        	<?php if (isset($theme_settings['contact_information']['facebook']) ) : ?>
   	        	<?php print $theme_settings['contact_information']['business_owner_name']; ?>
@@ -300,7 +300,24 @@
   				<?php endif; ?>
   
   	        </div>
-  	        	
+          <?php if (!empty($page['footer5'])) : ?>
+            <div class="col-sm-4">
+              <section role="complementary">
+      	        <div class="container footer-container">
+        	        <?php print render($page['footer5']); ?>
+        	     </div>
+              </section>
+  	        </div>
+          <?php endif ?>
+          <?php if (!empty($page['footer6'])) : ?>
+            <div class="col-sm-4">
+              <section role="complementary">
+      	        <div class="container footer-container">
+        	        <?php print render($page['footer6']); ?>
+        	     </div>
+              </section>
+  	        </div>
+          <?php endif ?>  	        	
   			<?php endif; ?>	        	
   	        	
           <?php if ($theme_settings['layout']['footer']['show_social_links']) : ?>

@@ -16,7 +16,7 @@
 			<?php print render($content['field_os2web_contact_field_mail']); ?>
 			<?php print render($content['field_medarbejder_tlf']); ?>
 			</div>
-			
+			<?php print render($content['field_os2web_contact_field_info']); ?>
 		</div>
 		<div class="related-links">
 		    <?php print render($content['field_links']); ?>

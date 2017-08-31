@@ -130,7 +130,6 @@ section[role=navigation] .main-navigation-right {
     justify-content: space-between;
     font-size: 1.2em!important;
 }
-
 .field-name-field-distrikt {
     font-weight: bold;
     margin-bottom: 20px;
@@ -259,7 +258,22 @@ section .main-navigation-list-link a {
     align-items: center;
 }
 .footer {
-    padding: @padding-base-horizontal;
+  .footer-branding {
+    padding: 20px;
+    background-color: #981B6E;
+    color: #FFF;
+    text-transform: uppercase;
+    .branding-logo {
+      background-image: balklogo.png;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+      .branding-text {
+        padding-left: 100px;
+        display: block;
+      }
+    }
+  }
+
     color: #ccc;
     border-radius: 3px 3px 0 0;
     .contact-information {
@@ -509,6 +523,7 @@ section .main-navigation-list-link a {
 .view-ballerup-subsites-spots .col-sm-6 {
     padding-left: 0px;
 }
+<<<<<<< HEAD
 .subsite-teaser-heading-title {
     margin-bottom: 20px;
 }
@@ -604,3 +619,48 @@ h3.subsite-teaser-heading-title a {
 .Modal-cancel-overflow {
   overflow: hidden;
 }
+=======
+
+.js-to_expand[aria-hidden=true],
+.js-to_expand[data-hidden=true] {
+  display: none;
+}
+
+.view-id-ballerup_afsnit {
+  margin-top: 20px;
+  border-top: 3px solid #243544;
+  .row {
+    border-bottom: 1px solid 1px;
+  }
+}
+.js-expandmore {
+  cursor: pointer;
+}
+
+.expandmore__button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
+}
+/* optional */
+.expandmore__button:before {
+  content : '+ ';
+  display: inline-block;
+width: 34px;
+height: 34px;
+margin-top: -17px;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+background-color: #f5f7f8;
+border: 1px solid #243544;
+text-align: center;
+line-height: 23px;
+}
+.expandmore__button[aria-expanded=true]:before,
+.expandmore__button[data-expanded=true]:before {
+  content : '- ';
+}
+
+
+>>>>>>> 1ca67af9285484cc97459da7c2bfcf85a7721110
