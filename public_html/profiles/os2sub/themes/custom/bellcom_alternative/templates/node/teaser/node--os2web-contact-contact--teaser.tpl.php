@@ -5,10 +5,13 @@
 		<div class="kontaktblok-headline">
 			<?php print render($content['field_os2web_contact_field_dept']); ?>
 		</div>
+		<?php print render($content['field_distrikt']); ?>
 		<div class="kontaktblok-text">
 			<?php print render($content['field_os2web_contact_field_info']); ?>
 		</div>
 		<div>
+		
+		<?php print render($content['group_adresse']); ?>
 			<?php print render($content['field_os2web_contact_field_mail']); ?>
 			<?php print render($content['field_os2web_contact_field_tel']); ?>
 		</div>
