@@ -113,25 +113,6 @@ function os2sub_frontpage_default_page_manager_pages() {
   $display->content['new-ffc99cb3-67aa-4439-86e7-36e4db10ad23'] = $pane;
   $display->panels['content'][0] = 'new-ffc99cb3-67aa-4439-86e7-36e4db10ad23';
   $pane = new stdClass();
-  $pane->pid = 'new-054a37dd-733f-42a5-9bb9-4f64da59cea2';
-  $pane->panel = 'footer';
-  $pane->type = 'views_panes';
-  $pane->subtype = 'os2sub_velkomst-panel_pane_1';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array();
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '054a37dd-733f-42a5-9bb9-4f64da59cea2';
-  $display->content['new-054a37dd-733f-42a5-9bb9-4f64da59cea2'] = $pane;
-  $display->panels['footer'][0] = 'new-054a37dd-733f-42a5-9bb9-4f64da59cea2';
-  $pane = new stdClass();
   $pane->pid = 'new-998e56b3-34bc-4070-b98c-40c907acea61';
   $pane->panel = 'sidebar-left';
   $pane->type = 'views';

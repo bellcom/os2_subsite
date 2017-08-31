@@ -224,10 +224,16 @@
         <?php else: ?>
           <?php print render($page['content']); ?>
         <?php endif; ?>
-        <?php print render($page['footer']); ?>
+
       </div>
     </div>
-    <!-- End - content -->
+    <?php if (!empty($page['footer'])) : ?>
+    <section role="complementary">
+      <div class="container footer-container">
+        <?php print render($page['footer']); ?>        
+      </div>
+    </section>
+    <?php endif ?>
         
      <footer class="footer">
        <div class="footer-branding">
