@@ -7170,6 +7170,42 @@
 
 }
 
+@media screen {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media print {
+
+}
+
 @media screen and (max-width: 767px) {
   .node-basket .node-basket-toolboxes .node-basket-toolboxes-heading-title {
     font-size: 19px;
