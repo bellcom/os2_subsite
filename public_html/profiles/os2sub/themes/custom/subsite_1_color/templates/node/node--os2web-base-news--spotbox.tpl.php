@@ -6,14 +6,14 @@
       <?php print render($content['body']); ?>
     </span>
   <?php endif; ?>
-<?php if ($submitted) { ?>
+
    <span class="date-in-parts">
        <span class="day"><?php  echo date("j", $node->created); ?>. </span>
        <span class="month"><?php echo date("M", $node->created); ?></span>
        <span class="year"><?php echo date("Y", $node->created); ?></span>
-    </span><!--//date-in-parts -->
+    </span>
 
-  <?php } ?>  </a>
+  </a>
 </article>
 
 
