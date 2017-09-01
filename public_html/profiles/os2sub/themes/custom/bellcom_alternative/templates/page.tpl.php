@@ -240,7 +240,8 @@
         <div class="container">
           <?php if (empty($page['footer4'])): ?>
             <div class="branding-logo">
-              <span class="branding-text">Dette subsite er præsenteret i samarbejde med Ballerup Kommune</span>
+              <span class="branding-text"><img src="<?php print base_path().path_to_theme().'/dist/img/ballerupbyvaaben.png' ?>"> subsite er præsenteret i samarbejde med Ballerup Kommune</span>
+              
             </div>
           <?php endif; ?>
 	        <?php print render($page['footer4']); ?>
