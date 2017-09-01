@@ -1,5 +1,6 @@
 <article role="listitem" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> subsite-spotbox subsite-box subsite-box-small-spacing"<?php print $attributes; ?>>
   <a class="news-spot-link" href="<?php print $node_url; ?>">
+    <span class="h3 aktuelt-static">Aktuelt</span>
   <span class="h4 subsite-spot-heading-title"><?php print $title; ?></span>
   <?php if (isset($content['body'])): ?>
     <span class="subsite-teaser-body-content">
