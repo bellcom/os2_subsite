@@ -1,8 +1,11 @@
 <article role="listitem" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> subsite-spotbox subsite-box subsite-box-small-spacing"<?php print $attributes; ?>>
-  <h3 class="subsite-spot-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+  <a class="news-spot-link" href="<?php print $node_url; ?>">
+  <span class="h4 subsite-spot-heading-title"><?php print $title; ?></span>
   <?php if (isset($content['body'])): ?>
-    <div class="subsite-teaser-body-content">
+    <span class="subsite-teaser-body-content">
       <?php print render($content['body']); ?>
-    </div>
+    </span>
   <?php endif; ?>
+    <span class="datestamp"><?php print $date; ?></span>
+  </a>
 </article>
