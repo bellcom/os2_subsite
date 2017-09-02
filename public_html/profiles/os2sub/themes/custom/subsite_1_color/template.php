@@ -117,4 +117,3 @@ function subsite_1_menu_local_task($variables) {
   return "<li>" . l($link_text, $link['href'], $link['localized_options']) . "</li>";
 }
 */
-
