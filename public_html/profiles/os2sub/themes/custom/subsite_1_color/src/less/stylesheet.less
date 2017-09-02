@@ -332,6 +332,17 @@ section .main-navigation-list-link a {
     display: flex;
     align-items: center;
 }
+.footer-dark .block-title {
+    font-size: 1.1em!important;
+    letter-spacing: 0.020em;
+    font-weight: 500;
+}
+.contact-information section {
+    text-align: left!important;
+}
+.footer6 {
+    padding-left: 60px;
+}
 .footer {
   .footer-branding {
     padding: 20px;
@@ -345,9 +356,14 @@ section .main-navigation-list-link a {
       .branding-text {
         padding-left: 100px;
         display: block;
+          padding: 0
       }
     }
   }
+    .uppercasing {
+        text-transform: uppercase;
+    }
+
 
     color: #ccc;
     border-radius: 3px 3px 0 0;
@@ -452,8 +468,10 @@ section .main-navigation-list-link a {
     .footer-dark {
       background-color: #243544;
       color: #FFF;
+        padding-top: 10px;
+        padding-bottom: 10px;
       a {
-        color: #59A6C6;
+        color: #6dcff6;
         padding-left: 0;
         &:hover {
           background-color: transparent;
@@ -650,7 +668,7 @@ h3.subsite-teaser-heading-title a {
     content: "\f16a";
     font-family: fontawesome;
     color: #fff;
-    font-size: 80px;
+    font-size: 70px;
     position: absolute;
   
 }
@@ -662,8 +680,8 @@ h3.subsite-teaser-heading-title a {
   width: 100%;
   top: 0;
   left: 0;
+    padding-top: 5%;
   cursor: pointer;
-  padding-top: 10%;
   z-index: 99999;
 }
 
@@ -678,7 +696,7 @@ h3.subsite-teaser-heading-title a {
 }
 .Modal-box > .video-container {
   position: relative;
-  display: block;
+  display: flex;
   height: 0;
   padding: 0;
   overflow: hidden;

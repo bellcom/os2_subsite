@@ -255,12 +255,13 @@
         <div class="container footer-dark-container">
           <div class="row">
   	        
-  	        <?php print render($page['footer2']); ?>
+  	   
   	
   	        <?php if (!empty($theme_settings['contact_information'])): ?>
   	
   			<div class="contact-information col-sm-4">
-  
+   <?php print render($page['footer2']); ?>
+  	
   	        	<?php if (isset($theme_settings['contact_information']['facebook']) ) : ?>
   	        	<?php print $theme_settings['contact_information']['business_owner_name']; ?>
   	        	<?php endif; ?>
