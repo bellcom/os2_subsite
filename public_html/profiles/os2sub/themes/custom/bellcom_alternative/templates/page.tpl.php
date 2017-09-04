@@ -228,23 +228,25 @@
       </div>
     </div>
     <?php if (!empty($page['footertop1']) OR !empty($page['footertop2']) OR !empty($page['footer'])): ?>
-        <div class="container footer-container pail-section">
-          <div class="row">
-            <?php if (!empty($page['footertop1'])) : ?>
-              <section role="complementary" class="pail-section col-sm-4">
-                  <?php print render($page['footertop1']); ?>        
-              </section>
-            <?php endif ?>
-            <?php if (!empty($page['footertop2'])) : ?>
-              <section role="complementary" class="pail-section col-sm-8">
-                  <?php print render($page['footertop2']); ?>        
-              </section>
-            <?php endif ?>
-            <?php if (!empty($page['footer'])) : ?>
-              <section role="complementary" class="pail-section col-sm-12">
-                <?php print render($page['footer']); ?>   
-              </section>     
-            <?php endif ?>
+        <div class="container footer-container ">
+          <div class="pail-section"
+            <div class="row">
+              <?php if (!empty($page['footertop1'])) : ?>
+                <section role="complementary" class="pail-section col-sm-4">
+                    <?php print render($page['footertop1']); ?>        
+                </section>
+              <?php endif ?>
+              <?php if (!empty($page['footertop2'])) : ?>
+                <section role="complementary" class="pail-section col-sm-8">
+                    <?php print render($page['footertop2']); ?>        
+                </section>
+              <?php endif ?>
+              <?php if (!empty($page['footer'])) : ?>
+                <section role="complementary" class="pail-section col-sm-12">
+                  <?php print render($page['footer']); ?>   
+                </section>     
+              <?php endif ?>
+            </div>
           </div>
         </div>
     <?php endif ?>
