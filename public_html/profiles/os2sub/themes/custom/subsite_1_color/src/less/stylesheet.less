@@ -328,6 +328,29 @@ section .main-navigation-list-link a {
 .expandmore__to_expand {
     margin-bottom: 40px!important;
 }
+.expandmore__button[aria-expanded=true]:before, .expandmore__button[data-expanded=true]:before {
+        content: '- ';
+}
+.buttontext {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.expandmore__button:before {
+    content: '+ ';
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 34px;
+    height: 34px;
+    margin-top: -20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #243544;
+    text-align: center;
+    font-weight: 600;
+}
 .breadcrumb li {
     color: #981b6e!important;
     font-size: 14px!important;
