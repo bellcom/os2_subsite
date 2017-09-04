@@ -55,6 +55,7 @@
     <!-- Begin - content -->
     <div class="content">
       <div class="container header-container">
+       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <?php if ($logo && !$site_name): ?>
@@ -143,6 +144,7 @@
                     <?php endif; ?>
                   </ul>
         </section>
+        </div>
         </div>
       </div>
       <!-- Begin - main navigation -->
@@ -332,14 +334,12 @@
             <div class="col-sm-4">
               <section role="complementary">
       	        <div class="footer6">
+                   <div class="custom-links">
         	        <?php print render($page['footer6']); ?>
-        	     </div>
-              </section>
-  	        </div>
-          <?php endif ?>  	        	
-  			<?php endif; ?>	        	
-  	        	
-          <?php if ($theme_settings['layout']['footer']['show_social_links']) : ?>
+                                   </div>
+        	            	        
+    	                 <div class="social-links">
+    	                             <?php print render($page['footer3']); ?>
   
             <ul class="social-icon-list">
   
@@ -402,13 +402,22 @@
                 <li><a href="<?php print $theme_settings['social_links']['vimeo']['url']; ?>" target="_blank" class="social-icon social-icon-vimeo" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['vimeo']['tooltip']; ?>"></a></li>
               <?php endif; ?>
   
-                </ul>	        
-              <?php endif; ?>        
+                </ul>	
+        	     </div>
+              </section>
+              </div>
+  	        </div>
+          <?php endif ?>  	        	
+  			<?php endif; ?>	        	
+  	        	
+       
             </div>	        
           <?php endif; ?>
           <div class="container footer-social">
     	        
-    	        <?php print render($page['footer3']); ?>
+    	
+        
+              
     
           </div>
         </div>

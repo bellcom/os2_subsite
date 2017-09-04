@@ -7,9 +7,6 @@
 
 // Container
 
-.main-container {
-    padding-top: 50px;
-}
 
 // Header
 .header-container {
@@ -79,9 +76,9 @@
     width: 100%;
     background: #fff;
     padding: 20px;
-    margin-top: 70px;
-        padding-top: 50px;
-    padding-bottom: 60px;
+    margin-top: 40px;
+        padding-top: 0px;
+    padding-bottom: 50px;
 }
 
 .node--velkomst--teaser .col-md-6 {
@@ -179,6 +176,65 @@ section .main-navigation-list-link a {
     padding-right: 15px;
 }
 
+// Social Links
+.footer .social-icon.social-icon-facebook:before {
+    content: "\f230"!important;
+    background: none;
+    border-radius: 0px;
+    color: #7c868f;
+    
+}
+
+.footer .social-icon.social-icon-twitter:before {
+    content: "\f081"!important;
+    color: #7c868f;
+}
+
+.footer .social-icon.social-icon-linkedin:before {
+   content: "\f08c"!important;
+    color: #7c868f; 
+}
+.footer .social-icon.social-icon-youtube:before {
+   content: "\f166"!important;
+    color: #7c868f; 
+}
+.footer .social-icon-list {
+    text-align: left!important;
+}
+.footer .social-icon-list li a {
+    margin-left: 0px;
+}
+.social-links p {
+    display: none;
+}
+.social-links {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    padding-right: 0px;
+}
+.social-links .block h2 {
+    font-size: 14px!important;
+}
+.footer6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+}
+.footer .social-icon {
+    background: none;
+}
+.social-icon {
+    background-color: transparent!important;
+     color: #7c868f;
+    font-size: 26px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 // Logged In 
 .highlighted .contextual-links-region {
     position: inherit!important;
@@ -220,8 +276,12 @@ section .main-navigation-list-link a {
     margin-bottom: 40px;
 }
 
-.front .block-views {
+.front .pail-section .block-views {
     margin-bottom: 100px;
+}
+
+.front .block-views {
+    margin-bottom: 70px;
 }
 
 .news-spot-link {
@@ -656,6 +716,29 @@ h3.subsite-teaser-heading-title a {
     display: none!important;
 }
 
+.header-container .col-md-6 {
+    padding-left: 0px;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, rgba(0, 41, 158, 0.5) 0%, rgba(194, 233, 251, 0) 100%);
+}
+.node-banner {
+    position: relative;
+}
+.main-navigation-bar {
+    z-index: 9;
+    position: relative;
+}
+
+.header-container {
+    width: 100%;
+    background: #fff;
+}
+
 // Youtube
 
 .field-name-field-video-placeholder {
@@ -664,12 +747,17 @@ h3.subsite-teaser-heading-title a {
     align-items: center;
 }
 .field.field-name-field-video-placeholder.field-type-image.field-label-above:before {
-    display: inline-block;
-    content: "\f16a";
-    font-family: fontawesome;
-    color: #fff;
-    font-size: 70px;
-    position: absolute;
+   display: inline-flex;
+content: "\f16a";
+font-family: fontawesome;
+color: #fff;
+width: 100%;
+min-height: 100%;
+font-size: 70px;
+text-align: center;
+position: absolute;
+justify-content: center;
+align-items: center;
   
 }
 .Modal-overlay {

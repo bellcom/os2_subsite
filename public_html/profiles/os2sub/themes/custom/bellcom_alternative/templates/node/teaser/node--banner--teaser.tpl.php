@@ -5,6 +5,7 @@
 	
 	<article id="node-<?php print $node->nid; ?>" role="banner" class="banner <?php print $classes . " all"; ?> clearfix"<?php print $attributes; ?> 
 		style="background: url(<?php print file_create_url($style_url); ?>) no-repeat scroll ;height:400px;background-size: cover;">
+   <div class="overlay"></div>
     <div class="container">
     	<div class="row">
       	<div class="col-sm-12 banner-wrapper color-<?php print $node->field_hvid_tekst['und']['0']['value']; ?>">
