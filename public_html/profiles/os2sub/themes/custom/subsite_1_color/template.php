@@ -84,6 +84,15 @@ function subsite_1_color_preprocess_node(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for theme_file_icon().
+ *
+ * Change the icon directory to use icons from this theme.
+ */
+function subsite_1_color_preprocess_file_icon(&$variables) {
+  $variables['icon_directory'] = drupal_get_path('theme', 'subsite_1_color') . '/dist/img/file-icons';
+}
+
 /*
  * Implements template_preprocess_comment().
  */
