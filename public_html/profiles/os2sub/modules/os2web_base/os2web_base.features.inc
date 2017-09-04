@@ -35,6 +35,21 @@ function os2web_base_views_api($module = NULL, $api = NULL) {
 function os2web_base_image_default_styles() {
   $styles = array();
 
+  // Exported image style: ballerup_carousel_thumbnail.
+  $styles['ballerup_carousel_thumbnail'] = array(
+    'label' => 'Ballerup carousel thumbnail (80x80)',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 80,
+          'height' => 80,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: os2sub_220x130.
   $styles['os2sub_220x130'] = array(
     'label' => 'Forside nyhed 4 spalter',
