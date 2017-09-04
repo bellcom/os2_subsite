@@ -42,7 +42,7 @@
         .banner-headline {
             font-size: 2.618em;
         }
-        // Golden Ratio 
+        // Golden Ratio
         .banner-text {
             font-size: 1.618em;
         }
@@ -62,14 +62,25 @@
 
 // Spotbox
 .os2-node-teaser-heading {
-        display: flex;
-    background: fade(@brand-primary, 80%);
+    display: flex;
+    //background: fade(@brand-primary, 80%);
     height: 5em;
     position: absolute!important;
     bottom: 0!important;
 }
+.os2-node-teaser-heading::before {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: @brand-primary;
+    content: '';
+    opacity: 0.8;
+}
 .os2-node-teaser-heading-title {
     background: none!important;
+    z-index: 1;
 }
 .node-os2web-spotbox-box a img {
     max-width: inherit!important;
@@ -689,7 +700,18 @@ section .main-navigation-list-link a {
 
 .main-navigation-bar {
     position: relative;
-    background-color: fade(@brand-primary, 80%);
+    //background-color: fade(@brand-primary, 80%);
+}
+
+.main-navigation-bar::before {
+    content: '';
+    background-color: @brand-primary;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
 }
 
 .main-navigation-wrapper .main-navigation-list > li {

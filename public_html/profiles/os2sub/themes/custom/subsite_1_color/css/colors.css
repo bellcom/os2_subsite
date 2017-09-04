@@ -20,22 +20,23 @@ body .banner .banner-wrapper a:active {
     background-color: #981b6e;
 }
 
-a .os2-node-teaser-heading {
-    background: #981b6e;
-}
-
-body .footer .footer-branding {
+/*front page teasers*/
+body .os2-node-teaser-heading::before {
     background-color: #981b6e;
 }
 
-body .footer .footer-branding {
-    color: #ffffff;
-}
-
-body .main-navigation-bar {
+/*navbar*/
+body .main-navigation-bar::before {
     background-color: #981b6e;
 }
-
 body #main-navigation-bar a {
     color: #ffffff !important;
+}
+
+/*footer*/
+body .footer .footer-branding {
+    background-color: #981b6e;
+}
+body .footer .footer-branding {
+    color: #ffffff;
 }
