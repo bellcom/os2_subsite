@@ -351,9 +351,7 @@
 
                   <?php if ($theme_settings['layout']['footer']['show_social_links']) : ?>
 
-                    ddd
                     <?php if ($theme_settings['social_links']['social_links_block_name']): ?>
-                      ddd
                       <h3 class="block-title"><?php print $theme_settings['social_links']['social_links_block_name']; ?></h3>
                     <?php endif; ?>
 
