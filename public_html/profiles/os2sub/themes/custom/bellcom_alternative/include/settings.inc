@@ -426,6 +426,12 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
     '#title' => t('Sociale tjenester'),
   );
 
+  $form['options']['social_links']['social_links_block_name'] = array(
+    '#type'  => 'textfield',
+    '#title' => t('Sociale tjenester blok navn'),
+    '#default_value' => theme_get_setting('social_links_block_name'),
+  );
+
   // Facebook
   $form['options']['social_links']['facebook'] = array(
     '#type'          => 'checkbox',
@@ -942,6 +948,7 @@ function _bellcom_collect_theme_settings() {
   $settings['contact_information']['ean'] = theme_get_setting('ean');
 
   // Social links
+  $settings['social_links']['social_links_block_name'] = theme_get_setting('social_links_block_name');
   $settings['social_links']['facebook']['active'] = theme_get_setting('facebook');
   $settings['social_links']['facebook']['url'] = theme_get_setting('facebook_url');
   $settings['social_links']['facebook']['tooltip'] = t(theme_get_setting('facebook_tooltip'));
