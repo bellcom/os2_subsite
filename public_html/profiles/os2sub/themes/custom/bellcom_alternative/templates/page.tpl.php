@@ -227,6 +227,24 @@
 
       </div>
     </div>
+    <?php if (!empty($page['footertop1']) OR !empty($page['footertop2'])): ?>
+      <div class="row">
+        <?php if (!empty($page['footertop1'])) : ?>
+          <section role="complementary" class="pail-section col-sm-4">
+            <div class="container footer-container">
+              <?php print render($page['footertop1']); ?>        
+            </div>
+          </section>
+        <?php endif ?>
+        <?php if (!empty($page['footertop2'])) : ?>
+          <section role="complementary" class="pail-section col-sm-8">
+            <div class="container footer-container">
+              <?php print render($page['footertop2']); ?>        
+            </div>
+          </section>
+        <?php endif ?>
+      </div>
+    <?php endif ?>
     <?php if (!empty($page['footer'])) : ?>
     <section role="complementary" class="pail-section">
       <div class="container footer-container">
