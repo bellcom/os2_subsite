@@ -303,6 +303,7 @@ section .main-navigation-list-link a {
 
 .footer-container .node-os2web-base-news {
     padding: 0px;
+
 }
 .menu-block-wrapper ul li a {
     background: #fff;
@@ -310,7 +311,29 @@ section .main-navigation-list-link a {
     font-weight: 600;
     color: #243544!important;
     border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.02);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.02);
+box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.02);
     
+}
+
+.not-front .menu-block-wrapper ul li a {
+    background: #f5f3ef;
+    padding: 20px;
+    font-weight: 600;
+    color: #243544!important;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
+-moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
+box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
+    
+}
+
+.not-front .os2sub-box {
+    background: #f5f3ef;
+      -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
+-moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
+box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
 }
 .menu-block-wrapper ul li {
     margin-bottom: 8px;
@@ -362,12 +385,37 @@ section .main-navigation-list-link a {
 
 }
 .os2sub-breadcrumb-container {
-    border-bottom: 1px solid rgba(0,0,0,0.02);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
     width: 100%;
     margin-top: -20px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 40px;
+}
+.file {
+        padding: 20px;
+    height: 50px;
+    background: #981b6e;
+    border-radius: 4px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.field.field-name-field-os2web-base-field-media.field-type-file .field-items .field-item a {
+    padding: 0!important;
+    font-size: 14px!important;
+}
+.field.field-name-field-os2web-base-field-media.field-type-file .field-items .field-item img.file-icon {
+    margin: 0!important;
+    float: inherit!important;
+    width: inherit!important;
+    height: inherit!impotant;
+    margin-right: 10px!important;
+}
+.field-type-file {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .breadcrumb a {
@@ -782,6 +830,14 @@ section .main-navigation-list-link a {
     top: 0;
     left: 0;
     opacity: 0.8;
+}
+
+.not-front .content {
+    background: #fff;
+}
+.not-front .pail-section {
+    margin-top: 0px;
+    padding-top: 40px;
 }
 
 .main-navigation-wrapper .main-navigation-list > li {

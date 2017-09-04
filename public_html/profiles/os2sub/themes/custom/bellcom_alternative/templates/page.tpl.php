@@ -149,7 +149,23 @@
       </div>
       <!-- Begin - main navigation -->
         <div class="main-navigation-wrapper">
+         
           <div class="main-navigation-bar" id="main-navigation-bar">
+          
+	
+	<div id="node-<?php print $node->nid; ?>" style="position:absolute;" role="banner" class="banner <?php print $classes . " all"; ?> clearfix"<?php print $attributes; ?> 
+		style="background: url(<?php print file_create_url($style_url); ?>) no-repeat scroll ;height:400px;background-size: cover;">
+    <div class="container">
+    	<div class="row">
+      	<div class="col-sm-12 banner-wrapper color-<?php print $node->field_hvid_tekst['und']['0']['value']; ?>">
+      		<div class="banner-headline"><?php print render($content['field_banner_headline']); ?></div>
+      		<div class="banner-text"><?php print render($content['field_banner_text']); ?></div>
+      		<?php print render($content['field_knap_link']);?>    		
+      	</div>
+    	</div>
+  	</div>	
+  </div>
+
             <div class="container nav-container">
               <div class="row">
                 <nav class="col-md-10" role="navigation">  
