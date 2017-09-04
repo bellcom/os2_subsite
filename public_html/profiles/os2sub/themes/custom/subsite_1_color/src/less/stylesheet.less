@@ -393,9 +393,9 @@ section .main-navigation-list-link a {
     align-items: center;
 }
 .footer-dark .block-title {
-    font-size: 1.1em!important;
+    font-size: 1.1em;
     letter-spacing: 0.020em;
-    font-weight: 500;
+    font-weight: 600;
 }
 .contact-information section {
     text-align: left!important;
@@ -429,7 +429,7 @@ section .main-navigation-list-link a {
     border-radius: 3px 3px 0 0;
     .contact-information {
         clear: both;
-        text-align: center;
+        //text-align: center;
     }
     // Social icon list
     .social-icon-list {
@@ -437,20 +437,25 @@ section .main-navigation-list-link a {
         padding: 0;
         margin-bottom: 5px;
         margin-top: 10px;
-        text-align: center;
+        //text-align: center;
         li {
             display: inline-block;
             text-align: center;
+            &:not(:first-child) {
+              margin-left: 7px;
+            }
         }
         .social-icon {
             display: block;
             font-family: "FontAwesome";
-            border-radius: 100%;
+            color: #243544;
+            border-radius: 3px;
             border: 0;
             width: floor((@bs3-designer-icon-font-size * 1.8));
             height: floor((@bs3-designer-icon-font-size * 1.8));
             line-height: floor((@bs3-designer-icon-font-size * 1.8));
             vertical-align: middle;
+            background-color: @social-link-color-generic;
             &:hover {
                 text-decoration: none;
             }
@@ -470,21 +475,21 @@ section .main-navigation-list-link a {
         }
         // Facebook
         &.social-icon-facebook {
-            background-color: @social-link-color-facebook;
+            //background-color: @social-link-color-facebook;
             &:before {
                 content: @fa-var-facebook;
             }
         }
         // Instagram
         &.social-icon-instagram {
-            background-color: @social-link-color-instagram;
+            //background-color: @social-link-color-instagram;
             &:before {
                 content: @fa-var-instagram;
             }
         }
         // Twitter
         &.social-icon-twitter {
-            background-color: @social-link-color-twitter;
+            //background-color: @social-link-color-twitter;
             &:before {
                 content: @fa-var-twitter;
             }
@@ -505,7 +510,7 @@ section .main-navigation-list-link a {
         }
         // LinkedIn
         &.social-icon-linkedin {
-            background-color: @social-link-color-linkedin;
+            //background-color: @social-link-color-linkedin;
             &:before {
                 content: @fa-var-linkedin;
             }
@@ -540,7 +545,10 @@ section .main-navigation-list-link a {
       h2.block-title {
         font-size: @font-size-large;
         text-transform: uppercase;
-        font-weight: normal;
+      }
+      h3.block-title {
+        font-size: @font-size-h5;
+        text-transform: uppercase;
       }
     }
 }
@@ -837,4 +845,11 @@ align-items: center;
   background: none;
   font-size: inherit;
   color: inherit;
+}
+.field.field-name-field-os2web-base-field-media.field-type-file{
+  & span.file{
+    & span.file-size{
+      display: none;
+    }
+  }
 }

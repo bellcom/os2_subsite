@@ -355,6 +355,27 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
     '#default_value' => theme_get_setting('working_hours'),
   );
 
+  // CVR NR
+  $form['options']['contact_information']['cvr_nr'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('CVR NR'),
+    '#default_value' => theme_get_setting('cvr_nr'),
+  );
+
+  // GIRO NR
+  $form['options']['contact_information']['giro_nr'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('GIRO NR'),
+    '#default_value' => theme_get_setting('giro_nr'),
+  );
+
+  // EAN NR
+  $form['options']['contact_information']['ean'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('EAN'),
+    '#default_value' => theme_get_setting('ean'),
+  );
+
 
   /**
 * Implementation of THEMEHOOK_settings() function.
@@ -403,6 +424,12 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
   $form['options']['social_links'] = array(
     '#type'  => 'fieldset',
     '#title' => t('Sociale tjenester'),
+  );
+
+  $form['options']['social_links']['social_links_block_name'] = array(
+    '#type'  => 'textfield',
+    '#title' => t('Sociale tjenester blok navn'),
+    '#default_value' => theme_get_setting('social_links_block_name'),
   );
 
   // Facebook
@@ -916,8 +943,12 @@ function _bellcom_collect_theme_settings() {
   $settings['contact_information']['phone_readable'] = theme_get_setting('phone_readable');
   $settings['contact_information']['email'] = theme_get_setting('email');
   $settings['contact_information']['working_hours'] = theme_get_setting('working_hours');
+  $settings['contact_information']['cvr_nr'] = theme_get_setting('cvr_nr');
+  $settings['contact_information']['giro_nr'] = theme_get_setting('giro_nr');
+  $settings['contact_information']['ean'] = theme_get_setting('ean');
 
   // Social links
+  $settings['social_links']['social_links_block_name'] = theme_get_setting('social_links_block_name');
   $settings['social_links']['facebook']['active'] = theme_get_setting('facebook');
   $settings['social_links']['facebook']['url'] = theme_get_setting('facebook_url');
   $settings['social_links']['facebook']['tooltip'] = t(theme_get_setting('facebook_tooltip'));
