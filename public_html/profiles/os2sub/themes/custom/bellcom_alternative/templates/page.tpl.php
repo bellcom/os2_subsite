@@ -271,52 +271,67 @@
         <div class="container footer-dark-container">
           <div class="row">
   	        
-  	   
-  	
   	        <?php if (!empty($theme_settings['contact_information'])): ?>
   	
   			<div class="contact-information col-sm-4">
-   <?php print render($page['footer2']); ?>
-  	
-  	        	<?php if (isset($theme_settings['contact_information']['facebook']) ) : ?>
-  	        	<?php print $theme_settings['contact_information']['business_owner_name']; ?>
+                <?php print render($page['footer2']); ?>
+
+  	        	<?php if (isset($theme_settings['contact_information']['business_owner_name'])) : ?>
+                  <h2 class="block-title">
+                    <?php print $theme_settings['contact_information']['business_owner_name']; ?>
+                  </h2>
   	        	<?php endif; ?>
-  	        	
-  	        	<?php if (!empty($theme_settings['contact_information']['business_startup_year']) ) : ?>
-  	        	<?php print '| '.t('Siden ').$theme_settings['contact_information']['business_startup_year']; ?>
-  	        	<?php endif; ?>
-  
-  				<?php if (!empty($theme_settings['contact_information']['address']) ) : ?>
-  				<?php print '| '.$theme_settings['contact_information']['address']; ?>
-  				<?php endif; ?>
-  				
-  				<?php if (!empty($theme_settings['contact_information']['zipcode']) ) : ?>
-  				<?php print ', '.$theme_settings['contact_information']['zipcode']; ?>
-  				<?php endif; ?>
-  				
-  				<?php if (!empty($theme_settings['contact_information']['city']) ) : ?>
-  				<?php print ' '.$theme_settings['contact_information']['city']; ?>
-  				<?php endif; ?>
-  				
-  				<?php if (!empty($theme_settings['contact_information']['phone_system']) ) : ?>
-  				<?php print '| <a title="Ring til '.$theme_settings['contact_information']['phone_readable'].'" href="tel:'.$theme_settings['contact_information']['phone_system'].'">'; ?>
-  				<?php endif; ?>
-  				
-  				<?php if (!empty($theme_settings['contact_information']['phone_readable']) ) : ?>
-  				<?php print $theme_settings['contact_information']['phone_readable']; ?>
-  				<?php endif; ?>
-  				
-  				<?php if (!empty($theme_settings['contact_information']['phone_system']) ) : ?>
-  				<?php print '</a>'; ?>
-  				<?php endif; ?>
-  
-  				<?php if (!empty($theme_settings['contact_information']['email']) ) : ?>
-  				<?php print '| <a href="mailto:'.$theme_settings['contact_information']['email'].' Title="Send email">'.$theme_settings['contact_information']['email'].'</a>'; ?>
-  				<?php endif; ?>
-  				
-  				<?php if (!empty($theme_settings['contact_information']['working_hours']) ) : ?>
-  				<?php print '| '.$theme_settings['contact_information']['working_hours']; ?>
-  				<?php endif; ?>
+
+                <p>
+                  <?php if (!empty($theme_settings['contact_information']['business_startup_year']) ) : ?>
+                    <?php print t('Siden ').$theme_settings['contact_information']['business_startup_year']; ?><br/>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['address']) ) : ?>
+                    <?php print $theme_settings['contact_information']['address']; ?><br/>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['zipcode']) ) : ?>
+                    <?php print $theme_settings['contact_information']['zipcode']; ?><br/>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['city']) ) : ?>
+                    <?php print $theme_settings['contact_information']['city']; ?><br/>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['phone_system']) ) : ?>
+                    <?php print '<a title="Ring til '.$theme_settings['contact_information']['phone_readable'].'" href="tel:'.$theme_settings['contact_information']['phone_system'].'">'; ?>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['phone_readable']) ) : ?>
+                    <?php print $theme_settings['contact_information']['phone_readable']; ?></br>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['phone_system']) ) : ?>
+                    <?php print '</a>'; ?><br/>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['email']) ) : ?>
+                    <?php print '<a href="mailto:'.$theme_settings['contact_information']['email'].' Title="Send email">'.$theme_settings['contact_information']['email'].'</a>'; ?><br/>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['working_hours']) ) : ?>
+                    <?php print $theme_settings['contact_information']['working_hours']; ?></br>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['cvr_nr']) ) : ?>
+                    <br/><?php print $theme_settings['contact_information']['cvr_nr']; ?></br>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['giro_nr']) ) : ?>
+                    <?php print $theme_settings['contact_information']['giro_nr']; ?></br>
+                  <?php endif; ?>
+
+                  <?php if (!empty($theme_settings['contact_information']['ean']) ) : ?>
+                    <?php print $theme_settings['contact_information']['ean']; ?></br>
+                  <?php endif; ?>
+
+                </p>
   
   	        </div>
           <?php if (!empty($page['footer5'])) : ?>
