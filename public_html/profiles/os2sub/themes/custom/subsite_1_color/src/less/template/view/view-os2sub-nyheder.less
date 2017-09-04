@@ -1,0 +1,166 @@
+// |--------------------------------------------------------------------------
+// | Accordion
+// |--------------------------------------------------------------------------
+// |
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Accordion
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// view-os2sub-nyheder
+
+div.nyheder-content{
+  & div.os2sub-box-body{
+    & .view.view-os2sub-nyheder.view-id-os2sub_nyheder.view-display-id-page{
+      & .view-content{
+        & a{
+          color: rgb(51, 66, 80);
+          & .os2sub-box{
+            margin: 0px !important;
+            border: 1px solid rgb(208, 208, 208) !important;
+            border-radius:0px 0px 4px 4px !important;
+            padding: 0px;
+            & .top-border{
+              border-top-color: rgb(36, 53, 68);
+              border-top-style: solid;
+              border-top-width: 3px;
+              width: 100%;
+              height: 100%;
+              padding: 20px 0px 20px 0px;
+              & .nyheder-title{
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                font-size: 1.4em;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 700;
+                line-height: 1.1;
+              }
+              & .nyheder-summary{
+                margin-bottom: 20px;
+                font-size: 1.4em;
+                font-family: 'Open Sans', sans-serif;
+                line-height: 1.1;
+              }
+            }
+          }
+          &:hover, &:active{
+            & .os2sub-box{
+              margin: 0px !important;
+              border: 1px solid rgb(208, 208, 208) !important;
+              border-radius:0px 0px 4px 4px !important;
+              padding: 0px;
+              box-shadow: 0 0 10px rgba(0,0,0,0.2);
+              & .top-border{
+                border-top-color: #981b6e;
+                border-top-style: solid;
+                border-top-width: 3px;
+                width: 100%;
+                height: 100%;
+                padding: 20px 0px 20px 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {
+    display: none;
+  }
+}
+
+// Tablet
+@media @media-query-tablet {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Print
+@media print {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// Touch
+.touch {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// No touch
+.no-touch {
+
+  // Breadcrumb
+  .os2sub-breadcrumb-container {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+.os2sub-mixin-breadcrumb() {}
