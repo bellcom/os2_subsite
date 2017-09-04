@@ -3,12 +3,12 @@
   global $base_url;
   print $base_url . $node_url;
   ?>">
-    <div class="os2sub-box">
-      <div class="top-border">
+    <span class="os2sub-box" style="display: block;">
+      <span class="top-border" style="display: block;">
         <article id="node-<?php print $node->nid; ?>" class="row <?php print $classes . " all"; ?> clearfix"<?php print $attributes; ?> date-filter="<?php if ( isset($top_parent_term) ) print $top_parent_term ?>">
-          <div class="teaser-wrapper">
+          <span class="teaser-wrapper" style="display: block;">
             <?php if ( isset($content['field_os2web_base_field_lead_img']) ) : ?>
-              <div class="col-xs-2">
+              <span class="col-xs-2" style="display: block;">
                 <?php
                 $img = field_get_items('node', $node, 'field_os2web_base_field_lead_img');
                 $image = $img[0];
@@ -17,31 +17,37 @@
                 $path = drupal_get_path_alias('node/' . $node->nid);
                 print $html = '<img class="img-responsive" title = "' . $image["title"] . '" src="' . $public_filename . '"/>';
                 ?>
-              </div>
-              <div class="col-xs-10">
-                <div class="nyheder-title">
+              </span>
+              <span class="col-xs-10" style="display: block;">
+                <span class="nyheder-title">
                   <?php print $node->title; ?>
-                </div>
-                <div class="nyheder-summary">
+                </span>
+                <span class="nyheder-summary" style="display: block;">
+                  <?php if (!isset($content['field_os2web_base_field_summary'])) : 
+                     print render($content['body']); endif; ?>
                   <?php print render($content['field_os2web_base_field_summary']); ?>
-                </div>
-              </div>
+                </span>
+                <span class="date-in-parts" style="display: block;">
+                   <span class="day"><?php  echo date("j", $node->created); ?>. </span>
+                   <span class="month"><?php echo date("F", $node->created); ?></span>
+                   <span class="year"><?php echo date("Y", $node->created); ?></span>
+                </span>
+
+              </span>
             <?php else: ?>
-              <div class="col-sm-12 col-xs-12">
-                <div>
+              <span class="col-sm-12 col-xs-12" style="display: block;">
+                <span style="display: block;">
                   <?php print $node->title; ?>
-                </div>
-                <div class="news-text-date">
-                  <span class="news-date-day"><?php print date('j', $created); ?></span>
-                  <span class="news-date-month"><?php
-                    $m = date('M', $created);
-                    print t($m);
-                    ?></span>
-                </div>
+                </span>
                 <?php print render($content['field_os2web_base_field_summary']); ?>
-              </div>
+                <span class="date-in-parts" style="display: block;">
+                   <span class="day"><?php  echo date("j", $node->created); ?>. </span>
+                   <span class="month"><?php echo date("F", $node->created); ?></span>
+                   <span class="year"><?php echo date("Y", $node->created); ?></span>
+                </span>
+              </span>
             <?php endif; ?>
-          </div>
+          </span>
           <?php
           // Hide comments, tags, and links now so that we can render them later.
           hide($content['comments']);
@@ -56,7 +62,7 @@
           <?php endif; ?>
           <?php hide($content['comments']); ?>
         </article>
-      </div>
-    </div>
+      </span>
+    </span>
   </a>
 <?php endif; ?>
