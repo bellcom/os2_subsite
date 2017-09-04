@@ -7,18 +7,16 @@ drupal_add_js(array('color' => array('logo' => theme_get_setting('logo', 'beta')
 $info = array(
     // Available colors and color labels used in theme.
     'fields' => array(
-        'background' => t('Main background (body)'),
-        'menu_bg' =>  t('Links and nav background'),
-        'menu_links' => t('Text'),
+        'main_branding_color' =>  t('Links and nav background'),
+        'menu_bar_links_color' => t('Menu nav links color'),
     ),
     // Pre-defined color schemes.
     'schemes' => array(
         'default' => array(
             'title' => t('Default colors'),
             'colors' => array(
-                'background' => '#f5f5ef', //main background color
-                'menu_links' => '#ffffff', //text color
-                'menu_bg' => '#981b6e', //menu background color
+                'main_branding_color' => '#981b6e', //menu background color
+                'menu_bar_links_color' =>  '#ffffff'
             ),
         ),
     ),
