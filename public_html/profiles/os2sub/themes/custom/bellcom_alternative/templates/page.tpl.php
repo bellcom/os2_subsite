@@ -228,8 +228,8 @@
       </div>
     </div>
     <?php if (!empty($page['footertop1']) OR !empty($page['footertop2']) OR !empty($page['footer'])): ?>
-        <div class="container footer-container ">
-          <div class="pail-section"
+        <div class="pail-section">
+          <div class="container footer-container">
             <div class="row">
               <?php if (!empty($page['footertop1'])) : ?>
                 <section role="complementary" class="pail-section col-sm-4">
