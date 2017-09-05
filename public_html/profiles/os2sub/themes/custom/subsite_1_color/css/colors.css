@@ -21,7 +21,7 @@ field.field-name-field-os2web-base-field-media.field-type-file .field-items .fie
 body .os2-node-teaser-heading::before,
 body .main-navigation-bar::before,
 body .footer .footer-branding,
-file {
+.file {
     background-color: #981b6e;
 }
 body #main-navigation-bar a {
@@ -30,4 +30,8 @@ body #main-navigation-bar a {
 
 body .footer .footer-branding {
     color: #ffffff;
+}
+
+.page-nyheder .os2sub-box-body .view.view-os2sub-nyheder.view-id-os2sub_nyheder.view-display-id-page .view-content a:hover .os2sub-box .top-border {
+  border-top-color:  #981b6e;
 }
