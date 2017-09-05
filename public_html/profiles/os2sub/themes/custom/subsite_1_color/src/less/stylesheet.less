@@ -751,6 +751,10 @@ section .main-navigation-list-link a {
     font-weight: 600!important;
 }
 
+.active-trail.active.main-navigation-list-link a {
+  background-color: #FFF;
+  color: @brand-primary;
+}
 .page-node .view-os2sub-banner {
     margin-bottom: 20px;
 }
@@ -809,10 +813,10 @@ section .main-navigation-list-link a {
   .input-group .form-control {
     float: none;
   }
-  input[type="text"]:-moz-placeholder,
-  input[type="text"]::-webkit-input-placeholder,
-  input[type="text"]::-moz-placeholder,
-  input[type="text"]:-ms-input-placeholder {
+  & input[type="text"]:-moz-placeholder,
+  & input[type="text"]::-webkit-input-placeholder,
+  & input[type="text"]::-moz-placeholder,
+  & input[type="text"]:-ms-input-placeholder {
     color: #fff;
   }
   .search-form .btn .icon:before {
@@ -839,6 +843,23 @@ section .main-navigation-list-link a {
     left: 0;
     opacity: 0.8;
 }
+
+.main-navigation-bar input[type="text"]::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.main-navigation-bar input[type="text"]::-moz-placeholder {
+    color: #fff;
+}
+
+.main-navigation-bar input[type="text"]:-ms-input-placeholder {
+    color: #fff;
+}
+
+.main-navigation-bar input[type="text"]:-moz-placeholder {
+    color: #fff;
+}
+
 .not-front .content {
     background: #fff;
 }

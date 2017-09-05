@@ -1,16 +1,16 @@
 body a {
-    color: #981b6e;
+  color: #981b6e;
 }
 
 /*news page*/
 body div.nyheder-content div.os2sub-box-body .view.view-os2sub-nyheder.view-id-os2sub_nyheder.view-display-id-page .view-content a:active .os2sub-box .top-border,
 body div.nyheder-content div.os2sub-box-body .view.view-os2sub-nyheder.view-id-os2sub_nyheder.view-display-id-page .view-content a:hover .os2sub-box .top-border {
-    border-top-color: #981b6e;
+  border-top-color: #981b6e;
 }
 
 /*front page aktuelt block*/
 body .news-spot-link:hover {
-    border-top: 4px solid #981b6e;
+  border-top: 4px solid #981b6e;
 }
 
 /*front page banner*/
@@ -23,14 +23,18 @@ body .main-navigation-bar::before,
 body .footer .footer-branding,
 .field.field-name-field-os2web-base-field-media.field-type-file .field-items .field-item,
 .file {
-    background-color: #981b6e;
+  background-color: #981b6e;
 }
 body #main-navigation-bar a {
-    color: #ffffff !important;
+  color: #ffffff;
+}
+body #main-navigation-bar a.active-trail {
+  background-color: #ffffff;
+  color: #981b6e
 }
 
 body .footer .footer-branding {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .page-nyheder .os2sub-box-body .view.view-os2sub-nyheder.view-id-os2sub_nyheder.view-display-id-page .view-content a:hover .os2sub-box .top-border {
