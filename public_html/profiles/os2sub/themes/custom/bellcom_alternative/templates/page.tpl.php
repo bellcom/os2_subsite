@@ -34,7 +34,7 @@
               </a>
             <?php elseif ($logo && $site_name): ?>
               <a href='<?php print $front_page; ?>' class="main-navigation-logo-link">
-                <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> 
+                  <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> 
                 <span class="site-name"><?php print $site_name; ?></span>
                 <?php if ($slogan): ?>
                   <span class="site-slogan"><?php print $slogan; ?></span>
@@ -183,7 +183,7 @@
       </div>
     </div>
     <?php if (!empty($page['footertop1']) OR !empty($page['footertop2']) OR !empty($page['footer'])): ?>
-      <div class="pail-section">
+      <div class="pail-section pail-section-wrapper">
         <div class="container footer-container">
           <div class="row">
             <?php if (!empty($page['footertop1'])) : ?>
