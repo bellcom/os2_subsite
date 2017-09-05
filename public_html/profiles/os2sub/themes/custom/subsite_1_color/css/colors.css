@@ -21,6 +21,7 @@ field.field-name-field-os2web-base-field-media.field-type-file .field-items .fie
 body .os2-node-teaser-heading::before,
 body .main-navigation-bar::before,
 body .footer .footer-branding,
+.field.field-name-field-os2web-base-field-media.field-type-file .field-items .field-item,
 .file {
     background-color: #981b6e;
 }
