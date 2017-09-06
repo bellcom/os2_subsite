@@ -135,5 +135,5 @@ function subsite_1_menu_local_task($variables) {
  * @param $form_id
  */
 function subsite_1_color_form_search_form_alter(&$form, &$form_state, $form_id) {
-  $form['basic']['keys']['#attributes']['placeholder'] = t('Hvad øger du?');
+  $form['basic']['keys']['#attributes']['placeholder'] = t('Hvad søger du?');
 }
