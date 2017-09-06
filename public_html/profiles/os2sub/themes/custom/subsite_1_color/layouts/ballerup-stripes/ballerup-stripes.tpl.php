@@ -1,6 +1,6 @@
 <div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <?php if ($content['top']): ?>
-	  <div class="col-md-12">
+	  <div class="col-md-12 top-panel-panes">
 		  <?php print $content['top']; ?>
 		</div>
 	<?php endif ?>
@@ -8,18 +8,18 @@
     <?php print $content['content']; ?>
   </div>
   <?php if ($content['sidebar-right']): ?>
-    <div class="col-md-4">
+    <div class="col-md-4 right-panel-panes">
       <?php print $content['sidebar-right']; ?>
     </div>
 
 	<?php endif ?>
   <?php if ($content['bottom']): ?>
-		<div class="col-sm-12 content-bottom">
+		<div class="col-sm-12 content-bottom bottom-panel-panes">
       <?php print $content['bottom']; ?>
     </div>
 	<?php endif ?>
     <?php if ($content['footer']): ?>
-	    <div class="col-md-12">
+	    <div class="col-md-12 footer-panel-panes">
         <?php print $content['footer']; ?>
 	    </div>
 	<?php endif ?>

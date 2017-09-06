@@ -19,7 +19,36 @@ $info = array(
                 'menu_bar_links_color' =>  '#ffffff'
             ),
         ),
+        'alterntive' => array(
+            'title' => t('Green'),
+            'colors' => array(
+                'main_branding_color' => '#5E8AB4', //menu background color
+                'menu_bar_links_color' =>  '#ffffff'
+            ),
+        ),
+        'alterntive2' => array(
+            'title' => t('Blue'),
+            'colors' => array(
+                'main_branding_color' => '#A8AD00', //menu background color
+                'menu_bar_links_color' =>  '#ffffff'
+            ),
+        ),
+        'alterntive3' => array(
+            'title' => t('Red'),
+            'colors' => array(
+                'main_branding_color' => '#BE3A34', //menu background color
+                'menu_bar_links_color' =>  '#ffffff'
+            ),
+        ),
+        'alterntive4' => array(
+            'title' => t('Orange'),
+            'colors' => array(
+                'main_branding_color' => '#BE531C', //menu background color
+                'menu_bar_links_color' =>  '#ffffff'
+            ),
+        ),
     ),
+    
     // CSS files (excluding @import) to rewrite with new color scheme.
     'css' => array(
         'css/colors.css',
@@ -50,10 +79,7 @@ $info = array(
     ),
     // Reference color used for blending. Matches the base.png's colors.
     'blend_target' => '#ffffff',
-    // Preview files.
-    'preview_css' => 'color/preview.css',
-    'preview_js' => 'color/preview.js',
-    'preview_html' => 'color/preview.html',
+
     // Base file for image generation.
     'base_image' => 'images/base.png',
 );
