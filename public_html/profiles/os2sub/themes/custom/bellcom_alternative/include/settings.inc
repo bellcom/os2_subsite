@@ -922,9 +922,7 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
       ),
     ),
   );
-
 }
-
 
 /**
  * Collect and assemble theme settings.
