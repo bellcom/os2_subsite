@@ -126,3 +126,14 @@ function subsite_1_menu_local_task($variables) {
   return "<li>" . l($link_text, $link['href'], $link['localized_options']) . "</li>";
 }
 */
+
+/**
+ * Checking the text in the search text box
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
+function subsite_1_color_form_search_form_alter(&$form, &$form_state, $form_id) {
+  $form['basic']['keys']['#attributes']['placeholder'] = t('Hvad søger du?');
+}

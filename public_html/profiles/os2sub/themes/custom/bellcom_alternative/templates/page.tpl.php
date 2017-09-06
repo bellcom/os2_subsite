@@ -120,14 +120,14 @@
     <div class="main-navigation-bar" id="main-navigation-bar">
       <div class="container nav-container">
         <div class="row">
-          <nav class="col-md-10" role="navigation">  
+          <nav class="col-md-9" role="navigation">
                            
             <?php if (isset($primary_navigation)): ?>
               <?php print render($primary_navigation); ?>
             <?php endif; ?>
 
           </nav>
-          <section role="search" class="col-md-2">
+          <section role="search" class="col-md-3">
             <?php print $search_box; ?>
           </section>
         </div>
