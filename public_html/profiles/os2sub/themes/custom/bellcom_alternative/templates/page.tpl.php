@@ -286,7 +286,7 @@
                   </p>
   	            </div>
                 <?php if (!empty($page['footer5'])) : ?>
-                  <div class="col-sm-4">
+                  <div class="col-sm-5">
                     <section role="complementary">
             	        <div class="footer5">
               	        <?php print render($page['footer5']); ?>
@@ -295,7 +295,7 @@
         	        </div>
                 <?php endif ?>
                 <?php if (!empty($page['footer6'])) : ?>
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                     <section role="complementary">
                       <div class="footer6">
                         <div class="custom-links">
