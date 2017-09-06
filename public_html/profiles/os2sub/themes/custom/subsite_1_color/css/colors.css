@@ -44,3 +44,6 @@ body .footer .footer-branding {
     background-color: #981B6E !important;
     border-color: #981B6E !important;
     }
+.main-navigation-bar .btn-primary {
+  border-color: #ffffff;
+}
