@@ -120,14 +120,14 @@
     <div class="main-navigation-bar" id="main-navigation-bar">
       <div class="container nav-container">
         <div class="row">
-          <nav class="col-md-9" role="navigation">
+          <nav class="col-sm-10" role="navigation">
                            
             <?php if (isset($primary_navigation)): ?>
               <?php print render($primary_navigation); ?>
             <?php endif; ?>
 
           </nav>
-          <section role="search" class="col-md-3">
+          <section role="search" class="col-sm-2">
             <?php print $search_box; ?>
           </section>
         </div>
@@ -138,24 +138,30 @@
   <?php if (!empty($page['highlighted'])): ?>
     <div class="highlighted"><?php print render($page['highlighted']); ?></div>
   <?php endif; ?>
+  <?php if (!empty($page['messages'])) : ?>
+    <div class="container messages-container messages"><?php print $messages; ?></div>
+  <?php endif; ?>
 
-  <div class="container main-container">
-    <?php print $messages; ?>
     <?php if (!empty($page['help'])): ?>
-      <?php print render($page['help']); ?>
+      <div class="container help-container">
+        <?php print render($page['help']); ?>
+      </div>
     <?php endif; ?>
     <?php if (!empty($action_links)): ?>
-      <ul class="action-links"><?php print render($action_links); ?></ul>
+      <div class="container actions-links-container">
+        <ul class="action-links"><?php print render($action_links); ?></ul>
+      </div>
     <?php endif; ?>
     <?php if (!empty($breadcrumb)): ?>
-      <section class="os2sub-breadcrumb-container">
-        <div class="row">
-          <div class="col-xs-12">
-            <?php print $breadcrumb; ?>
-          </div>
-        </div>
-      </section>
+      <div class="breadcrumbs-wrapper">
+        <section class="container os2sub-breadcrumb-container" role="navigation">
+          <?php print $breadcrumb; ?>
+
+        </section>
+      </div>
     <?php endif;?>
+  </div>
+  <div class="container main-container">
 
     <?php if (!empty($tabs)): ?>
       <div class="content-tabs-container">

@@ -986,7 +986,7 @@
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #F5F3EF;
+    border-bottom-color: #FFFFFF;
   }
 }
 
@@ -1010,7 +1010,7 @@
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #F5F3EF;
+    border-bottom-color: #FFFFFF;
   }
 }
 

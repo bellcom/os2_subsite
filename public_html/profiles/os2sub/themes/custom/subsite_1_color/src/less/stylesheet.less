@@ -11,8 +11,11 @@
     line-height: 90px;
 }
 // Contact box
-.content-area {
+.not-front .content-area {
   background-color: rgba(255, 255, 255, 0.7);
+}
+.front .content {
+  background-color: transparent;
 }
 .field-name-field-os2web-contact-field-dept .field-item {
   font-size: 0.618em;
@@ -96,12 +99,7 @@
 .pail-section-wrapper {
   border-top: 1px solid #e6e6e6;
 }
-.pail-section {
-  background: #fff;
-  margin-top: 30px;
-  padding-top: 45px;
-  padding-bottom: 60px;
-}
+
 .footer-region {
   margin: 60px 0;
 }
@@ -349,12 +347,9 @@
 .menu-block-wrapper ul li {
   margin-bottom: 8px;
 }
-.breadcrumb {
-  background: none;
-  padding: 0;
-  padding-top: 8px;
-  padding-bottom: 8px;
-    
+
+.front .inner-wrapper {
+  background-color: #F5F3EF;
 }
 
 .buttontext {
@@ -377,29 +372,19 @@
     text-align: center;
     font-weight: 600;
 }
-.breadcrumb li {
-    font-size: 14px!important;
-    font-weight: 600;
-    text-transform: capitalize!important;
-}
+
 .view-ballerup-afsnit .views-row {
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-
+    border-bottom: 1px solid rgba(0,0,0,0.2);}
+.pane-ballerup-subsites-spots {
+  margin: 60px 0;
 }
-.os2sub-breadcrumb-container {
+.breadcrumbs-wrapper {
     border-bottom: 1px solid rgba(0,0,0,0.04);
-    width: 100%;
-    margin-top: -20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 40px;
+}
+.breadcrumbs-wrapper {
+  clear: both;
 }
 
-.breadcrumb a {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: capitalize!important;
-}
 .jcarousel-item {
     margin-right: 10px!important;
 }
@@ -782,6 +767,9 @@
   .main-navigation-list-link a {
     text-transform: uppercase;
   }
+  .form-group {
+    margin-bottom: 0;
+  }
 }
 
 .main-navigation-wrapper .main-navigation-list.main-navigation-lang {
@@ -873,9 +861,10 @@
 .main-navigation-bar input[type="text"]:-moz-placeholder {
     color: #fff;
 }
-
-.not-front .content {
-    background: #fff;
+.pail-section {
+  margin-top: 30px;
+  padding-top: 65px;
+  padding-bottom: 60px;
 }
 .not-front .pail-section {
     margin-top: 0px;
