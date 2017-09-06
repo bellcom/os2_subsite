@@ -139,6 +139,15 @@
     <div class="highlighted"><?php print render($page['highlighted']); ?></div>
   <?php endif; ?>
 
+  <?php if (!empty($breadcrumb)): ?>
+    <section class="os2sub-breadcrumb-container">
+      <div class="breadcrumbs-wrapper">
+        <div class="container">
+          <?php print $breadcrumb; ?>
+        </div>
+      </div>
+    </section>
+  <?php endif;?>
   <div class="container main-container">
     <?php print $messages; ?>
     <?php if (!empty($page['help'])): ?>
@@ -147,15 +156,7 @@
     <?php if (!empty($action_links)): ?>
       <ul class="action-links"><?php print render($action_links); ?></ul>
     <?php endif; ?>
-    <?php if (!empty($breadcrumb)): ?>
-      <section class="os2sub-breadcrumb-container">
-        <div class="row">
-          <div class="col-xs-12">
-            <?php print $breadcrumb; ?>
-          </div>
-        </div>
-      </section>
-    <?php endif;?>
+
 
     <?php if (!empty($tabs)): ?>
       <div class="content-tabs-container">
