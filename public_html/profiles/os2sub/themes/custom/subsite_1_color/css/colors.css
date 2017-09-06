@@ -28,6 +28,10 @@ body .footer .footer-branding,
 body #main-navigation-bar a {
   color: #ffffff;
 }
+.os2sub-breadcrumb-container .breadcrumb li,
+.os2sub-breadcrumb-container .breadcrumb li a {
+  color: #981b6e !important;
+}
 body #main-navigation-bar a.active-trail {
   background-color: #ffffff;
   color: #981b6e
