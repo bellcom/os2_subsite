@@ -127,7 +127,7 @@
             <?php endif; ?>
 
           </nav>
-          <section role="search" class="col-sm-9">
+          <section role="search" class="col-sm-3">
             <?php print $search_box; ?>
           </section>
         </div>
