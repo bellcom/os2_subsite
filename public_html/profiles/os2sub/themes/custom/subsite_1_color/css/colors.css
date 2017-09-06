@@ -46,6 +46,6 @@ body .footer .footer-branding {
     }
 .main-navigation-bar .btn-primary,
 .main-navigation-bar input[type="text"] {
-  border-color: #ffffff;
+  border-color: #ffffff !important;
   color: #ffffff;
 }
