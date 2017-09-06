@@ -20,14 +20,14 @@ $info = array(
             ),
         ),
         'alterntive' => array(
-            'title' => t('Green'),
+            'title' => t('Blue'),
             'colors' => array(
                 'main_branding_color' => '#5E8AB4', //menu background color
                 'menu_bar_links_color' =>  '#ffffff'
             ),
         ),
         'alterntive2' => array(
-            'title' => t('Blue'),
+            'title' => t('Green'),
             'colors' => array(
                 'main_branding_color' => '#A8AD00', //menu background color
                 'menu_bar_links_color' =>  '#ffffff'
