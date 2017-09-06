@@ -187,17 +187,17 @@
         <div class="container footer-container">
           <div class="row">
             <?php if (!empty($page['footertop1'])) : ?>
-              <section role="complementary" class="pail-section col-sm-4">
+              <section role="complementary" class="footertop1-region col-sm-4">
                   <?php print render($page['footertop1']); ?>        
               </section>
             <?php endif ?>
             <?php if (!empty($page['footertop2'])) : ?>
-              <section role="complementary" class="pail-section col-sm-8">
+              <section role="complementary" class="footertop2-region col-sm-8">
                   <?php print render($page['footertop2']); ?>        
               </section>
             <?php endif ?>
             <?php if (!empty($page['footer'])) : ?>
-              <section role="complementary" class="pail-section col-sm-12">
+              <section role="complementary" class="footer-region col-sm-12">
                 <?php print render($page['footer']); ?>   
               </section>     
             <?php endif ?>
