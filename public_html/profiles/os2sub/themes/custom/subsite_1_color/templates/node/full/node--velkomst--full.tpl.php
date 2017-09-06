@@ -1,6 +1,6 @@
 <article role="banner" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> subsite-teaser subsite-box subsite-box-small-spacing"<?php print $attributes; ?>>
   <div class="row">
-    <?php if ($field_youtube_video[0]['display_url']): ?>
+    <?php if (isset($content['field_video'])): ?>
       <div class="col-sm-6">
     <?php else : ?>
       <div class="col-sm-12">
@@ -12,10 +12,10 @@
         </div>
       <?php endif; ?>
     </div>
-    <?php if ($field_youtube_video[0]['display_url']): ?>
+       <?php if (isset($content['field_video'])): ?>
     <div class="col-sm-6">
-      <a href="<?php print $field_youtube_video[0]['display_url']; ?>" data-modal="button">
-        <?php print render($content['field_video_placeholder']); ?>
+      <a href="#" data-modal="button">
+        <?php print render($content['field_video']); ?>
       </a>
       <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
         <div class="modal-dialog">

@@ -37,6 +37,15 @@ function os2sub_frontpage_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'os2sub_teaser_mini' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -57,6 +66,28 @@ function os2sub_frontpage_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__velkomst'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fitvids_customselectors';
+  $strongarm->value = '';
+  $export['fitvids_customselectors'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fitvids_selectors';
+  $strongarm->value = '.field-name-field-video
+.field-name-body';
+  $export['fitvids_selectors'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fitvids_simplifymarkup';
+  $strongarm->value = 1;
+  $export['fitvids_simplifymarkup'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
