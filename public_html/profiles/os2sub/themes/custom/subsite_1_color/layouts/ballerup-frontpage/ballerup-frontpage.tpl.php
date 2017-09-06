@@ -1,4 +1,4 @@
-<div class="row balkfp <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="row balkfp" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <?php if ($content['top']): ?>
     <div class="col-md-12">
       <?php print $content['top']; ?>
