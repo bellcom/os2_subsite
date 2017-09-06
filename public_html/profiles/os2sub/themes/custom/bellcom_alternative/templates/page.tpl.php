@@ -305,8 +305,7 @@
                     </section>
                   </div>
 
-                  
-                  <div class="social-links">
+                  <div class="social-links col-sm-3 col-sm-push-9">
                     <?php if ($theme_settings['social_links']['social_links_block_name']): ?>
                       <h3 class="block-title"><?php print $theme_settings['social_links']['social_links_block_name']; ?></h3>
                     <?php endif; ?>
