@@ -8,7 +8,7 @@
     <?php print $content['content']; ?>
   </div>
   <?php if ($content['sidebar-right']): ?>
-    <div class="col-md-4 right-panel-panes">
+    <div class="col-sm-4 right-panel-panes">
       <?php print $content['sidebar-right']; ?>
     </div>
 
@@ -19,7 +19,7 @@
     </div>
 	<?php endif ?>
     <?php if ($content['footer']): ?>
-	    <div class="col-md-12 footer-panel-panes">
+	    <div class="col-sm-12 footer-panel-panes">
         <?php print $content['footer']; ?>
 	    </div>
 	<?php endif ?>
