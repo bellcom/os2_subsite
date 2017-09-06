@@ -40,3 +40,7 @@ body .footer .footer-branding {
 .page-nyheder .os2sub-box-body .view.view-os2sub-nyheder.view-id-os2sub_nyheder.view-display-id-page .view-content a:hover .os2sub-box .top-border {
   border-top-color:  #981b6e;
 }
+.btn-primary {
+    background-color: #981B6E !important;
+    border-color: #981B6E !important;
+    }
