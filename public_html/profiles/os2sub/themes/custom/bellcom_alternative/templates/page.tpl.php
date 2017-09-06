@@ -301,91 +301,93 @@
                         <div class="custom-links">
                           <?php print render($page['footer6']); ?>
                         </div>
-                        <div class="social-links">
-    	                    <?php print render($page['footer3']); ?>
-                          <ul class="social-icon-list">
-                            <?php if ($theme_settings['social_links']['facebook']['active']): ?>
-                              <li>
-                                <a 
-                                  href="<?php print $theme_settings['social_links']['facebook']['url']; ?>" 
-                                  target="_blank" 
-                                  class="social-icon social-icon-facebook" 
-                                  data-toggle="tooltip"
-                                  data-placement="top" 
-                                  title="<?php print $theme_settings['social_links']['facebook']['tooltip']; ?>">
-                                </a>
-                              </li>
-                            <?php endif; ?>
-                
-                            <?php if ($theme_settings['social_links']['twitter']['active']): ?>
-                              <li>
-                                <a 
-                                  href="<?php print $theme_settings['social_links']['twitter']['url']; ?>" 
-                                  target="_blank" 
-                                  class="social-icon social-icon-twitter" 
-                                  data-toggle="tooltip"
-                                  data-placement="top" 
-                                  title="<?php print $theme_settings['social_links']['twitter']['tooltip']; ?>">
-                                </a>
-                              </li>
-                            <?php endif; ?>
-                
-                            <?php if ($theme_settings['social_links']['googleplus']['active']): ?>
-                              <li>
-                                <a 
-                                  href="<?php print $theme_settings['social_links']['googleplus']['url']; ?>" 
-                                  target="_blank"
-                                  class="social-icon social-icon-google-plus"
-                                  data-toggle="tooltip" 
-                                  data-placement="top"
-                                  title="<?php print $theme_settings['social_links']['googleplus']['tooltip']; ?>">
-                                </a>
-                              </li>
-                            <?php endif; ?>
-                
-                            <?php if ($theme_settings['social_links']['linkedin']['active']): ?>
-                              <li>
-                                <a 
-                                  href="<?php print $theme_settings['social_links']['linkedin']['url']; ?>"
-                                  target="_blank"
-                                  class="social-icon social-icon-linkedin" 
-                                  data-toggle="tooltip" 
-                                  data-placement="top"
-                                  title="<?php print $theme_settings['social_links']['linkedin']['tooltip']; ?>">
-                                </a>
-                              </li>
-                            <?php endif; ?>
-                            <?php if ($theme_settings['social_links']['pinterest']['active']): ?>
-                              <li>
-                                <a 
-                                  href="<?php print $theme_settings['social_links']['pinterest']['url']; ?>"
-                                  target="_blank" class="social-icon social-icon-pinterest" 
-                                  data-toggle="tooltip" 
-                                  data-placement="top" 
-                                  title="<?php print $theme_settings['social_links']['pinterest']['tooltip']; ?>">
-                                </a>
-                              </li>
-                            <?php endif; ?>
-                
-                            <?php if ($theme_settings['social_links']['instagram']['active']): ?>
-                              <li><a href="<?php print $theme_settings['social_links']['instagram']['url']; ?>" target="_blank" class="social-icon social-icon-instagram" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['instagram']['tooltip']; ?>"></a></li>
-                            <?php endif; ?>
-                
-                            <?php if ($theme_settings['social_links']['youtube']['active']): ?>
-                              <li><a href="<?php print $theme_settings['social_links']['youtube']['url']; ?>" target="_blank" class="social-icon social-icon-youtube" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['youtube']['tooltip']; ?>"></a></li>
-                            <?php endif; ?>
-                
-                            <?php if ($theme_settings['social_links']['vimeo']['active']): ?>
-                              <li><a href="<?php print $theme_settings['social_links']['vimeo']['url']; ?>" target="_blank" class="social-icon social-icon-vimeo" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['vimeo']['tooltip']; ?>"></a></li>
-                            <?php endif; ?>
-                          </ul>	
-                        </div>
                       </div>
                     </section>
                   </div>
-                  <?php if ($theme_settings['social_links']['social_links_block_name']): ?>
-                    <h3 class="block-title"><?php print $theme_settings['social_links']['social_links_block_name']; ?></h3>
-                  <?php endif; ?>
+
+                  
+                  <div class="social-links">
+                    <?php if ($theme_settings['social_links']['social_links_block_name']): ?>
+                      <h3 class="block-title"><?php print $theme_settings['social_links']['social_links_block_name']; ?></h3>
+                    <?php endif; ?>
+                    <?php print render($page['footer3']); ?>
+                    <ul class="social-icon-list">
+                      <?php if ($theme_settings['social_links']['facebook']['active']): ?>
+                        <li>
+                          <a 
+                            href="<?php print $theme_settings['social_links']['facebook']['url']; ?>" 
+                            target="_blank" 
+                            class="social-icon social-icon-facebook" 
+                            data-toggle="tooltip"
+                            data-placement="top" 
+                            title="<?php print $theme_settings['social_links']['facebook']['tooltip']; ?>">
+                          </a>
+                        </li>
+                      <?php endif; ?>
+          
+                      <?php if ($theme_settings['social_links']['twitter']['active']): ?>
+                        <li>
+                          <a 
+                            href="<?php print $theme_settings['social_links']['twitter']['url']; ?>" 
+                            target="_blank" 
+                            class="social-icon social-icon-twitter" 
+                            data-toggle="tooltip"
+                            data-placement="top" 
+                            title="<?php print $theme_settings['social_links']['twitter']['tooltip']; ?>">
+                          </a>
+                        </li>
+                      <?php endif; ?>
+          
+                      <?php if ($theme_settings['social_links']['googleplus']['active']): ?>
+                        <li>
+                          <a 
+                            href="<?php print $theme_settings['social_links']['googleplus']['url']; ?>" 
+                            target="_blank"
+                            class="social-icon social-icon-google-plus"
+                            data-toggle="tooltip" 
+                            data-placement="top"
+                            title="<?php print $theme_settings['social_links']['googleplus']['tooltip']; ?>">
+                          </a>
+                        </li>
+                      <?php endif; ?>
+          
+                      <?php if ($theme_settings['social_links']['linkedin']['active']): ?>
+                        <li>
+                          <a 
+                            href="<?php print $theme_settings['social_links']['linkedin']['url']; ?>"
+                            target="_blank"
+                            class="social-icon social-icon-linkedin" 
+                            data-toggle="tooltip" 
+                            data-placement="top"
+                            title="<?php print $theme_settings['social_links']['linkedin']['tooltip']; ?>">
+                          </a>
+                        </li>
+                      <?php endif; ?>
+                      <?php if ($theme_settings['social_links']['pinterest']['active']): ?>
+                        <li>
+                          <a 
+                            href="<?php print $theme_settings['social_links']['pinterest']['url']; ?>"
+                            target="_blank" class="social-icon social-icon-pinterest" 
+                            data-toggle="tooltip" 
+                            data-placement="top" 
+                            title="<?php print $theme_settings['social_links']['pinterest']['tooltip']; ?>">
+                          </a>
+                        </li>
+                      <?php endif; ?>
+          
+                      <?php if ($theme_settings['social_links']['instagram']['active']): ?>
+                        <li><a href="<?php print $theme_settings['social_links']['instagram']['url']; ?>" target="_blank" class="social-icon social-icon-instagram" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['instagram']['tooltip']; ?>"></a></li>
+                      <?php endif; ?>
+          
+                      <?php if ($theme_settings['social_links']['youtube']['active']): ?>
+                        <li><a href="<?php print $theme_settings['social_links']['youtube']['url']; ?>" target="_blank" class="social-icon social-icon-youtube" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['youtube']['tooltip']; ?>"></a></li>
+                      <?php endif; ?>
+          
+                      <?php if ($theme_settings['social_links']['vimeo']['active']): ?>
+                        <li><a href="<?php print $theme_settings['social_links']['vimeo']['url']; ?>" target="_blank" class="social-icon social-icon-vimeo" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['vimeo']['tooltip']; ?>"></a></li>
+                      <?php endif; ?>
+                    </ul>	
+                  </div>
                 <?php endif; ?>
             </div>
           </div>
