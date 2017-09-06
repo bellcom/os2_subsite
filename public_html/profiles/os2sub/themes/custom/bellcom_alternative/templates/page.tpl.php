@@ -42,7 +42,7 @@
               </a>
             <?php endif; ?>          
           </div>  		  	
-        <section class="col-md-6" role="navigation">
+        <section class="top-right-menu col-md-6" role="navigation">
           <?php if ($secondary_navigation): ?>
             <?php print render($secondary_navigation); ?>
           <?php endif; ?>

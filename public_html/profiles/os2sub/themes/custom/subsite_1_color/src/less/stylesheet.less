@@ -160,20 +160,20 @@
     display: flex;
     flex-direction: column;
 }
-section .main-navigation-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none!important;
+.top-right-menu {
+  ul {
+    float: right;
     list-style: none;
-}
-section .main-navigation-list-link a {
-  display: flex;
-  padding: 10px;
-  padding-left: 15px;
-  border: 1px solid;
-  border-radius: 6px;
-  padding-right: 15px;
+    margin-top: 10px;
+    li {
+      display: inline-block;
+      a {
+        color: #333;
+        margin-left: 15px;
+        font-weight: 600;
+      }
+    }
+  }
 }
 
 // Social Links
@@ -752,9 +752,6 @@ section .main-navigation-list-link a {
     }
 }
 
-.main-navigation-list-link a {
-    text-transform: uppercase;
-}
 
 .active-trail.active.main-navigation-list-link a {
   background-color: #FFF;
@@ -770,10 +767,16 @@ section .main-navigation-list-link a {
     color: #333;
     line-height: 80px;
     a {
-        color: #333;
+      color: #333;
     }
 }
-.main-navigation-wrapper { margin: 0; border-radius: 0!important; }
+.main-navigation-wrapper { 
+  margin: 0; 
+  border-radius: 0!important; 
+  .main-navigation-list-link a {
+    text-transform: uppercase;
+  }
+}
 
 .main-navigation-wrapper .main-navigation-list.main-navigation-lang {
     float: right;
