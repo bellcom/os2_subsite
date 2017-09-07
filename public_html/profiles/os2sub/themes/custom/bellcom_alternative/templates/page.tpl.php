@@ -20,6 +20,7 @@
       </ul>
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
         <img src="<?php print $logo; ?>" class="topbar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
+        <span class="visible-sm-inline tablet-sitename"><?php print $site_name; ?></span>
       </a>
     </nav>
     <div class="content">

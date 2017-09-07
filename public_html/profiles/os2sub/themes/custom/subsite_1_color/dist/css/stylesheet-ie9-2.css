@@ -7796,4 +7796,11 @@
   .container.header-container {
     display: none;
   }
+
+  img.topbar-logo-image {
+    float: left;
+    margin-left: 60px;
+    max-height: 40px;
+    margin-top: 5px;
+  }
 }
