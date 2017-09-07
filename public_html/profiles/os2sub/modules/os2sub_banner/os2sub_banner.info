@@ -9,6 +9,7 @@ dependencies[] = field_slideshow
 dependencies[] = image
 dependencies[] = link
 dependencies[] = list
+dependencies[] = manualcrop
 dependencies[] = media
 dependencies[] = node
 dependencies[] = os2web_base

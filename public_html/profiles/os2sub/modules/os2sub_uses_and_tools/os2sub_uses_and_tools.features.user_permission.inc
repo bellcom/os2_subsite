@@ -1397,45 +1397,6 @@ function os2sub_uses_and_tools_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'epsacrop administer available crops'.
-  $permissions['epsacrop administer available crops'] = array(
-    'name' => 'epsacrop administer available crops',
-    'roles' => array(
-      'subsiteadmin' => 'subsiteadmin',
-    ),
-    'module' => 'epsacrop',
-  );
-
-  // Exported permission: 'epsacrop create crops'.
-  $permissions['epsacrop create crops'] = array(
-    'name' => 'epsacrop create crops',
-    'roles' => array(
-      'Editor' => 'Editor',
-      'subsiteadmin' => 'subsiteadmin',
-    ),
-    'module' => 'epsacrop',
-  );
-
-  // Exported permission: 'epsacrop delete all crops'.
-  $permissions['epsacrop delete all crops'] = array(
-    'name' => 'epsacrop delete all crops',
-    'roles' => array(
-      'Editor' => 'Editor',
-      'subsiteadmin' => 'subsiteadmin',
-    ),
-    'module' => 'epsacrop',
-  );
-
-  // Exported permission: 'epsacrop edit all crops'.
-  $permissions['epsacrop edit all crops'] = array(
-    'name' => 'epsacrop edit all crops',
-    'roles' => array(
-      'Editor' => 'Editor',
-      'subsiteadmin' => 'subsiteadmin',
-    ),
-    'module' => 'epsacrop',
-  );
-
   // Exported permission: 'notify of path changes'.
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',

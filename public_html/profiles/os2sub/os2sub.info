@@ -36,7 +36,6 @@ dependencies[] = transliteration
 dependencies[] = ctools
 dependencies[] = date_popup
 dependencies[] = views
-dependencies[] = epsacrop
 dependencies[] = features
 dependencies[] = feeds
 dependencies[] = field_slideshow

@@ -50,20 +50,11 @@ function os2sub_banner_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'epsacrop' => array(
-        'styles' => array(
-          'os2sub_220x130' => 0,
-          'os2sub_300x175' => 0,
-          'os2sub_banner' => 'os2sub_banner',
-          'svendborg_content_image' => 0,
-          'svendborg_spotbox' => 0,
-        ),
-      ),
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '1200X320',
+      'min_resolution' => '1200x400',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -72,8 +63,8 @@ function os2sub_banner_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'oembed' => 0,
           'public' => 'public',
-          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -86,9 +77,23 @@ function os2sub_banner_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 'upload',
-          'youtube' => 0,
         ),
-        'progress_indicator' => 'throbber',
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(
+          'os2sub_banner' => 'os2sub_banner',
+        ),
+        'manualcrop_styles_list' => array(
+          'os2sub_banner' => 'os2sub_banner',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
       'weight' => 4,

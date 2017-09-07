@@ -38,17 +38,6 @@ projects[file_entity][subdir] = "contrib"
 projects[media][subdir] = "contrib"
 projects[media][version] = "2.0-alpha2"
 
-projects[media_youtube][subdir] = "contrib"
-projects[media_youtube][version] = "2.0-rc3"
-
-projects[epsacrop][subdir] = "contrib"
-projects[epsacrop][version] = "2.x-dev"
-
-libraries[Jcrop][download][type] = "get"
-libraries[Jcrop][download][url] = "http://jcrop.googlecode.com/files/jquery.Jcrop-0.9.8.zip"
-libraries[Jcrop][directory_name] = "Jcrop"
-libraries[Jcrop][destination] = "libraries"
-
 libraries[json2][download][type] = "get"
 libraries[json2][download][url] = "http://github.com/douglascrockford/JSON-js/archive/master.zip"
 libraries[json2][directory_name] = "json2"

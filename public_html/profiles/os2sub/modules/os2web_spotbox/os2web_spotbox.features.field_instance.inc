@@ -21,8 +21,10 @@ function os2web_spotbox_field_default_field_instances() {
         'label' => 'above',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2web_spotbox_image',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 2,
@@ -63,8 +65,10 @@ function os2web_spotbox_field_default_field_instances() {
         'label' => 'above',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2web_spotbox_image',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 2,
@@ -81,8 +85,6 @@ function os2web_spotbox_field_default_field_instances() {
         'styles' => array(
           'os2sub_220x130' => 0,
           'os2sub_300x175' => 0,
-          'os2sub_banner' => 0,
-          'os2web_spotbox_image' => 'os2web_spotbox_image',
         ),
       ),
       'file_directory' => '',
@@ -98,8 +100,8 @@ function os2web_spotbox_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'oembed' => 0,
           'public' => 'public',
-          'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
@@ -112,9 +114,23 @@ function os2web_spotbox_field_default_field_instances() {
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
           'upload' => 'upload',
-          'youtube' => 0,
         ),
-        'progress_indicator' => 'throbber',
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(
+          'os2web_spotbox_image' => 'os2web_spotbox_image',
+        ),
+        'manualcrop_styles_list' => array(
+          'os2web_spotbox_image' => 'os2web_spotbox_image',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
       'weight' => -3,

@@ -36,7 +36,19 @@ function os2sub_frontpage_image_default_styles() {
   $styles['os2web_cover'] = array(
     'label' => 'os2web cover',
     'effects' => array(
-      5 => array(
+      15 => array(
+        'name' => 'manualcrop_crop_and_scale',
+        'data' => array(
+          'width' => 1920,
+          'height' => 1920,
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 1,
+          'style_name' => 'os2web_cover',
+        ),
+        'weight' => 0,
+      ),
+      14 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => 1920,
