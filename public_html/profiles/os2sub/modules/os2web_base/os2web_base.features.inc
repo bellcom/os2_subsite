@@ -35,102 +35,23 @@ function os2web_base_views_api($module = NULL, $api = NULL) {
 function os2web_base_image_default_styles() {
   $styles = array();
 
-  // Exported image style: ballerup_carousel_thumbnail.
-  $styles['ballerup_carousel_thumbnail'] = array(
-    'label' => 'Ballerup carousel thumbnail (80x80)',
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 80,
-          'height' => 80,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: os2sub_220x130.
-  $styles['os2sub_220x130'] = array(
-    'label' => 'Forside nyhed 4 spalter',
-    'effects' => array(
-      3 => array(
-        'name' => 'epsacrop_crop',
-        'data' => array(
-          'width' => 220,
-          'height' => 130,
-          'anchor' => 'center-center',
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
-        ),
-        'weight' => 1,
-      ),
-      4 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 220,
-          'height' => 130,
-        ),
-        'weight' => 2,
-      ),
-    ),
-  );
-
-  // Exported image style: os2sub_300x175.
-  $styles['os2sub_300x175'] = array(
-    'label' => 'Forside nyhed 2 og 3 spalter',
-    'effects' => array(
-      1 => array(
-        'name' => 'epsacrop_crop',
-        'data' => array(
-          'width' => 300,
-          'height' => 175,
-          'anchor' => 'center-center',
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
-        ),
-        'weight' => 1,
-      ),
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 300,
-          'height' => 175,
-        ),
-        'weight' => 2,
-      ),
-    ),
-  );
-
   // Exported image style: os2sub_normal_imagesize.
   $styles['os2sub_normal_imagesize'] = array(
     'label' => 'Normal billede',
     'effects' => array(
-      6 => array(
-        'name' => 'epsacrop_crop',
+      4 => array(
+        'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 848,
           'height' => 410,
-          'anchor' => 'center-center',
-          'disable_scale' => 0,
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 1,
+          'style_name' => 'os2sub_normal_imagesize',
         ),
-        'weight' => 1,
+        'weight' => 0,
       ),
-      7 => array(
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 848,
@@ -145,14 +66,15 @@ function os2web_base_image_default_styles() {
   $styles['os2sub_small_imagesize'] = array(
     'label' => 'Lille billede',
     'effects' => array(
-      3 => array(
-        'name' => 'epsacrop_crop_reuse',
+      13 => array(
+        'name' => 'manualcrop_reuse',
         'data' => array(
-          'jcrop_reuse' => 'os2sub_normal_imagesize',
+          'reuse_crop_style' => 'os2sub_normal_imagesize',
+          'apply_all_effects' => 1,
         ),
-        'weight' => 1,
+        'weight' => 0,
       ),
-      4 => array(
+      12 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 285,
@@ -161,146 +83,6 @@ function os2web_base_image_default_styles() {
         'weight' => 2,
       ),
     ),
-  );
-
-  // Exported image style: os2web_base_style_content.
-  $styles['os2web_base_style_content'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 460,
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => 1,
-      ),
-      2 => array(
-        'name' => 'image_crop',
-        'data' => array(
-          'width' => 460,
-          'height' => 260,
-          'anchor' => 'center-center',
-        ),
-        'weight' => 2,
-      ),
-    ),
-    'label' => 'os2web_base_style_content',
-  );
-
-  // Exported image style: os2web_base_style_image.
-  $styles['os2web_base_style_image'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 470,
-          'height' => 230,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_image',
-  );
-
-  // Exported image style: os2web_base_style_medium.
-  $styles['os2web_base_style_medium'] = array(
-    'effects' => array(
-      5 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 460,
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => 1,
-      ),
-      6 => array(
-        'name' => 'image_crop',
-        'data' => array(
-          'width' => 460,
-          'height' => 260,
-          'anchor' => 'center-center',
-        ),
-        'weight' => 2,
-      ),
-    ),
-    'label' => 'os2web_base_style_medium',
-  );
-
-  // Exported image style: os2web_base_style_news_big.
-  $styles['os2web_base_style_news_big'] = array(
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 214,
-          'height' => 116,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_big',
-  );
-
-  // Exported image style: os2web_base_style_news_medium.
-  $styles['os2web_base_style_news_medium'] = array(
-    'effects' => array(
-      4 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 180,
-          'height' => 140,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_medium',
-  );
-
-  // Exported image style: os2web_base_style_news_small.
-  $styles['os2web_base_style_news_small'] = array(
-    'effects' => array(
-      3 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 60,
-          'height' => 69,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_small',
-  );
-
-  // Exported image style: os2web_base_style_rotating.
-  $styles['os2web_base_style_rotating'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 460,
-          'height' => 260,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_rotating',
-  );
-
-  // Exported image style: os2web_base_style_rotating_small.
-  $styles['os2web_base_style_rotating_small'] = array(
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 161,
-          'height' => 65,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_rotating_small',
   );
 
   return $styles;
