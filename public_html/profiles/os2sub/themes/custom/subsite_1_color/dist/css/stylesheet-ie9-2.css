@@ -7781,3 +7781,13 @@
 @media print {
 
 }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .highlighted {
+    margin-top: 50px;
+  }
+
+  .container.header-container {
+    display: none;
+  }
+}

@@ -3,7 +3,6 @@
     <div class="sidebar-logo">
       <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
         <img src="<?php print $logo; ?>" class="sidebar-logo-image sidebar-logo-image-wide" alt="<?php print $site_name. t(' logo'); ?>" />
-        <img src="<?php print $path_img . '/logo-xs.png'; ?>" class="sidebar-logo-image sidebar-logo-image-narrow" alt="<?php print $site_name. t(' logo'); ?>" />
       </a>
     </div>
     <?php if (isset($sidebar_primary_navigation)): ?>
@@ -20,7 +19,7 @@
         </li>
       </ul>
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
-        <?php print $site_name; ?>
+        <img src="<?php print $logo; ?>" class="topbar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
       </a>
     </nav>
     <div class="content">
