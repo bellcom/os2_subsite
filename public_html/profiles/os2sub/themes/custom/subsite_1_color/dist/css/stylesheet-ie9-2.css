@@ -7783,6 +7783,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .highlighted {
+    margin-top: 50px;
+  }
+
   .container.header-container {
     display: none;
   }
