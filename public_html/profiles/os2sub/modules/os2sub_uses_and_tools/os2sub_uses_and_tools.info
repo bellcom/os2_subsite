@@ -30,7 +30,6 @@ dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = respondjs
 dependencies[] = scheduler
-dependencies[] = search
 dependencies[] = strongarm
 dependencies[] = system
 dependencies[] = taxonomy

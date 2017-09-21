@@ -42,7 +42,6 @@ dependencies[] = panels
 dependencies[] = paragraphs
 dependencies[] = photoswipe
 dependencies[] = references
-dependencies[] = search
 dependencies[] = site_map
 dependencies[] = strongarm
 dependencies[] = subsites_urls
