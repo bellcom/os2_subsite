@@ -55,13 +55,6 @@ function os2sub_search_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'custom_search_advanced_type_event_calendar_display';
-  $strongarm->value = 1;
-  $export['custom_search_advanced_type_event_calendar_display'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_advanced_type_media_display';
   $strongarm->value = 1;
   $export['custom_search_advanced_type_media_display'] = $strongarm;
@@ -163,7 +156,6 @@ function os2sub_search_strongarm() {
   $strongarm->name = 'custom_search_node_types';
   $strongarm->value = array(
     'banner' => 0,
-    'event_calendar' => 0,
     'os2web_base_gallery' => 0,
     'os2web_base_contentpage' => 0,
     'os2web_contact_contact' => 0,
@@ -188,7 +180,6 @@ function os2sub_search_strongarm() {
     'os2web_base_selfservice_link' => 'os2web_base_selfservice_link',
     'os2web_spotbox_box' => 'os2web_spotbox_box',
     'velkomst' => 'velkomst',
-    'event_calendar' => 0,
     'os2web_base_gallery' => 0,
     'os2web_base_contentpage' => 0,
     'os2web_kulturnaut_knactivity' => 0,
@@ -360,7 +351,6 @@ function os2sub_search_strongarm() {
         ),
         'filter' => array(
           'banner' => 0,
-          'event_calendar' => 0,
           'os2web_base_gallery' => 0,
           'os2web_base_contentpage' => 0,
           'os2web_contact_contact' => 0,

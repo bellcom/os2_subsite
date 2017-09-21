@@ -15,7 +15,6 @@ features[variable][] = custom_search_advanced_negative_display
 features[variable][] = custom_search_advanced_or_display
 features[variable][] = custom_search_advanced_phrase_display
 features[variable][] = custom_search_advanced_type_banner_display
-features[variable][] = custom_search_advanced_type_event_calendar_display
 features[variable][] = custom_search_advanced_type_media_display
 features[variable][] = custom_search_advanced_type_os2web_base_contentpage_display
 features[variable][] = custom_search_advanced_type_os2web_base_gallery_display
