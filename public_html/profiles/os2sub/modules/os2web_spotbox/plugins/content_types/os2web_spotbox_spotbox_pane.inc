@@ -42,7 +42,6 @@ function os2web_spotbox_spotbox_pane_edit_form($form, &$form_state) {
     '#prefix' => '<div class="no-float">',
     '#title' => t('Vælg hvilken spotbox type du vil bruge.'),
     '#type' => 'select',
-    '#options' => $crops['settings']['epsacrop']['styles'],
     '#default_value' => $conf['spotbox_type'],
     '#weight' => -10,
     '#suffix' => '</div>',
