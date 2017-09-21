@@ -209,12 +209,31 @@
     <footer class="footer">
       <div class="footer-branding">
        <div class="container">
-        <?php if (empty($page['footer4'])): ?>
+        <?php if (empty($page['footer4']) OR $theme_settings['layout']['footer']['show_branding']): ?>
           <div class="branding-logo">
-            <span class="branding-text">
-              <img src="<?php print base_path().path_to_theme().'/dist/img/ballerupbyvaaben.png' ?>"> 
-              subsite er præsenteret i samarbejde med Ballerup Kommune
-            </span>
+            <?php if (isset($theme_settings['layout']['branding_link'])): ?>
+              <a href="<?php print $theme_settings['layout']['branding_link']; ?>">
+            <?php endif; ?>
+              <span class="branding-text">
+                <img src="<?php print base_path().path_to_theme().'/dist/img/ballerupbyvaaben.png' ?>"> 
+                <?php if ($theme_settings['layout']['footer']['show_branding_text']): ?>
+  
+                <?php if (isset($theme_settings['layout']['branding_text'])): ?>
+                  <?php print $theme_settings['layout']['branding_text']; ?>
+  
+                <?php else: ?>
+                subsite er præsenteret i samarbejde med Ballerup Kommune
+  
+                <?php endif; ?>
+                
+                 <?php print $theme_settings['branding_text']; ?>
+    
+  
+                <?php endif; ?>
+              </span>
+            <?php if (isset($theme_settings['layout']['branding_link'])): ?>
+            </a>
+            <?php endif; ?>
           </div>
         <?php endif; ?>
         <?php print render($page['footer4']); ?>
