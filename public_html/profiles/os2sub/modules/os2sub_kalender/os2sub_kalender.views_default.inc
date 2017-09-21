@@ -88,6 +88,12 @@ function os2sub_kalender_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event_calendar' => 'event_calendar',
   );
+  /* Filterkriterie: Indhold: Date -  startdato (event_calendar_date) */
+  $handler->display->display_options['filters']['event_calendar_date_value']['id'] = 'event_calendar_date_value';
+  $handler->display->display_options['filters']['event_calendar_date_value']['table'] = 'field_data_event_calendar_date';
+  $handler->display->display_options['filters']['event_calendar_date_value']['field'] = 'event_calendar_date_value';
+  $handler->display->display_options['filters']['event_calendar_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['event_calendar_date_value']['default_date'] = 'now';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -142,7 +148,8 @@ function os2sub_kalender_views_default_views() {
   $handler->display->display_options['filters']['event_calendar_date_value']['id'] = 'event_calendar_date_value';
   $handler->display->display_options['filters']['event_calendar_date_value']['table'] = 'field_data_event_calendar_date';
   $handler->display->display_options['filters']['event_calendar_date_value']['field'] = 'event_calendar_date_value';
-  $handler->display->display_options['filters']['event_calendar_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['event_calendar_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['event_calendar_date_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['event_calendar_date_value']['default_date'] = 'now';
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
