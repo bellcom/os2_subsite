@@ -274,6 +274,22 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
     '#default_value' => theme_get_setting('footer_show_branding'),
     '#description'   => t("Skal der vises kommunelogo eller ej?"),
   );
+  $form['options']['layout']['footer']['footer_show_branding_text'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Vis branding tekst'),
+    '#default_value' => theme_get_setting('footer_show_branding_text'),
+  );
+    $form['options']['layout']['branding_text'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Branding tekst'),
+    '#default_value' => theme_get_setting('fbranding_text'),
+  );
+    $form['options']['layout']['branding_link'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Branding link'),
+    '#default_value' => theme_get_setting('branding_link'),
+  );
+
 
   /*
   |--------------------------------------------------------------------------
@@ -995,7 +1011,10 @@ function _bellcom_collect_theme_settings() {
   // Layout
   $settings['layout']['copyright'] = ($settings['contact_information']['business_startup_year'] < date('Y') AND $settings['contact_information']['business_startup_year'] !== NULL) ? $settings['contact_information']['business_startup_year'] . '-' . date('Y') : date('Y');
   $settings['layout']['footer']['show_social_links'] = theme_get_setting('footer_show_social_links');
-  $settings['layout']['footer']['show_branding'] = theme_get_setting('footer_show_branding');
+  $settings['layout']['footer']['show_branding'] = theme_get_setting('footer_show_branding');  
+  $settings['layout']['footer']['show_branding_text'] = theme_get_setting('footer_show_branding_text');
+  $settings['layout']['branding_text'] = theme_get_setting('branding_text');
+  $settings['layout']['branding_link'] = theme_get_setting('branding_link');
   $settings['layout']['sidebar']['show_social_links'] = theme_get_setting('sidebar_show_social_links');
 
   return $settings;
