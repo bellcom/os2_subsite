@@ -161,6 +161,42 @@ function os2sub_kalender_views_default_views() {
       'label' => 'Indhold: Nid',
     ),
   );
+
+  /* Display: Blok */
+  $handler = $view->new_display('block', 'Blok', 'block_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Date */
+  $handler->display->display_options['fields']['event_calendar_date']['id'] = 'event_calendar_date';
+  $handler->display->display_options['fields']['event_calendar_date']['table'] = 'field_data_event_calendar_date';
+  $handler->display->display_options['fields']['event_calendar_date']['field'] = 'event_calendar_date';
+  $handler->display->display_options['fields']['event_calendar_date']['label'] = '';
+  $handler->display->display_options['fields']['event_calendar_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['event_calendar_date']['settings'] = array(
+    'format_type' => 'short',
+    'custom_date_format' => '',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
   $translatables['kalender'] = array(
     t('Master'),
     t('Kalender'),
@@ -181,6 +217,7 @@ function os2sub_kalender_views_default_views() {
     t('Content pane'),
     t('Alle'),
     t('View panes'),
+    t('Blok'),
   );
   $export['kalender'] = $view;
 
