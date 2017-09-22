@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function os2web_contact_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function os2web_contact_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_adresse|node|os2web_contact_contact|form'] = $field_group;
+  $field_groups['group_adresse|node|os2web_contact_contact|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -64,7 +64,7 @@ function os2web_contact_field_group_info() {
       ),
     ),
   );
-  $export['group_form|node|os2web_contact_contact|form'] = $field_group;
+  $field_groups['group_form|node|os2web_contact_contact|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -94,7 +94,7 @@ function os2web_contact_field_group_info() {
       ),
     ),
   );
-  $export['group_kontakt|node|os2web_contact_contact|form'] = $field_group;
+  $field_groups['group_kontakt|node|os2web_contact_contact|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -125,7 +125,14 @@ function os2web_contact_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_telmail|node|os2web_contact_contact|form'] = $field_group;
+  $field_groups['group_telmail|node|os2web_contact_contact|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Adresse');
+  t('Form');
+  t('Kontaktblok');
+  t('Kontaktdata');
+
+  return $field_groups;
 }

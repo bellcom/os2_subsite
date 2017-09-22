@@ -254,7 +254,7 @@ function os2web_contact_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Overskrift på kontaktblok */
+  /* Field: Indholdselement: Overskrift på kontaktblok */
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['id'] = 'field_os2web_contact_field_dept';
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['table'] = 'field_data_field_os2web_contact_field_dept';
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['field'] = 'field_os2web_contact_field_dept';
@@ -262,19 +262,19 @@ function os2web_contact_views_default_views() {
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['element_default_classes'] = FALSE;
-  /* Field: Content: Adresse */
+  /* Field: Indholdselement: Adresse */
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['id'] = 'field_os2web_contact_field_addr';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['table'] = 'field_data_field_os2web_contact_field_addr';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['field'] = 'field_os2web_contact_field_addr';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['element_label_colon'] = FALSE;
-  /* Field: Content: Postnummer */
+  /* Field: Indholdselement: Postnummer */
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['id'] = 'field_os2web_contact_field_zip';
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['table'] = 'field_data_field_os2web_contact_field_zip';
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['field'] = 'field_os2web_contact_field_zip';
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['element_label_colon'] = FALSE;
-  /* Field: Content: Eget indhold */
+  /* Field: Indholdselement: Eget indhold */
   $handler->display->display_options['fields']['field_os2web_contact_field_info']['id'] = 'field_os2web_contact_field_info';
   $handler->display->display_options['fields']['field_os2web_contact_field_info']['table'] = 'field_data_field_os2web_contact_field_info';
   $handler->display->display_options['fields']['field_os2web_contact_field_info']['field'] = 'field_os2web_contact_field_info';
@@ -581,7 +581,7 @@ return os2web_contact_get_block();
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Overskrift på kontaktblok */
+  /* Field: Indholdselement: Overskrift på kontaktblok */
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['id'] = 'field_os2web_contact_field_dept';
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['table'] = 'field_data_field_os2web_contact_field_dept';
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['field'] = 'field_os2web_contact_field_dept';
@@ -589,13 +589,13 @@ return os2web_contact_get_block();
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_contact_field_dept']['element_default_classes'] = FALSE;
-  /* Field: Content: Adresse */
+  /* Field: Indholdselement: Adresse */
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['id'] = 'field_os2web_contact_field_addr';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['table'] = 'field_data_field_os2web_contact_field_addr';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['field'] = 'field_os2web_contact_field_addr';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_contact_field_addr']['element_label_colon'] = FALSE;
-  /* Field: Content: Postnummer */
+  /* Field: Indholdselement: Postnummer */
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['id'] = 'field_os2web_contact_field_zip';
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['table'] = 'field_data_field_os2web_contact_field_zip';
   $handler->display->display_options['fields']['field_os2web_contact_field_zip']['field'] = 'field_os2web_contact_field_zip';
@@ -609,7 +609,7 @@ return os2web_contact_get_block();
   $handler->display->display_options['fields']['field_os2web_contact_field_email']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_os2web_contact_field_email']['alter']['text'] = '<a href="mailto:[field_os2web_contact_field_email-value]">[field_os2web_contact_field_email]</a>';
   $handler->display->display_options['fields']['field_os2web_contact_field_email']['element_label_colon'] = FALSE;
-  /* Field: Content: Eget indhold */
+  /* Field: Indholdselement: Eget indhold */
   $handler->display->display_options['fields']['field_os2web_contact_field_info']['id'] = 'field_os2web_contact_field_info';
   $handler->display->display_options['fields']['field_os2web_contact_field_info']['table'] = 'field_data_field_os2web_contact_field_info';
   $handler->display->display_options['fields']['field_os2web_contact_field_info']['field'] = 'field_os2web_contact_field_info';
