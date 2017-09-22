@@ -12,10 +12,10 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
-        'skin' => 'moono',
-        'ckeditor_path' => '//cdn.ckeditor.com/4.4.7/full-all',
+        'skin' => 'moono-lisa',
+        'ckeditor_path' => '%l/ckeditor',
         'ckeditor_local_path' => '',
-        'ckeditor_plugins_path' => '%m/plugins',
+        'ckeditor_plugins_path' => '%l/ckeditor/plugins',
         'ckeditor_plugins_local_path' => '',
         'ckfinder_path' => '%m/ckfinder',
         'ckfinder_local_path' => '',
@@ -33,7 +33,7 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
     [\'Source\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\',\'Scayt\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Media\',\'Flash\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\',\'Iframe\'],
+    [\'Image\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\',\'Iframe\'],
     \'/\',
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\',\'CreateDiv\'],
@@ -53,7 +53,7 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
         'lang' => 'da',
         'auto_lang' => 't',
         'language_direction' => 'default',
-        'allowed_content' => 't',
+        'allowed_content' => 'f',
         'extraAllowedContent' => '',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
@@ -73,7 +73,7 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'none',
+        'filebrowser' => 'ckeditor_media',
         'filebrowser_image' => '',
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
@@ -103,25 +103,30 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
             'buttons' => array(
               'linkit' => array(
                 'label' => 'Linkit',
-                'icon' => 'linkit.png',
+                'icon' => 'icons/linkit.png',
               ),
             ),
           ),
           'media' => array(
             'name' => 'media',
-            'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%plugin_dir%media/',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%profiles/os2sub/modules/contrib/media_ckeditor/js/plugins/media/',
             'buttons' => array(
               'Media' => array(
-                'label' => 'Media',
-                'icon' => 'images/icon.gif',
+                'icon' => 'icons/media.png',
+                'label' => 'Add media',
               ),
             ),
             'default' => 'f',
           ),
+          'mediaBrowser' => array(
+            'name' => 'mediaBrowser',
+            'desc' => 'Media Browser for File Upload/Browsing',
+            'path' => '/profiles/os2sub/modules/contrib/ckeditor_media/plugins/mediaBrowser/',
+          ),
           'mediaembed' => array(
             'name' => 'mediaembed',
-            'desc' => 'Plugin for inserting Drupal embeded media',
+            'desc' => 'Plugin for embedding HTML snippets',
             'path' => '%plugin_dir%mediaembed/',
             'buttons' => array(
               'MediaEmbed' => array(
@@ -130,13 +135,6 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
               ),
             ),
             'default' => 'f',
-          ),
-          'tableresize' => array(
-            'name' => 'tableresize',
-            'desc' => 'Table Resize plugin. See <a href="http://ckeditor.com/addon/tableresize">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.4.7/full-all/plugins/tableresize/',
-            'buttons' => FALSE,
-            'default' => 't',
           ),
         ),
       ),
