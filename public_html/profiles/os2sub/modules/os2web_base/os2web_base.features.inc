@@ -148,6 +148,16 @@ function os2web_base_paragraphs_info() {
       'bundle' => 'afsnit_m_billede',
       'locked' => '1',
     ),
+    'galleri' => array(
+      'name' => 'Galleri',
+      'bundle' => 'galleri',
+      'locked' => '1',
+    ),
+    'harmonika' => array(
+      'name' => 'Harmonika',
+      'bundle' => 'harmonika',
+      'locked' => '1',
+    ),
   );
   return $items;
 }

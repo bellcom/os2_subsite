@@ -607,11 +607,15 @@ function os2web_base_field_default_field_instances() {
       'add_mode' => 'select',
       'allowed_bundles' => array(
         'afsnit_m_billede' => -1,
+        'galleri' => 'galleri',
+        'harmonika' => 'harmonika',
       ),
       'bundle_weights' => array(
-        'afsnit_m_billede' => 2,
+        'afsnit_m_billede' => -6,
+        'galleri' => -4,
+        'harmonika' => -5,
       ),
-      'default_edit_mode' => 'open',
+      'default_edit_mode' => 'preview',
       'title' => 'Afsnit',
       'title_multiple' => 'Afsnit',
       'user_register_form' => FALSE,
@@ -4664,7 +4668,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -4748,9 +4752,10 @@ function os2web_base_field_default_field_instances() {
         'weight' => 0,
       ),
       'paragraphs_editor_preview' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
     ),
@@ -4815,7 +4820,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'paragraphs_item',
@@ -4857,6 +4862,186 @@ function os2web_base_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'paragraphs_item-galleri-field_indlejret_galleri'.
+  $field_instances['paragraphs_item-galleri-field_indlejret_galleri'] = array(
+    'bundle' => 'galleri',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'node_reference',
+        'settings' => array(
+          'node_reference_view_mode' => 'full',
+        ),
+        'type' => 'node_reference_node',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_indlejret_galleri',
+    'label' => 'Indlejret galleri',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-galleri-field_os2web_base_field_photo'.
+  $field_instances['paragraphs_item-galleri-field_os2web_base_field_photo'] = array(
+    'bundle' => 'galleri',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'photoswipe',
+        'settings' => array(
+          'photoswipe_caption' => 'title',
+          'photoswipe_image_style' => '',
+          'photoswipe_node_style' => 'os2sub_normal_imagesize',
+          'photoswipe_view_mode' => 'default',
+        ),
+        'type' => 'photoswipe',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_os2web_base_field_photo',
+    'label' => 'Billeder',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+      'wysiwyg_insert' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'oembed' => 'oembed',
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(
+          'os2sub_normal_imagesize' => 'os2sub_normal_imagesize',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-harmonika-field_harmonika_enheder'.
+  $field_instances['paragraphs_item-harmonika-field_harmonika_enheder'] = array(
+    'bundle' => 'harmonika',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'paragraphs_editor_preview',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_harmonika_enheder',
+    'label' => 'Harmonika enheder',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'button',
+      'allowed_bundles' => array(
+        'afsnit_m_billede' => 'afsnit_m_billede',
+        'galleri' => -1,
+        'harmonika' => -1,
+      ),
+      'bundle_weights' => array(
+        'afsnit_m_billede' => 2,
+        'galleri' => 3,
+        'harmonika' => 4,
+      ),
+      'default_edit_mode' => 'preview',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 1,
     ),
   );
 
@@ -5566,7 +5751,9 @@ function os2web_base_field_default_field_instances() {
   t('Filer');
   t('Forfrem til');
   t('Forældre-menupunkt');
+  t('Harmonika enheder');
   t('Indhold');
+  t('Indlejret galleri');
   t('Indløb / Udløb');
   t('Intro');
   t('Intro / Resume (maks 2 linier!)');
