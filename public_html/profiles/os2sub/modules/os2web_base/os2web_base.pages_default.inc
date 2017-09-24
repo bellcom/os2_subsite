@@ -922,7 +922,7 @@ function os2web_base_default_page_manager_handlers() {
   );
   $pane->css = array(
     'css_id' => '',
-    'css_class' => '',
+    'css_class' => 'indholds-afsnit',
     'template_suggestion' => 'plain',
   );
   $pane->extras = array();

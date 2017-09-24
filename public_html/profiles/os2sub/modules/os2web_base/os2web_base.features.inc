@@ -143,6 +143,11 @@ function os2web_base_node_info() {
  */
 function os2web_base_paragraphs_info() {
   $items = array(
+    'afsnit_billede' => array(
+      'name' => 'Afsnit',
+      'bundle' => 'afsnit_billede',
+      'locked' => '1',
+    ),
     'afsnit_m_billede' => array(
       'name' => 'Afsnit m billede',
       'bundle' => 'afsnit_m_billede',
