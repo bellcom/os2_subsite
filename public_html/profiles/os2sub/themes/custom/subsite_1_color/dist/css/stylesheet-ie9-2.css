@@ -7799,10 +7799,6 @@
     font-size: 1.7em;
     padding-left: 20px;
   }
-
-  .node-type-os2web-base-contentpage .right-panel-panes {
-    margin-top: 30px;
-  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -7828,9 +7824,5 @@
   .banner .banner-wrapper .banner-headline {
     font-size: 1.9em;
     padding-left: 10px;
-  }
-
-  .node-type-os2web-base-contentpage .right-panel-panes {
-    margin-top: 82px;
   }
 }
