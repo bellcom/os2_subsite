@@ -23,37 +23,24 @@ function os2web_base_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Forbindelse: Paragraphs item: Entity with the Afsnit (field_afsnit) */
+  /* Relationship: Paragraphs item: Entity with the Afsnit (field_afsnit) */
   $handler->display->display_options['relationships']['field_afsnit_node']['id'] = 'field_afsnit_node';
   $handler->display->display_options['relationships']['field_afsnit_node']['table'] = 'paragraphs_item';
   $handler->display->display_options['relationships']['field_afsnit_node']['field'] = 'field_afsnit_node';
   $handler->display->display_options['relationships']['field_afsnit_node']['required'] = TRUE;
-  /* Felt: Paragraphs item: Paragraphs item ID */
+  /* Field: Paragraphs item: Paragraphs item ID */
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
   $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
-  /* Felt: Paragraphs item: Afsnit overskrift */
+  /* Field: Paragraphs item: Afsnit overskrift */
   $handler->display->display_options['fields']['field_paragraph_header']['id'] = 'field_paragraph_header';
   $handler->display->display_options['fields']['field_paragraph_header']['table'] = 'field_data_field_paragraph_header';
   $handler->display->display_options['fields']['field_paragraph_header']['field'] = 'field_paragraph_header';
@@ -63,7 +50,7 @@ function os2web_base_views_default_views() {
   $handler->display->display_options['fields']['field_paragraph_header']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_paragraph_header']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_paragraph_header']['element_default_classes'] = FALSE;
-  /* Felt: Paragraphs item: Billede */
+  /* Field: Paragraphs item: Billede */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -75,7 +62,7 @@ function os2web_base_views_default_views() {
     'image_style' => 'os2sub_normal_imagesize',
     'image_link' => '',
   );
-  /* Felt: Paragraphs item: Tekst */
+  /* Field: Paragraphs item: Tekst */
   $handler->display->display_options['fields']['field_paragraph_text']['id'] = 'field_paragraph_text';
   $handler->display->display_options['fields']['field_paragraph_text']['table'] = 'field_data_field_paragraph_text';
   $handler->display->display_options['fields']['field_paragraph_text']['field'] = 'field_paragraph_text';
@@ -88,7 +75,7 @@ function os2web_base_views_default_views() {
   $handler->display->display_options['fields']['field_paragraph_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_paragraph_text']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_paragraph_text']['element_default_classes'] = FALSE;
-  /* Kontekstuelt filter: Indhold: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -106,12 +93,12 @@ function os2web_base_views_default_views() {
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_2');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Felt: Paragraphs item: Paragraphs item ID */
+  /* Field: Paragraphs item: Paragraphs item ID */
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'paragraphs_item';
   $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
-  /* Felt: Paragraphs item: Rendered Paragraphs item */
+  /* Field: Paragraphs item: Rendered Paragraphs item */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_paragraphs_item';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -133,19 +120,19 @@ function os2web_base_views_default_views() {
   );
   $translatables['ballerup_afsnit'] = array(
     t('Master'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Antal elementer'),
-    t('- Alle -'),
-    t('Forskydning'),
-    t('« første'),
-    t('‹ forrige'),
-    t('næste ›'),
-    t('sidste »'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
     t('field_afsnit'),
     t('Paragraphs item ID'),
     t('.'),
