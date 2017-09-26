@@ -282,7 +282,7 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
     $form['options']['layout']['branding_text'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Branding tekst'),
-    '#default_value' => theme_get_setting('fbranding_text'),
+    '#default_value' => theme_get_setting('branding_text'),
   );
     $form['options']['layout']['branding_link'] = array(
     '#type'          => 'textfield',

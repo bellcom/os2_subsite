@@ -1057,80 +1057,24 @@ function os2web_base_default_page_manager_handlers() {
     ),
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => 'Selvbetjening',
+    'override_title_text' => '',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => '',
+    'template_suggestion' => 'plain',
+  );
   $pane->extras = array();
   $pane->position = 2;
   $pane->locks = array();
   $pane->uuid = '902e99d1-fbe8-49d2-a0ca-d6b8331497e9';
   $display->content['new-902e99d1-fbe8-49d2-a0ca-d6b8331497e9'] = $pane;
   $display->panels['sidebar-right'][2] = 'new-902e99d1-fbe8-49d2-a0ca-d6b8331497e9';
-  $pane = new stdClass();
-  $pane->pid = 'new-e4d4ddeb-8ad3-4cdb-a4b3-a03b841bdc51';
-  $pane->panel = 'sidebar-right';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_os2web_base_field_related';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'node_reference_default',
-    'delta_limit' => '0',
-    'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 1,
-    'override_title_text' => 'Læs også',
-    'override_title_heading' => 'h3',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 3;
-  $pane->locks = array();
-  $pane->uuid = 'e4d4ddeb-8ad3-4cdb-a4b3-a03b841bdc51';
-  $display->content['new-e4d4ddeb-8ad3-4cdb-a4b3-a03b841bdc51'] = $pane;
-  $display->panels['sidebar-right'][3] = 'new-e4d4ddeb-8ad3-4cdb-a4b3-a03b841bdc51';
-  $pane = new stdClass();
-  $pane->pid = 'new-72928d41-013b-4890-8ecf-8777b9f87636';
-  $pane->panel = 'sidebar-right';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_os2web_base_field_ext_link';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'title',
-    'formatter' => 'link_default',
-    'delta_limit' => '0',
-    'delta_offset' => '0',
-    'delta_reversed' => 0,
-    'formatter_settings' => array(),
-    'context' => 'argument_entity_id:node_1',
-    'override_title' => 0,
-    'override_title_text' => '%title',
-    'override_title_heading' => 'h3',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 4;
-  $pane->locks = array();
-  $pane->uuid = '72928d41-013b-4890-8ecf-8777b9f87636';
-  $display->content['new-72928d41-013b-4890-8ecf-8777b9f87636'] = $pane;
-  $display->panels['sidebar-right'][4] = 'new-72928d41-013b-4890-8ecf-8777b9f87636';
   $pane = new stdClass();
   $pane->pid = 'new-a8639e0e-ae7b-4dfe-ac36-d36bdebd7f65';
   $pane->panel = 'sidebar-right';
@@ -1156,13 +1100,47 @@ function os2web_base_default_page_manager_handlers() {
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'os2sub-stacked dark-box os2sub-stacked-first',
+    'template_suggestion' => 'plaind',
+  );
   $pane->extras = array();
-  $pane->position = 5;
+  $pane->position = 3;
   $pane->locks = array();
   $pane->uuid = 'a8639e0e-ae7b-4dfe-ac36-d36bdebd7f65';
   $display->content['new-a8639e0e-ae7b-4dfe-ac36-d36bdebd7f65'] = $pane;
-  $display->panels['sidebar-right'][5] = 'new-a8639e0e-ae7b-4dfe-ac36-d36bdebd7f65';
+  $display->panels['sidebar-right'][3] = 'new-a8639e0e-ae7b-4dfe-ac36-d36bdebd7f65';
+  $pane = new stdClass();
+  $pane->pid = 'new-f4828eb6-be82-4563-944f-0048e85878d3';
+  $pane->panel = 'sidebar-right';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'ballerup_sidebar-panel_pane_1';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => 1,
+    'override_title_text' => 'Læs også',
+    'override_title_heading' => 'h3',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'os2sub-stacked dark-box',
+    'template_suggestion' => 'views_panes',
+  );
+  $pane->extras = array();
+  $pane->position = 4;
+  $pane->locks = array();
+  $pane->uuid = 'f4828eb6-be82-4563-944f-0048e85878d3';
+  $display->content['new-f4828eb6-be82-4563-944f-0048e85878d3'] = $pane;
+  $display->panels['sidebar-right'][4] = 'new-f4828eb6-be82-4563-944f-0048e85878d3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-b398e1ac-858e-43e3-872f-2d6f3524454d';
   $handler->conf['display'] = $display;
