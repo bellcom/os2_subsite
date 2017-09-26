@@ -1,3 +1,5 @@
+<?php if (!$page): hide($content['field_baggrund']); endif; ?>
+
 <?php if ($view_mode == 'full'): ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
