@@ -23,7 +23,6 @@
   margin-bottom: 20px;
   font-weight: 600;
 }
-
 .view-mode-spotbox .os2-node-teaser-heading .os2-node-teaser-heading-title {
   font-size: 1.2em;
   color: #fff;
@@ -418,10 +417,7 @@
 .pane-node-field-os2sub-menuheader {
     margin-top: 20px;
 }
-.menu-block-wrapper {
-    margin-bottom: 100px;
-    margin-top: 10px;
-}
+
 .field-slideshow-wrapper img {
     border-radius: 4px!important;
 }
@@ -729,28 +725,54 @@
   margin: 30px 0;
 }
 
-.right-panel-panes .pane-os2sub-nyheder {
-  .os2sub-box {
-    .view-id-os2sub_nyheder {
+.right-panel-panes  {
+  
+}
+.right-panel-panes {
+  .pane-os2sub-nyheder {
+    .os2sub-box {
+      .view-id-os2sub_nyheder {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      background-color: #F5F3EF;
+    }
+    .static.aktuelt {
+      display: none;
+    }
+    .news-spot-link {
+      padding: 15px;
+      background-color: #FFF;
+      margin-bottom: 15px;
+    .subsite-spot-heading-title {
       margin-top: 0;
-      margin-bottom: 0;
+      }
     }
-    background-color: #F5F3EF;
-  }
-  .static.aktuelt {
-    display: none;
-  }
-  .news-spot-link {
-    padding: 15px;
-    background-color: #FFF;
-    margin-bottom: 15px;
-  .subsite-spot-heading-title {
-    margin-top: 0;
+    .date-in-parts {
+      margin: 10px 0;
     }
   }
-  .date-in-parts {
-    margin: 10px 0;
+  .os2sub-stacked.os2sub-stacked-first {
+    .os2sub-box {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
   }
+  .os2sub-stacked:last-of-type {
+    .os2sub-box {
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+  }
+}
+.dark-box .os2sub-box {
+  background-color: #f5f3ef;
+}
+.os2sub-stacked-first {
+  margin-top: 100px;
+}
+.os2sub-stacked-first .os2sub-box {
+  border-bottom-left-radius: 0 !important;
 }
 
 .os2web-spotbox-spotbox {
@@ -968,6 +990,18 @@ h3.subsite-teaser-heading-title a {
   }
 }
 
+.pane-ballerup-sidebar-panel-pane-1 {
+  .os2sub-box .os2sub-box-heading {
+    padding-bottom: 0;
+  }
+  h3.pane-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+}
+
 // Youtube
 
 .field-name-field-video-placeholder {
@@ -1120,5 +1154,12 @@ align-items: center;
   .banner .banner-wrapper .banner-headline {
     font-size: 1.9em;
     padding-left: 10px;
+  }
+}
+// Desktop - only
+@media @media-query-desktop {
+  
+  .pane-node-field-os2web-base-field-selfserv {
+    margin-top: 25px;
   }
 }

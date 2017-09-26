@@ -1,6 +1,6 @@
 <article id="node-<?php print $node->nid; ?>" class="kontaktblok <?php print $classes . " all"; ?> clearfix"<?php print $attributes; ?> >
-	
-
+<?php print render($title_prefix); ?>
+<?php print render($title_suffix); ?>
 	<div class="kontaktblok-wrapper">
 		<div class="kontaktblok-headline">
 			<?php print render($content['field_os2web_contact_field_dept']); ?>

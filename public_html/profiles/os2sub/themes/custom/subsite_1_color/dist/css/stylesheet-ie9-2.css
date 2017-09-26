@@ -7826,3 +7826,9 @@
     padding-left: 10px;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .pane-node-field-os2web-base-field-selfserv {
+    margin-top: 25px;
+  }
+}

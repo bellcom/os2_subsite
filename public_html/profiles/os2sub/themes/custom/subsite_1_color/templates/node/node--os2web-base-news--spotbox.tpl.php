@@ -1,4 +1,5 @@
 <article role="listitem" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> subsite-spotbox subsite-box subsite-box-small-spacing"<?php print $attributes; ?>>
+  <?php print render($title_prefix); ?>
   <a class="news-spot-link" href="<?php print $node_url; ?>">
     <span class="h3 aktuelt static">Aktuelt</span>
   <span class="h4 subsite-spot-heading-title"><?php print $title; ?></span>
@@ -15,6 +16,7 @@
     </span>
 
   </a>
+  <?php print render($title_suffix); ?>
 </article>
 
 
