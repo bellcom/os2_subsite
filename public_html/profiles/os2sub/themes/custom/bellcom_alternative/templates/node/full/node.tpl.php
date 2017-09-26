@@ -1,6 +1,6 @@
-<?php if ($page): ?>111
-<?php else: ?>222
-<?php endif; ?><?php if ($view_mode == 'full'): ?>
+<?php if (!$page): hide($content['field_baggrund']); endif; ?>
+
+<?php if ($view_mode == 'full'): ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
 
