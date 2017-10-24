@@ -53,4 +53,5 @@ body .footer .footer-branding {
 .main-navigation-bar input[type="text"] {
   border-color: #ffffff !important;
   color: #ffffff;
+  border-left: none !important;
 }
