@@ -317,33 +317,6 @@
     right: 0;
     top: 135px;
 }
-.footer-branding {
-    height: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../../dist/img/watermark.svg');
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: right 150px top -100px;
-}
-.branding-logo {
-    text-align: center;
-    a {
-      color: #fff;
-      .branding-text {
-        color: #FFF;
-      }
-    }
-}
-.branding-text {
-    font-size: 1.1em;
-    font-weight: 600;
-}
-.branding-text img {
-    width: 50px;
-    margin-right: 20px;
-}
 .subsite-full-body {
     margin-top: 40px;
 }
@@ -555,6 +528,24 @@
 .contact-information section {
     text-align: left!important;
 }
+.branding-logo {
+    text-align: center;
+    a {
+      color: #fff;
+      .branding-text {
+        color: #FFF;
+      }
+    }
+}
+.branding-text {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.branding-text img {
+    width: 50px;
+    margin-right: 20px;
+}
+
 
 .footer {
   .footer-branding {
@@ -562,6 +553,19 @@
     background-color: #981B6E;
     color: #FFF;
     text-transform: uppercase;
+    height: 140px;
+    display: table;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../dist/img/watermark.svg');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: right 150px top -100px;
+    .container {
+      display: table-cell;
+      vertical-align: middle;
+    }
     .branding-logo {
       background-image: balklogo.png;
       background-repeat: no-repeat;
