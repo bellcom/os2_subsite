@@ -279,12 +279,23 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
     '#title'         => t('Vis branding tekst'),
     '#default_value' => theme_get_setting('footer_show_branding_text'),
   );
-    $form['options']['layout']['branding_text'] = array(
+  $form['options']['layout']['footer']['footer_branding_logo'] = array(
+    '#type'     => 'managed_file',
+    '#title'    => t('Branding logo'),
+    '#description' => t('Upload et andet branding logo end standard Ballerup logo. Skal have transparent baggrund.'),
+    '#required' => FALSE,
+    '#upload_location' => file_default_scheme() . '://theme/',
+    '#default_value' => theme_get_setting('footer_branding_logo'), 
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+  );
+    $form['options']['layout']['footer']['branding_text'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Branding tekst'),
     '#default_value' => theme_get_setting('branding_text'),
   );
-    $form['options']['layout']['branding_link'] = array(
+    $form['options']['layout']['footer']['branding_link'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Branding link'),
     '#default_value' => theme_get_setting('branding_link'),
@@ -1013,6 +1024,7 @@ function _bellcom_collect_theme_settings() {
   $settings['layout']['footer']['show_social_links'] = theme_get_setting('footer_show_social_links');
   $settings['layout']['footer']['show_branding'] = theme_get_setting('footer_show_branding');  
   $settings['layout']['footer']['show_branding_text'] = theme_get_setting('footer_show_branding_text');
+  $settings['layout']['footer']['footer_branding_logo'] = theme_get_setting('footer_branding_logo');
   $settings['layout']['branding_text'] = theme_get_setting('branding_text');
   $settings['layout']['branding_link'] = theme_get_setting('branding_link');
   $settings['layout']['sidebar']['show_social_links'] = theme_get_setting('sidebar_show_social_links');
