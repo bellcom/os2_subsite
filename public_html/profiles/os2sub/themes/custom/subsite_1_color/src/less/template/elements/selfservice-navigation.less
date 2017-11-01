@@ -1,0 +1,100 @@
+// |--------------------------------------------------------------------------
+// | Selfservice button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.selfservice-navigation {
+  margin-bottom: (@grid-gutter-width /2);
+}
+.selfservice-navigation__item {
+  
+  + .selfservice-navigation__item {
+    margin-top: 10px;
+  }
+}
+.selfservice-navigation__item__link {
+  display: block;
+  
+  padding: 10px 15px;
+  
+  background-color: @brand-success;
+  border-radius: @border-radius-base;
+  
+  &:hover {
+    background-color: darken(@brand-success, 10%);
+  }
+  
+  &, &:hover {
+    color: #fff;
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+}
+
+// Tablet
+@media @media-query-tablet {
+
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+}
+
+// Desktop
+@media @media-query-desktop {
+
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+}
+
+// Print
+@media print {
+}
+
+// Touch
+.touch {
+
+}
+
+// No touch
+.no-touch {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Box mixin
