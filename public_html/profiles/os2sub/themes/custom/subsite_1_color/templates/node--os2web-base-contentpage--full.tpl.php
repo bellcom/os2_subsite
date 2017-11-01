@@ -2,9 +2,6 @@
 <?php if (!$page): hide($content['field_baggrund']); endif; ?>
 
 <?php print render($title_prefix); ?>
-<h1<?php print $title_attributes; ?> class="subsite-full-heading-title">
-  <?php print $title; ?>
-</h1>
 <?php print render($title_suffix); ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> subsite-full"<?php print $attributes; ?>> 
   <div class="subsite-full-heading">
