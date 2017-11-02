@@ -5,6 +5,9 @@
         <img src="<?php print $logo; ?>" class="sidebar-logo-image sidebar-logo-image-wide" alt="<?php print $site_name. t(' logo'); ?>" />
       </a>
     </div>
+    <section role="search" class="col-md-3">
+      <?php print $search_box; ?>
+    </section>
     <?php if (isset($sidebar_primary_navigation)): ?>
       <?php print render($sidebar_primary_navigation); ?>
     <?php endif; ?>
@@ -20,7 +23,8 @@
       </ul>
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
         <img src="<?php print $logo; ?>" class="topbar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
-        <span class="visible-sm-inline tablet-sitename"><?php print $site_name; ?></span>
+        <span class="tablet-sitename"><?php print $site_name; ?></span>
+        
       </a>
     </nav>
     <div class="content">

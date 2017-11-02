@@ -266,15 +266,16 @@ function _theme_subsite_1_color_settings_form(&$form, $form_state) {
     '#type'          => 'checkbox',
     '#title'         => t('Vis links til sociale tjenester'),
     '#default_value' => theme_get_setting('footer_show_social_links'),
-    '#description'   => t("Skal links til sociale tjenester vises i bunden af siden?"),
+    '#description'   => t('Skal links til sociale tjenester vises i bunden af siden?'),
   );
   $form['options']['layout']['footer']['footer_show_branding'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Vis kommunelogo'),
     '#default_value' => theme_get_setting('footer_show_branding'),
-    '#description'   => t("Skal der vises kommunelogo eller ej?"),
+    '#description'   => t('Skal der vises kommunelogo eller ej?'),
   );
 
+      
   /*
   |--------------------------------------------------------------------------
   | Contact information
@@ -968,6 +969,8 @@ function _subsite_1_color_collect_theme_settings() {
   $settings['layout']['footer']['show_social_links'] = theme_get_setting('footer_show_social_links');
   $settings['layout']['footer']['show_branding'] = theme_get_setting('footer_show_branding');
   $settings['layout']['sidebar']['show_social_links'] = theme_get_setting('sidebar_show_social_links');
+  $settings['layout']['footer']['footer_branding_logo'] = theme_get_setting('footer_branding_logo');
+  
 
   return $settings;
 }

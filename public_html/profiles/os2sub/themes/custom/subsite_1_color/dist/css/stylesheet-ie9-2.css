@@ -7811,6 +7811,10 @@
   .footer-dark {
     padding-left: 30px;
   }
+
+  .tablet-sitename {
+    margin-left: 15px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -7836,6 +7840,12 @@
   .banner .banner-wrapper .banner-headline {
     font-size: 1.9em;
     padding-left: 10px;
+  }
+
+  .tablet-sitename {
+    text-align: left;
+    float: left;
+    margin-left: 15px;
   }
 }
 

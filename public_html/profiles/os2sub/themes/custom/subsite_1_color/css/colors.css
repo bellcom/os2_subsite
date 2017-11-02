@@ -55,3 +55,6 @@ body .footer .footer-branding {
   color: #ffffff;
   border-left: none !important;
 }
+.sidebar-navigation a.active {
+  color: #8b0053;
+}
