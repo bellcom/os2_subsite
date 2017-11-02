@@ -49,12 +49,17 @@ body .footer .footer-branding {
     background-color: #981B6E !important;
     border-color: #981B6E !important;
     }
-.main-navigation-bar .btn-primary,
 .main-navigation-bar input[type="text"] {
+  border-color: #ffffff !important;
+  color: #ffffff;
+}
+
+.main-navigation-bar .btn-primary {
   border-color: #ffffff !important;
   color: #ffffff;
   border-left: none !important;
 }
+
 .sidebar-navigation a.active {
   color: #8b0053;
 }
