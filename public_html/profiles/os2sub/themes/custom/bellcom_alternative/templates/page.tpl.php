@@ -23,7 +23,7 @@
       </ul>
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
         <img src="<?php print $logo; ?>" class="topbar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
-        <span class="tablet-sitename"><?php print $site_name; ?></span>
+        <?php if ($site_name) : ?><span class="tablet-sitename"><?php print $site_name; ?></span><?php endif; ?>
         
       </a>
     </nav>

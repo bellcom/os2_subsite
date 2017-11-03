@@ -787,16 +787,15 @@
     border-radius: 6px;
 }
 
-@radius: 3px;
 .simple-navigation-logo-link {
     color: #333;
     text-align: left;
     font-size: @font-size-large;
+    padding-left: 58px;
     &:hover {
         color: #dedede
     }
 }
-
 
 .active-trail.active.main-navigation-list-link a {
   background-color: #FFF;
@@ -1010,6 +1009,10 @@ h3.subsite-teaser-heading-title a {
   }
 }
 
+.tablet-sitename {
+  text-transform: uppercase;
+}
+
 // Youtube
 
 .field-name-field-video-placeholder {
@@ -1196,7 +1199,9 @@ align-items: center;
 
 // Desktop - only
 @media @media-query-desktop {
-  
+  .site-name {
+    margin-left: 30px;
+  }
   .pane-node-field-os2web-base-field-selfserv {
     margin-bottom: 15px;
   }
