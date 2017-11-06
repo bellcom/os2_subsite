@@ -26,6 +26,7 @@ body .footer .footer-branding,
 .sidebar {
   background-color: #981b6e !important;
 }
+.sidebar-navigation a.active,
 body #main-navigation-bar a {
   color: #ffffff;
 }
@@ -35,7 +36,16 @@ body #main-navigation-bar a {
 }
 body #main-navigation-bar a.active-trail {
   background-color: #ffffff;
-  color: #981b6e
+  color: #981b6e;
+}
+.content-tabs-container .nav-tabs li.active a {
+  background-color: #981b6e !important;
+}
+.content-tabs-container .nav-tabs li.active a::after {
+  border-color: #8b0053 transparent transparent !important;
+}
+.dark-box .os2sub-box .menu li a {
+  color: #981b6e !important;
 }
 
 body .footer .footer-branding {

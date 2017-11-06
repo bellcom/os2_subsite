@@ -141,9 +141,7 @@
 .os2sub-box-body article {
     margin: 0;
 }
-.os2sub-box {
-    border-radius: 6px!important;
-}
+
 .field-name-field-distrikt .field-label {
     display: none;
 }
@@ -157,7 +155,7 @@
 .kontaktblok-wrapper {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2em!important;
+    font-size: 1.2em;
 }
 .field-name-field-distrikt {
     font-weight: bold;
@@ -337,25 +335,6 @@
   padding: 0px;
   margin-bottom: 30px;
 }
-
-.pane-menu-tree .menu-block-wrapper ul li a {
-  background: #f5f3ef;
-  padding: 20px;
-  font-weight: 600;
-  color: #243544 !important;
-  border-radius: 4px;
-  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
-  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
-  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.075);
-}
-
-.menu-block-wrapper ul li {
-  margin-bottom: 8px;
-}
-.menu-block-wrapper ul li.last {
-  margin-bottom: 0;
-}
-
 .front .inner-wrapper {
   background-color: #F5F3EF;
 }
@@ -774,13 +753,20 @@
     }
   }
 }
-.dark-box .os2sub-box {
-  background-color: #f5f3ef;
-}
-.os2sub-stacked-first {
-}
-.os2sub-stacked-first .os2sub-box {
-  border-bottom-left-radius: 0 !important;
+
+.dark-box {
+  .os2sub-box {
+    background-color: #f5f3ef;
+    .menu {
+      li {
+        a {
+          background-color: transparent;
+          padding: floor((@grid-gutter-width/4)) 0;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }  
 }
 
 .os2web-spotbox-spotbox {
@@ -963,10 +949,11 @@ h3.subsite-teaser-heading-title a {
   color: #4f5b67!important;
   text-decoration: none!important;
 }
-.field-name-field-os2sub-menuheader {
+.field-name-field-os2sub-menuheader  {
   text-transform: uppercase;
-  color: #334250;
-  padding-left: 20px;
+  color: #334250; }
+.pane-node-field-os2sub-menuheader .os2sub-box .os2sub-box-body {
+    padding-bottom: 0;
 }
 .overlay {
     position: absolute;

@@ -169,7 +169,7 @@
     <?php endif; ?>
 
     <a id="main-content"></a>
-
+    <div class="visible-xs-block visible-sm-block"><?php print $search_box; ?></div>
     <?php if (!panels_get_current_page_display()): ?>
       <div class="os2sub-box">
         <?php if (empty($node) ) { ?>
