@@ -26,7 +26,7 @@ function svendborg_hide_sidebar_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'spotbox' => array(
         'label' => 'above',
