@@ -42,7 +42,7 @@ body #main-navigation-bar a.active-trail {
   background-color: #981b6e !important;
 }
 .content-tabs-container .nav-tabs li.active a::after {
-  border-color: #8b0053 transparent transparent !important;
+  border-color: #981b6e transparent transparent !important;
 }
 .dark-box .os2sub-box .menu li a {
   color: #981b6e !important;
