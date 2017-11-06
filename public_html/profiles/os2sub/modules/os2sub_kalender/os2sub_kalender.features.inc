@@ -29,11 +29,11 @@ function os2sub_kalender_views_api($module = NULL, $api = NULL) {
 function os2sub_kalender_node_info() {
   $items = array(
     'event_calendar' => array(
-      'name' => t('Event Calendar'),
+      'name' => t('Begivenhed'),
       'base' => 'node_content',
       'description' => t('En indholdstype der bruges til at lave begivenheder i kalenderen.'),
       'has_title' => '1',
-      'title_label' => t('Event Title'),
+      'title_label' => t('Overskrift'),
       'help' => '',
     ),
   );

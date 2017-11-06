@@ -590,7 +590,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'spotbox' => array(
         'label' => 'above',
@@ -653,7 +653,7 @@ function os2web_base_field_default_field_instances() {
           'random' => 0,
         ),
         'type' => 'backstretch',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'spotbox' => array(
         'label' => 'above',
@@ -1258,7 +1258,7 @@ function os2web_base_field_default_field_instances() {
           'text' => 'Download [file:name]',
         ),
         'type' => 'file_download_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -1629,12 +1629,9 @@ function os2web_base_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'node_reference',
-        'settings' => array(
-          'node_reference_view_mode' => 'full',
-        ),
-        'type' => 'node_reference_node',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'spotbox' => array(
         'label' => 'above',
