@@ -43,6 +43,12 @@ function os2web_contact_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'os2sub_teaser_mini' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
