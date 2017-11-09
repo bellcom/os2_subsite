@@ -233,7 +233,6 @@ features[node][] = media
 features[node][] = os2web_base_contentpage
 features[node][] = os2web_base_news
 features[node][] = os2web_base_selfservice_link
-features[node][] = webform
 features[page_manager_handlers][] = node_edit_panel_context
 features[page_manager_handlers][] = node_view__nyhed
 features[page_manager_handlers][] = node_view__panel_context_002feedf-3b68-460a-aab2-a8d087f95f10
