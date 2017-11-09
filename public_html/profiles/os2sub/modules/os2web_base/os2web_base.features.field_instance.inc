@@ -1845,10 +1845,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
-          'photoswipe_caption' => '',
-          'photoswipe_image_style' => 'gallery',
-          'photoswipe_node_style' => 'os2sub_small_imagesize',
-          'photoswipe_view_mode' => '',
+          'photoswipe_caption' => 'alt',
+          'photoswipe_image_style' => 'gallery-thumb',
+          'photoswipe_node_style' => 'gallery',
+          'photoswipe_view_mode' => 'default',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -1889,8 +1889,15 @@ function os2web_base_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 1,
@@ -1908,7 +1915,7 @@ function os2web_base_field_default_field_instances() {
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 3,
     ),
   );

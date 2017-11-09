@@ -226,6 +226,7 @@ features[field_instance][] = taxonomy_term-os2web_base_tax_site_structure-field_
 features[field_instance][] = taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_spotbox
 features[field_instance][] = taxonomy_term-os2web_base_tax_site_structure-field_svendborg_hide_sidebar
 features[filter][] = plain_text
+features[image][] = footer_branding
 features[image][] = os2sub_normal_imagesize
 features[image][] = os2sub_small_imagesize
 features[node][] = media

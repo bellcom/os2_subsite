@@ -312,11 +312,7 @@ function os2web_base_field_group_info() {
   $field_group->data = array(
     'label' => 'Skjult',
     'weight' => '6',
-    'children' => array(
-      0 => 'field_os2web_base_field_inh_colm',
-      1 => 'field_os2web_base_field_lead_img',
-      2 => 'field_os2web_base_field_parent',
-    ),
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',

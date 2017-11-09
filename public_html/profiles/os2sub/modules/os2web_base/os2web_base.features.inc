@@ -35,6 +35,22 @@ function os2web_base_views_api($module = NULL, $api = NULL) {
 function os2web_base_image_default_styles() {
   $styles = array();
 
+  // Exported image style: footer_branding.
+  $styles['footer_branding'] = array(
+    'label' => 'Footer branding',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 100,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: os2sub_normal_imagesize.
   $styles['os2sub_normal_imagesize'] = array(
     'label' => 'Normal billede',
