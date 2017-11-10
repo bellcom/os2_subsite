@@ -23,6 +23,8 @@ if(typeof(CKEDITOR) !== 'undefined') {
 
         { name : 'Indledning'     , element : 'p', attributes: { 'class': 'lead' } },
         { name : 'Afsnit'     , element : 'p', attributes: { } },
+        { name : 'Sekundær'     , element : 'span', attributes: { 'class': 'phone' } },
+        { name : 'Tertiær'     , element : 'span', attributes: { 'class': 'email' } },
 
         {
             name : 'Liste',
