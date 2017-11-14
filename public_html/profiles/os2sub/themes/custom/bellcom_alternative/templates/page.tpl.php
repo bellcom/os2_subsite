@@ -216,7 +216,7 @@
               <a href="<?php print $theme_settings['layout']['branding_link']; ?>">
             <?php endif; ?>
               <span class="branding-text">
-               <?php if (!isset($theme_settings['layout']['footer']['footer_branding_logo'])): ?>
+               <?php if (!isset($theme_settings['layout']['footer']['footer_branding_logo']) || !isset($theme_settings['layout']['footer']['footer_show_branding'])): ?>
                 <span class="standard"><img src="<?php print base_path().path_to_theme().'/dist/img/ballerupbyvaaben.png' ?>"></span>
                 <?php else: 
                   $file = file_load((int) $theme_settings['layout']['footer']['footer_branding_logo']);
@@ -249,7 +249,7 @@
      </div>
       <?php if (!empty($page['footer2']) 
         OR !empty($theme_settings['contact_information']) 
-        OR $theme_settings['layout']['footer']['show_social_links'] ) : ?>
+        OR isset($theme_settings['layout']['footer']['show_social_links']) ) : ?>
         <div class="footer-dark">
           <div class="container footer-dark-container">
             <div class="row">
@@ -332,8 +332,7 @@
                       </div>
                     </section>
                   </div>
-
-                  <div class="social-links col-sm-3 col-sm-push-9">
+                  <div class="social-links col-sm-3">
                     <?php if ($theme_settings['social_links']['social_links_block_name']): ?>
                       <h3 class="block-title"><?php print $theme_settings['social_links']['social_links_block_name']; ?></h3>
                     <?php endif; ?>
