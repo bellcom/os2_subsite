@@ -970,7 +970,6 @@ function _subsite_1_color_collect_theme_settings() {
   $settings['layout']['footer']['show_branding'] = theme_get_setting('footer_show_branding');
   $settings['layout']['sidebar']['show_social_links'] = theme_get_setting('sidebar_show_social_links');
   $settings['layout']['footer']['footer_branding_logo'] = theme_get_setting('footer_branding_logo');
-  
 
   return $settings;
 }
