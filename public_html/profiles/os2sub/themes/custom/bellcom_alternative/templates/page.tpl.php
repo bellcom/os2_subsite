@@ -216,14 +216,15 @@
               <a href="<?php print $theme_settings['layout']['branding_link']; ?>">
             <?php endif; ?>
               <span class="branding-text">
-               <?php if (!isset($theme_settings['layout']['footer']['footer_branding_logo']) || !isset($theme_settings['layout']['footer']['footer_show_branding'])): ?>
+                <?php if (!empty($theme_settings['layout']['footer']['show_branding']) ): ?>
+                <?php if (empty($theme_settings['layout']['footer']['footer_branding_logo']) ): ?>
                 <span class="standard"><img src="<?php print base_path().path_to_theme().'/dist/img/ballerupbyvaaben.png' ?>"></span>
                 <?php else: 
                   $file = file_load((int) $theme_settings['layout']['footer']['footer_branding_logo']);
                   $uri = $file->uri;
                   print theme('image_style', array('path' => $uri, 'style_name' => 'footer_branding')); ?>
-
                 <?php endif;?>
+                 <?php endif;?>
                 <?php if ($theme_settings['layout']['footer']['show_branding_text']): ?>
   
                 <?php if (isset($theme_settings['layout']['branding_text'])): ?>
