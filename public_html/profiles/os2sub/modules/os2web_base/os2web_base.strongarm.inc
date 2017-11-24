@@ -1336,8 +1336,22 @@ function os2web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'site_mail';
+  $strongarm->value = 'balkom@balk.dk';
+  $export['site_mail'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'smtp_fromname';
+  $strongarm->value = 'balkom@balk.dk';
+  $export['smtp_fromname'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'smtp_host';
-  $strongarm->value = '130.227.16.200';
+  $strongarm->value = 'eu-outbound.centiumsecurity.dk';
   $export['smtp_host'] = $strongarm;
 
   $strongarm = new stdClass();
