@@ -1364,6 +1364,13 @@ function os2web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'smtp_port';
+  $strongarm->value = '587';
+  $export['smtp_port'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'transliteration_file_lowercase';
   $strongarm->value = 1;
   $export['transliteration_file_lowercase'] = $strongarm;
