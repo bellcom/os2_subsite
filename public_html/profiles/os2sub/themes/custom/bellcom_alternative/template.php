@@ -31,10 +31,10 @@ function bellcom_alternative_preprocess_page(&$variables) {
   $secondary_navigation_name = variable_get('menu_secondary_links_source', 'user-menu');
 
   // Navigation
-  $variables['primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'main-navigation', 1);
-  $variables['secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'main-navigation');
-  $variables['sidebar_primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'sidebar');
-  $variables['sidebar_secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'sidebar');
+  $variables['primary_navigation'] = _bellcom_alternative_generate_menu($primary_navigation_name, 'main-navigation', 1);
+  $variables['secondary_navigation'] = _bellcom_alternative_generate_menu($secondary_navigation_name, 'main-navigation');
+  $variables['sidebar_primary_navigation'] = _bellcom_alternative_generate_menu($primary_navigation_name, 'sidebar');
+  $variables['sidebar_secondary_navigation'] = _bellcom_alternative_generate_menu($secondary_navigation_name, 'sidebar');
 
   // Paths
   $variables['path_js']   = base_path() . drupal_get_path('theme', $current_theme) . '/dist/js';
@@ -43,7 +43,7 @@ function bellcom_alternative_preprocess_page(&$variables) {
   $variables['path_font'] = base_path() . drupal_get_path('theme', $current_theme) . '/dist/font';
 
   // Theme settings
-  $variables['theme_settings'] = _bellcom_collect_theme_settings();
+  $variables['theme_settings'] = _bellcom_alternative_collect_theme_settings();
   
   if (!empty($settings['options']['footer_logo']['footer_logo_path'])) {
     $vars['options']['footer_logo']['footer_logo_path'] = $settings['options']['footer_logo']['footer_logo_path'];
@@ -80,7 +80,7 @@ function bellcom_alternative_preprocess_node(&$variables) {
   }
 
   // Title (shortened)
-  $variables['title_shortened'] = _bellcom_text_shortener($variables['title'], 50);
+  $variables['title_shortened'] = _bellcom_alternative_text_shortener($variables['title'], 50);
 
   // Updated at
   if ($updated_at = $variables['node']->changed) {
@@ -88,7 +88,7 @@ function bellcom_alternative_preprocess_node(&$variables) {
     $variables['updated_at_medium'] = format_date($updated_at, 'medium');
     $variables['updated_at_long'] = format_date($updated_at, 'long');
     $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));;
-    $variables['updated_at_seperated'] = _bellcom_seperated_dates($updated_at);
+    $variables['updated_at_seperated'] = _bellcom_alternative_seperated_dates($updated_at);
   }
 
   // Created at
@@ -97,7 +97,7 @@ function bellcom_alternative_preprocess_node(&$variables) {
     $variables['created_at_medium'] = format_date($created_at, 'medium');
     $variables['created_at_long'] = format_date($created_at, 'long');
     $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
-    $variables['created_at_seperated'] = _bellcom_seperated_dates($created_at);
+    $variables['created_at_seperated'] = _bellcom_alternative_seperated_dates($created_at);
   }
 }
 
@@ -112,7 +112,7 @@ function bellcom_alternative_preprocess_comment(&$variables) {
     $variables['updated_at_medium'] = format_date($updated_at, 'medium');
     $variables['updated_at_long'] = format_date($updated_at, 'long');
     $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));
-    $variables['updated_at_seperated'] = _bellcom_seperated_dates($updated_at);
+    $variables['updated_at_seperated'] = _bellcom_alternative_seperated_dates($updated_at);
   }
 
   // Created at
@@ -121,7 +121,7 @@ function bellcom_alternative_preprocess_comment(&$variables) {
     $variables['created_at_medium'] = format_date($created_at, 'medium');
     $variables['created_at_long'] = format_date($created_at, 'long');
     $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
-    $variables['created_at_seperated'] = _bellcom_seperated_dates($created_at);
+    $variables['created_at_seperated'] = _bellcom_alternative_seperated_dates($created_at);
   }
 }
 
@@ -208,7 +208,7 @@ function bellcom_alternative_menu_link__main_navigation(array $variables) {
   }
 
   // If this item is active and/or in the active trail, add necessary classes.
-  $active_classes = _bellcom_in_active_trail($element['#href']);
+  $active_classes = _bellcom_alternative_in_active_trail($element['#href']);
   if (isset($element['#attributes']['class'])) {
     $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $active_classes);
   }
@@ -279,7 +279,7 @@ function bellcom_alternative_menu_link__sidebar(array $variables) {
  * Seperated dates
  * Heavily inspired by drupals format_date() function.
  */
-function _bellcom_seperated_dates($timestamp) {
+function _bellcom_Alternative_seperated_dates($timestamp) {
   $seperated_dates = array();
 
   // Use the advanced drupal_static() pattern, since this is called very often.
@@ -334,7 +334,7 @@ function _bellcom_seperated_dates($timestamp) {
 /*
  * Text shortener
  */
-function _bellcom_text_shortener($text_string, $max_length) {
+function _bellcom_alternative_text_shortener($text_string, $max_length) {
   $alter = array(
     'max_length'    => $max_length,
     'ellipsis'      => TRUE,

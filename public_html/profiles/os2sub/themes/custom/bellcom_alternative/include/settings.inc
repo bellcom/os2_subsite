@@ -955,7 +955,7 @@ function _theme_bellcom_alternative_settings_form(&$form, $form_state) {
  * Collect and assemble theme settings.
  * @return array
  */
-function _bellcom_collect_theme_settings() {
+function _bellcom_alternative_collect_theme_settings() {
   $settings = array();
 
   // Contact information
