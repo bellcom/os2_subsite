@@ -8,7 +8,7 @@
  *
  * @return array
  */
-function _bellcom_generate_menu($menu_name, $theme_function_name = FALSE, $max_depth = NULL) {
+function _bellcom_alternative_generate_menu($menu_name, $theme_function_name = FALSE, $max_depth = NULL) {
   if (empty($menu_name)) {
     return array();
   }
@@ -48,7 +48,7 @@ function _bellcom_generate_menu($menu_name, $theme_function_name = FALSE, $max_d
       'old' => 'menu_link__' . strtr($menu_name, '-', '_'),
       'new' => 'menu_link__' . strtr($theme_function_name, '-', '_'),
     );
-    array_walk_recursive($output, '_bellcom_alter_menu_theme_function', $menu_link_function_names);
+    array_walk_recursive($output, '_bellcom_alternative_alter_menu_theme_function', $menu_link_function_names);
   }
 
   return $output;
@@ -61,7 +61,7 @@ function _bellcom_generate_menu($menu_name, $theme_function_name = FALSE, $max_d
  * @param $key
  * @param $theme_functions
  */
-function _bellcom_alter_menu_theme_function(&$item, $key, $theme_functions) {
+function _bellcom_alternative_alter_menu_theme_function(&$item, $key, $theme_functions) {
   $old_theme_function = $theme_functions['old'];
   $new_theme_function = $theme_functions['new'];
 
@@ -86,7 +86,7 @@ function _bellcom_alter_menu_theme_function(&$item, $key, $theme_functions) {
  * @todo
  *   Look at migrating to a menu system level function.
  */
-function _bellcom_in_active_trail($link_path) {
+function _bellcom_alternative_in_active_trail($link_path) {
   $classes = array();
   $active_paths = array();
   // Don't waste cycles: if we're on the front page, we're either active or not
