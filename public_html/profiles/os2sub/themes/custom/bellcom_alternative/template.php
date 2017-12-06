@@ -279,7 +279,7 @@ function bellcom_alternative_menu_link__sidebar(array $variables) {
  * Seperated dates
  * Heavily inspired by drupals format_date() function.
  */
-function _bellcom_Alternative_seperated_dates($timestamp) {
+function _bellcom_alternative_seperated_dates($timestamp) {
   $seperated_dates = array();
 
   // Use the advanced drupal_static() pattern, since this is called very often.
