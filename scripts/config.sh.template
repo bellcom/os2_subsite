@@ -1,11 +1,11 @@
 #Set of new config variables
 #This should be the only editable part
-SUBSITENAME=test.subsites.ballerup.dk
+SUBSITENAME=subsites.test.ballerup.dk
 SQLADMIN=
 SITEADMIN=
 
 #OLD PART OF THE CONFIG
-#BASEDIR="/var/www/test.subsites.ballerup.dk"
+#BASEDIR="/var/www/subsites.test.ballerup.dk"
 BASEDIR="/var/www/$SUBSITENAME"
 SERVERIP=""
 PROFILE="os2sub"

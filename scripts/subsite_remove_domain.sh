@@ -34,6 +34,7 @@ if [[ "$USER" != "root" ]]; then
   exit 10
 fi
 
+validate_sitesphp
 validate_domainname "$REMOVEDOMAIN"
 check_existence_remove
 remove_from_vhost

@@ -34,6 +34,7 @@ if [[ "$USER" != "root" ]]; then
   exit 10
 fi
 
+validate_sitesphp
 validate_domainname "$NEWDOMAIN"
 check_existence_add
 add_to_vhost

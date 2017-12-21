@@ -36,6 +36,7 @@ if [[ "$USER" != "root" ]]; then
   exit 10
 fi
 
+validate_sitesphp
 validate_sitename "$SITENAME"
 validate_email "$USEREMAIL"
 check_existence_create "$SITENAME"

@@ -22,6 +22,15 @@ validate_mysql() {
   fi
 }
 
+validate_sitesphp() {
+   debug "Checking if sites.php is in public_html/sites"
+   if [ ! -f $BASEDIR/public_html/sites/sites.php ]
+   then
+      echo "ERROR: public_html/sites/sites.php is missing!"
+      exit 10
+   fi
+}
+
 validate_sitename() {
   local SITENAME="$1"
   debug "Checking site name ($SITENAME)"
@@ -29,10 +38,10 @@ validate_sitename() {
     echo "ERROR: Domain not valid"
     exit 10
   fi
-  # hardcoded that the domain must end in test.subsites.ballerup.dk ($SUBSITENAME)
-#  if [[ ! "$SITENAME" =~ test.subsites.ballerup.dk$ ]]; then
+  # hardcoded that the domain must end in subsites.test.ballerup.dk ($SUBSITENAME)
+#  if [[ ! "$SITENAME" =~ subsites.test.ballerup.dk$ ]]; then
   if [[ ! "$SITENAME" =~ $SUBSITENAME$ ]]; then
-#    echo "ERROR: Domain not valid (doesn't end with test.subsites.ballerup.dk)"
+#    echo "ERROR: Domain not valid (doesn't end with subsites.test.ballerup.dk)"
     echo "ERROR: Domain not valid (doesn't end with $SUBSITENAME)"
     exit 10
   fi
