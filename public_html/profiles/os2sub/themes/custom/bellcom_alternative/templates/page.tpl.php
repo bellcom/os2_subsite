@@ -21,7 +21,7 @@
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
         <img src="<?php print $logo; ?>" class="topbar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
         <?php if ($site_name) : ?><span class="tablet-sitename"><?php print $site_name; ?></span><?php endif; ?>
-        
+
       </a>
     </nav>
     <div class="content">
@@ -35,79 +35,82 @@
               </a>
             <?php elseif ($logo && $site_name): ?>
               <a href='<?php print $front_page; ?>' class="main-navigation-logo-link">
-                  <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> 
+                  <img class="main-navigation-logo-image" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                 <span class="site-name"><?php print $site_name; ?></span>
                 <?php if ($slogan): ?>
                   <span class="site-slogan"><?php print $slogan; ?></span>
                 <?php endif; ?>
               </a>
-            <?php endif; ?>          
-          </div>  		  	
+            <?php endif; ?>
+          </div>
         <section class="top-right-menu col-md-6" role="navigation">
           <?php if ($secondary_navigation): ?>
             <?php print render($secondary_navigation); ?>
           <?php endif; ?>
+          <?php if (!empty($page['header'])):?>
+            <?php print render($page['header']);?>
+          <?php endif; ?>
           <ul class="main-navigation-list main-navigation-lang">
             <?php if ($theme_settings['languages']['lang_german']['active']): ?>
               <li class="main-navigation-list-link">
-                <a href="<?php print $theme_settings['languages']['lang_german']['url']; ?>" 
-                  class="lang-link lang-link-de" 
-                  data-toggle="tooltip" 
-                  data-placement="bottom" 
-                  title="<?php print $theme_settings['languages']['lang_german']['tooltip']; ?>">DE        
+                <a href="<?php print $theme_settings['languages']['lang_german']['url']; ?>"
+                  class="lang-link lang-link-de"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="<?php print $theme_settings['languages']['lang_german']['tooltip']; ?>">DE
                 </a>
               </li>
             <?php endif; ?>
             <?php if ($theme_settings['languages']['lang_english']['active']): ?>
               <li class="main-navigation-list-link">
-                <a href="<?php print $theme_settings['languages']['lang_english']['url']; ?>" 
-                  class="lang-link lang-link-en" 
-                  data-toggle="tooltip" 
-                  data-placement="bottom" 
-                  title="<?php print $theme_settings['languages']['lang_english']['tooltip']; ?>">EN        
+                <a href="<?php print $theme_settings['languages']['lang_english']['url']; ?>"
+                  class="lang-link lang-link-en"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="<?php print $theme_settings['languages']['lang_english']['tooltip']; ?>">EN
                 </a>
               </li>
             <?php endif; ?>
 
             <?php if ($theme_settings['languages']['lang_swedish']['active']): ?>
               <li class="main-navigation-list-link">
-                <a href="<?php print $theme_settings['languages']['lang_swedish']['url']; ?>" 
-                  class="lang-link lang-link-se" 
-                  data-toggle="tooltip" 
-                  data-placement="bottom" 
-                  title="<?php print $theme_settings['languages']['lang_swedish']['tooltip']; ?>">SE        
+                <a href="<?php print $theme_settings['languages']['lang_swedish']['url']; ?>"
+                  class="lang-link lang-link-se"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="<?php print $theme_settings['languages']['lang_swedish']['tooltip']; ?>">SE
                 </a>
               </li>
             <?php endif; ?>
             <?php if ($theme_settings['languages']['lang_norwegian']['active']): ?>
               <li class="main-navigation-list-link">
-                <a href="<?php print $theme_settings['languages']['lang_norwegian']['url']; ?>" 
-                  class="lang-link lang-link-no" 
-                  data-toggle="tooltip" 
-                  data-placement="bottom" 
-                  title="<?php print $theme_settings['languages']['lang_norwegian']['tooltip']; ?>">NO        
+                <a href="<?php print $theme_settings['languages']['lang_norwegian']['url']; ?>"
+                  class="lang-link lang-link-no"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="<?php print $theme_settings['languages']['lang_norwegian']['tooltip']; ?>">NO
                 </a>
               </li>
             <?php endif; ?>
 
             <?php if ($theme_settings['languages']['lang_arabic']['active']): ?>
               <li class="main-navigation-list-link">
-                <a href="<?php print $theme_settings['languages']['lang_arabic']['url']; ?>" 
-                  class="lang-link lang-link-ar" 
-                  data-toggle="tooltip" 
-                  data-placement="bottom" 
-                  title="<?php print $theme_settings['languages']['lang_arabic']['tooltip']; ?>">AR        
+                <a href="<?php print $theme_settings['languages']['lang_arabic']['url']; ?>"
+                  class="lang-link lang-link-ar"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="<?php print $theme_settings['languages']['lang_arabic']['tooltip']; ?>">AR
                 </a>
               </li>
             <?php endif; ?>
-          
+
             <?php if ($theme_settings['languages']['lang_danish']['active']): ?>
               <li class="main-navigation-list-link">
-                <a href="<?php print $theme_settings['languages']['lang_danish']['url']; ?>" 
-                  class="lang-link lang-link-da" 
-                  data-toggle="tooltip" 
-                  data-placement="bottom" 
-                  title="<?php print $theme_settings['languages']['lang_danish']['tooltip']; ?>">DK        
+                <a href="<?php print $theme_settings['languages']['lang_danish']['url']; ?>"
+                  class="lang-link lang-link-da"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="<?php print $theme_settings['languages']['lang_danish']['tooltip']; ?>">DK
                 </a>
               </li>
             <?php endif; ?>
@@ -122,7 +125,7 @@
       <div class="container nav-container">
         <div class="row">
           <nav class="col-md-9" role="navigation">
-                           
+
             <?php if (isset($primary_navigation)): ?>
               <?php print render($primary_navigation); ?>
             <?php endif; ?>
@@ -190,18 +193,18 @@
           <div class="row">
             <?php if (!empty($page['footertop1'])) : ?>
               <section role="complementary" class="footertop-region col-sm-4">
-                  <?php print render($page['footertop1']); ?>        
+                  <?php print render($page['footertop1']); ?>
               </section>
             <?php endif ?>
             <?php if (!empty($page['footertop2'])) : ?>
               <section role="complementary" class="footertop2-region col-sm-8">
-                  <?php print render($page['footertop2']); ?>        
+                  <?php print render($page['footertop2']); ?>
               </section>
             <?php endif ?>
             <?php if (!empty($page['footer'])) : ?>
               <section role="complementary" class="footer-region col-sm-12">
-                <?php print render($page['footer']); ?>   
-              </section>     
+                <?php print render($page['footer']); ?>
+              </section>
             <?php endif ?>
           </div>
         </div>
@@ -219,25 +222,25 @@
                 <?php if (!empty($theme_settings['layout']['footer']['show_branding']) ): ?>
                 <?php if (empty($theme_settings['layout']['footer']['footer_branding_logo']) ): ?>
                 <span class="standard"><img src="<?php print base_path().path_to_theme().'/dist/img/ballerupbyvaaben.png' ?>"></span>
-                <?php else: 
+                <?php else:
                   $file = file_load((int) $theme_settings['layout']['footer']['footer_branding_logo']);
                   $uri = $file->uri;
                   print theme('image_style', array('path' => $uri, 'style_name' => 'footer_branding')); ?>
                 <?php endif;?>
                  <?php endif;?>
                 <?php if ($theme_settings['layout']['footer']['show_branding_text']): ?>
-  
+
                 <?php if (isset($theme_settings['layout']['branding_text'])): ?>
                   <?php print $theme_settings['layout']['branding_text']; ?>
-  
+
                 <?php else: ?>
                 subsite er præsenteret i samarbejde med Ballerup Kommune
-  
+
                 <?php endif; ?>
-                
+
                  <?php print $theme_settings['branding_text']; ?>
-    
-  
+
+
                 <?php endif; ?>
               </span>
             <?php if (isset($theme_settings['layout']['branding_link'])): ?>
@@ -248,8 +251,8 @@
         <?php print render($page['footer4']); ?>
        </div>
      </div>
-      <?php if (!empty($page['footer2']) 
-        OR !empty($theme_settings['contact_information']) 
+      <?php if (!empty($page['footer2'])
+        OR !empty($theme_settings['contact_information'])
         OR isset($theme_settings['layout']['footer']['show_social_links']) ) : ?>
         <div class="footer-dark">
           <div class="container footer-dark-container">
@@ -266,49 +269,49 @@
                     <?php if (!empty($theme_settings['contact_information']['business_startup_year']) ) : ?>
                       <?php print t('Siden ').$theme_settings['contact_information']['business_startup_year']; ?><br/>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['address']) ) : ?>
                       <?php print $theme_settings['contact_information']['address']; ?><br/>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['zipcode']) ) : ?>
                       <?php print $theme_settings['contact_information']['zipcode']; ?><br/>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['city']) ) : ?>
                       <?php print $theme_settings['contact_information']['city']; ?><br/>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['phone_system']) ) : ?>
-                      <?php print '<a title="Ring til '.$theme_settings['contact_information']['phone_readable'].'" 
+                      <?php print '<a title="Ring til '.$theme_settings['contact_information']['phone_readable'].'"
                         href="tel:'.$theme_settings['contact_information']['phone_system'].'">'; ?>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['phone_readable']) ) : ?>
                       <?php print $theme_settings['contact_information']['phone_readable']; ?></br>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['phone_system']) ) : ?>
                       <?php print '</a>'; ?><br/>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['email']) ) : ?>
-                      <?php print '<a href="mailto:'.$theme_settings['contact_information']['email'].' 
+                      <?php print '<a href="mailto:'.$theme_settings['contact_information']['email'].'
                         Title="Send email">'.$theme_settings['contact_information']['email'].'</a>'; ?><br/>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['working_hours']) ) : ?>
                       <?php print $theme_settings['contact_information']['working_hours']; ?></br>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['cvr_nr']) ) : ?>
                       <br/><?php print $theme_settings['contact_information']['cvr_nr']; ?></br>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['giro_nr']) ) : ?>
                       <?php print $theme_settings['contact_information']['giro_nr']; ?></br>
                     <?php endif; ?>
-  
+
                     <?php if (!empty($theme_settings['contact_information']['ean']) ) : ?>
                       <?php print $theme_settings['contact_information']['ean']; ?></br>
                     <?php endif; ?>
@@ -341,50 +344,50 @@
                     <ul class="social-icon-list">
                       <?php if ($theme_settings['social_links']['facebook']['active']): ?>
                         <li>
-                          <a 
-                            href="<?php print $theme_settings['social_links']['facebook']['url']; ?>" 
-                            target="_blank" 
-                            class="social-icon social-icon-facebook" 
+                          <a
+                            href="<?php print $theme_settings['social_links']['facebook']['url']; ?>"
+                            target="_blank"
+                            class="social-icon social-icon-facebook"
                             data-toggle="tooltip"
-                            data-placement="top" 
+                            data-placement="top"
                             title="<?php print $theme_settings['social_links']['facebook']['tooltip']; ?>">
                           </a>
                         </li>
                       <?php endif; ?>
-          
+
                       <?php if ($theme_settings['social_links']['twitter']['active']): ?>
                         <li>
-                          <a 
-                            href="<?php print $theme_settings['social_links']['twitter']['url']; ?>" 
-                            target="_blank" 
-                            class="social-icon social-icon-twitter" 
+                          <a
+                            href="<?php print $theme_settings['social_links']['twitter']['url']; ?>"
+                            target="_blank"
+                            class="social-icon social-icon-twitter"
                             data-toggle="tooltip"
-                            data-placement="top" 
+                            data-placement="top"
                             title="<?php print $theme_settings['social_links']['twitter']['tooltip']; ?>">
                           </a>
                         </li>
                       <?php endif; ?>
-          
+
                       <?php if ($theme_settings['social_links']['googleplus']['active']): ?>
                         <li>
-                          <a 
-                            href="<?php print $theme_settings['social_links']['googleplus']['url']; ?>" 
+                          <a
+                            href="<?php print $theme_settings['social_links']['googleplus']['url']; ?>"
                             target="_blank"
                             class="social-icon social-icon-google-plus"
-                            data-toggle="tooltip" 
+                            data-toggle="tooltip"
                             data-placement="top"
                             title="<?php print $theme_settings['social_links']['googleplus']['tooltip']; ?>">
                           </a>
                         </li>
                       <?php endif; ?>
-          
+
                       <?php if ($theme_settings['social_links']['linkedin']['active']): ?>
                         <li>
-                          <a 
+                          <a
                             href="<?php print $theme_settings['social_links']['linkedin']['url']; ?>"
                             target="_blank"
-                            class="social-icon social-icon-linkedin" 
-                            data-toggle="tooltip" 
+                            class="social-icon social-icon-linkedin"
+                            data-toggle="tooltip"
                             data-placement="top"
                             title="<?php print $theme_settings['social_links']['linkedin']['tooltip']; ?>">
                           </a>
@@ -392,34 +395,34 @@
                       <?php endif; ?>
                       <?php if ($theme_settings['social_links']['pinterest']['active']): ?>
                         <li>
-                          <a 
+                          <a
                             href="<?php print $theme_settings['social_links']['pinterest']['url']; ?>"
-                            target="_blank" class="social-icon social-icon-pinterest" 
-                            data-toggle="tooltip" 
-                            data-placement="top" 
+                            target="_blank" class="social-icon social-icon-pinterest"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="<?php print $theme_settings['social_links']['pinterest']['tooltip']; ?>">
                           </a>
                         </li>
                       <?php endif; ?>
-          
+
                       <?php if ($theme_settings['social_links']['instagram']['active']): ?>
                         <li><a href="<?php print $theme_settings['social_links']['instagram']['url']; ?>" target="_blank" class="social-icon social-icon-instagram" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['instagram']['tooltip']; ?>"></a></li>
                       <?php endif; ?>
-          
+
                       <?php if ($theme_settings['social_links']['youtube']['active']): ?>
                         <li><a href="<?php print $theme_settings['social_links']['youtube']['url']; ?>" target="_blank" class="social-icon social-icon-youtube" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['youtube']['tooltip']; ?>"></a></li>
                       <?php endif; ?>
-          
+
                       <?php if ($theme_settings['social_links']['vimeo']['active']): ?>
                         <li><a href="<?php print $theme_settings['social_links']['vimeo']['url']; ?>" target="_blank" class="social-icon social-icon-vimeo" data-toggle="tooltip" data-placement="top" title="<?php print $theme_settings['social_links']['vimeo']['tooltip']; ?>"></a></li>
                       <?php endif; ?>
-                    </ul>	
+                    </ul>
                   </div>
                 <?php endif; ?>
             </div>
           </div>
         </div>
-      <?php endif ?> 	        	   
+      <?php endif ?>
     </footer>
   </div>
 </div>
