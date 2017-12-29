@@ -1,0 +1,8 @@
+name = Balerup Subsite Standarder
+core = 7.x
+package = Ballerup
+version = 7.x-1.0
+dependencies[] = fe_block
+dependencies[] = gtranslate
+features[fe_block_settings][] = gtranslate-gtranslate
+features[features_api][] = api:2

@@ -41,13 +41,25 @@
  * @see template_process()
  */
 ?>
-<?php if ($block->delta != 'main'): ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php endif; ?>
+<ul>
+  <li class="secondary-nav__item">
+    <a title="Google Translate oversætter indholdet. Derfor kan der forekomme meningsforstyrrende oversættelser." href="#" onclick="ShowGTranslateBox();">Translate</a>
+    <script>
+    function ShowGTranslateBox() {
+      var display = document.getElementById("gtranslate-box").style.display;
+      if (display == 'none') {
+        document.getElementById("gtranslate-box").style.display = "block";
+      }
+      if (display == 'block') {
+        document.getElementById("gtranslate-box").style.display = "none";
+      }
+    }
+    </script>
+    <div  class="<?php print $classes; ?>"<?php print $attributes; ?> id="gtranslate-box" style="width:200px;position:absolute;top:30px;display:none;">
+      <?php print render($title_prefix); ?>
+      <?php print render($title_suffix); ?>
 
-  <?php print render($title_prefix); ?>
-  <?php print render($title_suffix); ?>
-
-  <?php print $content ?>
-
-  <?php $block->delta != 'main' ? print '</div>' : ''; ?>
+      <?php print $content ?>
+    </div>
+  </li>
+</ul>
