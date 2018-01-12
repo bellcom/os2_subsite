@@ -13,34 +13,6 @@ function os2web_base_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_afsnit|node|os2web_base_contentpage|form';
-  $field_group->group_name = 'group_afsnit';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'os2web_base_contentpage';
-  $field_group->mode = 'form';
-  $field_group->parent_name = 'group_os2web_base_group_content';
-  $field_group->data = array(
-    'label' => 'Afsnit',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_afsnit',
-    ),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-afsnit field-group-htab',
-        'required_fields' => 1,
-        'id' => '',
-      ),
-    ),
-  );
-  $export['group_afsnit|node|os2web_base_contentpage|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_billeder|taxonomy_term|os2web_base_tax_site_structure|form';
   $field_group->group_name = 'group_billeder';
   $field_group->entity_type = 'taxonomy_term';
@@ -115,12 +87,13 @@ function os2web_base_field_group_info() {
   $field_group->parent_name = 'group_os2web_base_group_content';
   $field_group->data = array(
     'label' => 'Indstillinger',
-    'weight' => '10',
+    'weight' => '9',
     'children' => array(
       0 => 'field_svendborg_hide_sidebar',
       1 => 'field_os2web_base_field_contact',
       2 => 'field_os2web_base_field_hidlinks',
       3 => 'field_svendborg_hide_contact',
+      4 => 'field_os2sub_subtype',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -148,12 +121,12 @@ function os2web_base_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'group_os2web_base_group_3',
-      1 => 'group_os2web_base_group_extras',
-      2 => 'group_os2web_base_group_general',
-      3 => 'group_os2web_base_group_images',
-      4 => 'group_relationer',
-      5 => 'group_spotbokse',
-      6 => 'group_afsnit',
+      1 => 'group_os2web_base_group_esdh',
+      2 => 'group_os2web_base_group_extras',
+      3 => 'group_os2web_base_group_general',
+      4 => 'group_os2web_base_group_images',
+      5 => 'group_relationer',
+      6 => 'group_spotbokse',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -176,7 +149,7 @@ function os2web_base_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Hentet fra kommunens sagssystem',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(),
     'format_type' => 'hidden',
     'format_settings' => array(
@@ -197,11 +170,8 @@ function os2web_base_field_group_info() {
   $field_group->parent_name = 'group_os2web_base_group_content';
   $field_group->data = array(
     'label' => 'Sager og dokumenter',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_os2web_base_field_case',
-      1 => 'field_os2web_base_field_doc',
-    ),
+    'weight' => '10',
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'label' => 'Sager og dokumenter',
@@ -226,7 +196,7 @@ function os2web_base_field_group_info() {
   $field_group->parent_name = 'group_os2web_base_group_content';
   $field_group->data = array(
     'label' => 'Emneord',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_os2web_base_field_edi_tags',
       1 => 'field_os2web_base_field_loca_ref',
@@ -259,7 +229,8 @@ function os2web_base_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'field_os2web_base_field_summary',
+      1 => 'field_os2web_base_field_kle_ref',
+      2 => 'field_os2web_base_field_summary',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -376,6 +347,7 @@ function os2web_base_field_group_info() {
       1 => 'field_os2web_base_banner',
       2 => 'field_os2web_base_field_image',
       3 => 'field_os2web_base_field_media',
+      4 => 'field_os2web_base_field_photo',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -641,7 +613,7 @@ function os2web_base_field_group_info() {
   $field_group->parent_name = 'group_os2web_base_group_content';
   $field_group->data = array(
     'label' => 'Relationer',
-    'weight' => '9',
+    'weight' => '8',
     'children' => array(
       0 => 'field_os2web_base_field_ext_link',
       1 => 'field_os2web_base_field_related',
@@ -728,7 +700,7 @@ function os2web_base_field_group_info() {
   $field_group->parent_name = 'group_os2web_base_group_content';
   $field_group->data = array(
     'label' => 'Spotbokse / Webform',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_os2web_base_field_spotbox',
       1 => 'field_os2web_base_field_webform',

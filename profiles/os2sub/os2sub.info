@@ -66,6 +66,5 @@ dependencies[] = os2sub_frontpage
 dependencies[] = os2web_contact
 dependencies[] = publishcontent
 dependencies[] = pps
-dependencies[] = bellcom_panel_layouts
 
 version = 1.0

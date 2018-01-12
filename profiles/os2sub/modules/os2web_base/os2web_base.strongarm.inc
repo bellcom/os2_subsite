@@ -21,7 +21,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'clean_url';
-  $strongarm->value = TRUE;
+  $strongarm->value = 1;
   $export['clean_url'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -293,6 +293,20 @@ function os2web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_day_and_month';
+  $strongarm->value = 'D. d. M.';
+  $export['date_format_day_and_month'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_full_date';
+  $strongarm->value = 'd. F Y';
+  $export['date_format_full_date'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_long';
   $strongarm->value = 'l, j F, Y - H:i';
   $export['date_format_long'] = $strongarm;
@@ -317,6 +331,53 @@ function os2web_base_strongarm() {
   $strongarm->name = 'date_format_short';
   $strongarm->value = 'd.m.Y - H:i';
   $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__media';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_advanced' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_simple' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'spotbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__media'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -363,6 +424,15 @@ function os2web_base_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_advanced' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_simple' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'display' => array(
@@ -371,9 +441,33 @@ function os2web_base_strongarm() {
             'weight' => '7',
             'visible' => TRUE,
           ),
+          'list_advanced' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
+          'list_simple' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
+          'list' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
         ),
         'language' => array(
           'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list_advanced' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list_simple' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
@@ -457,6 +551,15 @@ function os2web_base_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_advanced' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_simple' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -476,6 +579,18 @@ function os2web_base_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list_advanced' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list_simple' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
@@ -581,11 +696,32 @@ function os2web_base_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list_advanced' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list_simple' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'display' => array(
         'language' => array(
           'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list_advanced' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list_simple' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'list' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
@@ -640,7 +776,41 @@ function os2web_base_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__os2web_base_selfservice_link';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_advanced' => array(
+        'custom_settings' => FALSE,
+      ),
+      'list_simple' => array(
+        'custom_settings' => FALSE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'spotbox' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -688,6 +858,15 @@ function os2web_base_strongarm() {
       'spotbox' => array(
         'custom_settings' => TRUE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list_advanced' => array(
+        'custom_settings' => TRUE,
+      ),
+      'list_simple' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -704,6 +883,18 @@ function os2web_base_strongarm() {
       'display' => array(
         'webform' => array(
           'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'list_advanced' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'list_simple' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+          'list' => array(
             'weight' => '2',
             'visible' => TRUE,
           ),
@@ -738,7 +929,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_cdn';
-  $strongarm->value = 'google';
+  $strongarm->value = 'jquery';
   $export['jquery_update_jquery_cdn'] = $strongarm;
 
   $strongarm = new stdClass();
