@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Balerup Subsite Standarder feature.
  */
+
+include_once 'balerup_subsite_standarder.features.inc';
