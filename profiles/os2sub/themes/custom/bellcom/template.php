@@ -42,6 +42,9 @@ function bellcom_preprocess_page(&$variables) {
   $variables['menu_slinky__primary'] = _bellcom_generate_menu($primary_navigation_name, 'slinky', TRUE);
   $variables['menu_slinky__secondary'] = _bellcom_generate_menu($secondary_navigation_name, 'slinky', TRUE);
 
+  $variables['flexy_list__primary'] = _bellcom_generate_menu($primary_navigation_name, 'flexy_list', FALSE, 1);
+  $variables['flexy_list__secondary'] = _bellcom_generate_menu($secondary_navigation_name, 'flexy_list', FALSE, 1);
+
   // Paths
   $variables['path_js']   = base_path() . drupal_get_path('theme', $current_theme) . '/dist/js';
   $variables['path_img']  = base_path() . drupal_get_path('theme', $current_theme) . '/dist/img';
