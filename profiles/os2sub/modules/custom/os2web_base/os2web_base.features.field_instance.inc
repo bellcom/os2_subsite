@@ -877,6 +877,52 @@ function os2web_base_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2web_base_contentpage-field_os2sub_paragraphs'.
+  $field_instances['node-os2web_base_contentpage-field_os2sub_paragraphs'] = array(
+    'bundle' => 'os2web_base_contentpage',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 23,
+      ),
+      'spotbox' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2sub_paragraphs',
+    'label' => 'Afsnit',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(),
+      'bundle_weights' => array(),
+      'default_edit_mode' => 'preview',
+      'title' => 'Afsnit',
+      'title_multiple' => 'Afsnit',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2web_base_contentpage-field_os2sub_subtype'.
   $field_instances['node-os2web_base_contentpage-field_os2sub_subtype'] = array(
     'bundle' => 'os2web_base_contentpage',
@@ -1285,8 +1331,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2sub_normal_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -1295,8 +1343,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2sub_normal_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -1305,8 +1355,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2sub_normal_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -1315,8 +1367,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => 'os2sub_normal_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -2415,8 +2469,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => 'gallery',
           'photoswipe_node_style' => 'os2sub_small_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -2425,8 +2481,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => 'gallery',
           'photoswipe_node_style' => 'os2sub_small_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -2435,8 +2493,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => 'gallery',
           'photoswipe_node_style' => 'os2sub_small_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -2445,8 +2505,10 @@ function os2web_base_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => 'gallery',
           'photoswipe_node_style' => 'os2sub_small_imagesize',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 0,
@@ -5771,6 +5833,193 @@ function os2web_base_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'paragraphs_item-os2sub_accordion-field_os2sub_accordion_sets'.
+  $field_instances['paragraphs_item-os2sub_accordion-field_os2sub_accordion_sets'] = array(
+    'bundle' => 'os2sub_accordion',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'paragraphs_editor_preview',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_os2sub_accordion_sets',
+    'label' => 'Afsnit',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'button',
+      'allowed_bundles' => array(
+        'os2sub_accordion' => -1,
+        'os2sub_paragraph_text' => 'os2sub_paragraph_text',
+      ),
+      'bundle_weights' => array(
+        'os2sub_accordion' => 2,
+        'os2sub_paragraph_text' => 3,
+      ),
+      'default_edit_mode' => 'preview',
+      'title' => 'Afsnit',
+      'title_multiple' => 'Afsnit',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-os2sub_paragraph_text-field_os2sub_paragraph_text_body'.
+  $field_instances['paragraphs_item-os2sub_paragraph_text-field_os2sub_paragraph_text_body'] = array(
+    'bundle' => 'os2sub_paragraph_text',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 120,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_os2sub_paragraph_text_body',
+    'label' => 'Indhold',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => -9,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-os2sub_paragraph_text-field_os2sub_paragraph_text_head'.
+  $field_instances['paragraphs_item-os2sub_paragraph_text-field_os2sub_paragraph_text_head'] = array(
+    'bundle' => 'os2sub_paragraph_text',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_os2sub_paragraph_text_head',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'plain_text' => array(
+              'weight' => -9,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-os2web_base_tax_site_structure-field_alternative_display'.
   $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_alternative_display'] = array(
     'bundle' => 'os2web_base_tax_site_structure',
@@ -6708,69 +6957,9 @@ function os2web_base_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'taxonomy_term-os2web_base_tax_site_structure-field_svendborg_hide_sidebar'.
-  $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_svendborg_hide_sidebar'] = array(
-    'bundle' => 'os2web_base_tax_site_structure',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'list_advanced' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'list_simple' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_svendborg_hide_sidebar',
-    'label' => 'Skjul højre sidebar',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 34,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
+  t('Afsnit');
   t('Alternativ visning');
   t('Baggrund');
   t('Banner');
@@ -6811,6 +7000,7 @@ function os2web_base_field_default_field_instances() {
   t('Organisation');
   t('Organistation');
   t('Overordnet placering');
+  t('Overskrift');
   t('PDF Filer');
   t('PDF filer');
   t('Politik');
@@ -6821,7 +7011,6 @@ function os2web_base_field_default_field_instances() {
   t('Selvbetjeningslinks');
   t('Sidetype');
   t('Skjul automatisk relaterede links');
-  t('Skjul højre sidebar');
   t('Skjul kontaktblok');
   t('Skriv den fuldstændige URL hvis det er et eksternt link. Interne links skrives som systemsti, alternativt søges destinationen frem via Søg funktionen.');
   t('Source ID');

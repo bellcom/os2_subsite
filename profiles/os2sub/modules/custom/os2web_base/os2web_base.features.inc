@@ -395,3 +395,22 @@ function os2web_base_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function os2web_base_paragraphs_info() {
+  $items = array(
+    'os2sub_accordion' => array(
+      'name' => 'Harmonika',
+      'bundle' => 'os2sub_accordion',
+      'locked' => '1',
+    ),
+    'os2sub_paragraph_text' => array(
+      'name' => 'Tekstafsnit',
+      'bundle' => 'os2sub_paragraph_text',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}

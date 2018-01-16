@@ -21,7 +21,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'clean_url';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['clean_url'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -475,10 +475,10 @@ function os2web_base_strongarm() {
       ),
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '21',
+          'weight' => '4',
         ),
         'workbench_access' => array(
           'weight' => '0',
@@ -505,7 +505,7 @@ function os2web_base_strongarm() {
           'weight' => '7',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '5',
         ),
         'redirect' => array(
           'weight' => '30',
@@ -922,14 +922,14 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_admin_version';
-  $strongarm->value = '1.7';
+  $strongarm->value = '1.8';
   $export['jquery_update_jquery_admin_version'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_cdn';
-  $strongarm->value = 'jquery';
+  $strongarm->value = 'none';
   $export['jquery_update_jquery_cdn'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -964,7 +964,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_version';
-  $strongarm->value = '1.10';
+  $strongarm->value = '1.9';
   $export['jquery_update_jquery_version'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1217,7 +1217,6 @@ function os2web_base_strongarm() {
   $strongarm->name = 'node_options_os2web_base_contentpage';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'revision',
   );
   $export['node_options_os2web_base_contentpage'] = $strongarm;
 
