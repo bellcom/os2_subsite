@@ -1,5 +1,5 @@
-name = OS2Sub - Subsites til OS2Web
-description = OS2sub installationsprofil fra Bellcom
+name = 'OS2Sub - Subsites til OS2Web'
+description = 'OS2sub installationsprofil fra Bellcom'
 distribution_name = OS2Sub
 core = 7.x
 dependencies[] = libraries
