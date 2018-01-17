@@ -75,6 +75,17 @@ function os2web_base_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'administer image styles'.
+  $permissions['administer image styles'] = array(
+    'name' => 'administer image styles',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'Webmaster' => 'Webmaster',
+      'subsiteadmin' => 'subsiteadmin',
+    ),
+    'module' => 'image',
+  );
+
   // Exported permission: 'bypass node access'.
   $permissions['bypass node access'] = array(
     'name' => 'bypass node access',
@@ -84,6 +95,26 @@ function os2web_base_user_default_permissions() {
       'subsiteadmin' => 'subsiteadmin',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'search content'.
+  $permissions['search content'] = array(
+    'name' => 'search content',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'subsiteadmin' => 'subsiteadmin',
+    ),
+    'module' => 'search',
+  );
+
+  // Exported permission: 'use advanced search'.
+  $permissions['use advanced search'] = array(
+    'name' => 'use advanced search',
+    'roles' => array(
+      'subsiteadmin' => 'subsiteadmin',
+    ),
+    'module' => 'search',
   );
 
   return $permissions;

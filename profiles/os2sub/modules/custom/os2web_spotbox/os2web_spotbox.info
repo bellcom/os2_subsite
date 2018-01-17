@@ -5,7 +5,6 @@ version = 7.x-2.0
 project = os2web_spotbox
 dependencies[] = ctools
 dependencies[] = entity
-dependencies[] = epsacrop
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = file_entity

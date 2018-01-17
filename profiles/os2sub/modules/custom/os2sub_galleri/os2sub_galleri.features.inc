@@ -24,12 +24,12 @@ function os2sub_galleri_image_default_styles() {
 
   // Exported image style: gallery.
   $styles['gallery'] = array(
-    'label' => 'gallery',
+    'label' => 'Gallery',
     'effects' => array(
-      2 => array(
+      3 => array(
         'name' => 'image_scale',
         'data' => array(
-          'width' => 1200,
+          'width' => 1440,
           'height' => '',
           'upscale' => 0,
         ),
@@ -40,15 +40,19 @@ function os2sub_galleri_image_default_styles() {
 
   // Exported image style: gallery-thumb.
   $styles['gallery-thumb'] = array(
-    'label' => 'gallery-thumb',
+    'label' => 'Gallery thumb',
     'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
+      4 => array(
+        'name' => 'manualcrop_crop_and_scale',
         'data' => array(
-          'width' => 137,
-          'height' => 92,
+          'width' => 260,
+          'height' => 155,
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'gallery-thumb',
         ),
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
   );

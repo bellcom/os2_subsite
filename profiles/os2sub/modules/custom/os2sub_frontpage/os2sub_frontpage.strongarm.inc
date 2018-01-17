@@ -13,6 +13,27 @@ function os2sub_frontpage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_velkomst';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_velkomst'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_velkomst';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_velkomst'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_velkomst';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_velkomst'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__velkomst';
   $strongarm->value = array(
     'view_modes' => array(
@@ -37,16 +58,13 @@ function os2sub_frontpage_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'list' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list_advanced' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list_simple' => array(
-        'custom_settings' => FALSE,
-      ),
       'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'os2sub_teaser_mini' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -69,6 +87,28 @@ function os2sub_frontpage_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__velkomst'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fitvids_customselectors';
+  $strongarm->value = '';
+  $export['fitvids_customselectors'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fitvids_selectors';
+  $strongarm->value = '.field-name-field-video
+.field-name-body';
+  $export['fitvids_selectors'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fitvids_simplifymarkup';
+  $strongarm->value = 1;
+  $export['fitvids_simplifymarkup'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -300,7 +340,7 @@ function os2sub_frontpage_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_items_tablet_owlcarousel_settings_default_items';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['owlcarousel_items_tablet_owlcarousel_settings_default_items'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -342,14 +382,14 @@ function os2sub_frontpage_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_items_tablet_small_owlcarousel_settings_forsidenyheder_items';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['owlcarousel_items_tablet_small_owlcarousel_settings_forsidenyheder_items'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_items_tablet_small_owlcarousel_settings_forsidenyheder_width';
-  $strongarm->value = '0';
+  $strongarm->value = '750';
   $export['owlcarousel_items_tablet_small_owlcarousel_settings_forsidenyheder_width'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -707,6 +747,13 @@ function os2sub_frontpage_strongarm() {
   $strongarm->name = 'owlcarousel_transition_style_owlcarousel_settings_forsidenyheder';
   $strongarm->value = '';
   $export['owlcarousel_transition_style_owlcarousel_settings_forsidenyheder'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_frontpage';
+  $strongarm->value = 'forside';
+  $export['site_frontpage'] = $strongarm;
 
   return $export;
 }

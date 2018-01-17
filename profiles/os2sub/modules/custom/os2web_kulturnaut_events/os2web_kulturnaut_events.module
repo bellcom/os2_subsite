@@ -1,51 +1,21 @@
 <?php
-
 /**
  * @file
- * Code for the OS2web Kulturnaut events feature.
+ * Code for the Kulturnaut events feature.
  */
 
-include_once 'os2web_kulturnaut_events.features.inc';
+include_once('os2web_kulturnaut_events.features.inc');
 
 /**
- * Implements hook_cron().
+ * Implements hook_os2web_help().
  */
-function os2web_kulturnaut_events_cron() {
-  /**
-  watchdog('cron', 'Node unpublish task started');
+function os2web_kulturnaut_events_os2web_help($sections) {
 
-  $type = 'os2web_kulturnaut_knactivity';
-  $query = new \EntityFieldQuery();
-  $result = $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', $type)
-      ->propertyCondition('status', NODE_PUBLISHED)
-      ->execute();
+  // Content types.
+  $sections['contenttype'] = t('<p><b>Kulturnaut Events:</b> Kulturnaut events are imported from the website kulturnaut.dk. An kulturnaut event is an event of some kind related to your site. <i><a href="#os2web_kulturnaut_events">See more about the importer.</a></i></p>');
 
-  if (!empty($result['node'])) {
-    $nids = array_keys($result['node']);
-    $nodes = node_load_multiple($nids);
-    $i = 0;
-    $unpublished_nodes = array();
+  // Importers.
+  $sections['import'] = t('<p><b id=="os2web_kulturnaut_events">Kulturnaut Events:</b> Initialize the importer for Kulturnaut events at <a href="@url">the import page.</a></p>', array('@url' => 'import/os2web_kulturnaut_feeds_import'));
 
-    foreach ($nodes as $node) {
-      $node_end_date_str = $node->field_os2web_kulturnaut_date['und'][0]['value2'];
-
-      $node_end_date = DateTime::createFromFormat('Y-m-d h:i:s', $node_end_date_str);
-      $current_date = new DateTime('now');
-
-      if ($current_date > $node_end_date) {
-        $node->status = NODE_NOT_PUBLISHED;
-        node_save($node);
-        $i++;
-        $unpublished_nodes[] = $node->nid;
-        watchdog('cron', 'Node ' . $node->nid . ' unpublished');
-      }
-    }
-    watchdog('cron', 'Nodes unpublished: '. $i . ' ('. implode(',', $unpublished_nodes) . ')');
-  }
-  else{
-    watchdog('cron', 'No publeshed nodes found');
-  }
-  watchdog('cron', 'Node unpublish task finished');
-*/
+  return $sections;
 }

@@ -13,6 +13,13 @@ function os2web_kulturnaut_events_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_os2web_kulturnaut_knactivity';
+  $strongarm->value = 'edit-workflow';
+  $export['additional_settings__active_tab_os2web_kulturnaut_knactivity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__os2web_kulturnaut_knactivity';
   $strongarm->value = array(
     'view_modes' => array(
@@ -49,32 +56,17 @@ function os2web_kulturnaut_events_strongarm() {
       'os2sub_teaser_mini' => array(
         'custom_settings' => TRUE,
       ),
-      'os2sub_spotbox_list' => array(
-        'custom_settings' => TRUE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list' => array(
-        'custom_settings' => TRUE,
-      ),
-      'list_advanced' => array(
-        'custom_settings' => TRUE,
-      ),
-      'list_simple' => array(
-        'custom_settings' => TRUE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '40',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '30',
         ),
       ),
       'display' => array(),
@@ -125,6 +117,13 @@ function os2web_kulturnaut_events_strongarm() {
   $strongarm->name = 'node_submitted_os2web_kulturnaut_knactivity';
   $strongarm->value = 0;
   $export['node_submitted_os2web_kulturnaut_knactivity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'save_continue_os2web_kulturnaut_knactivity';
+  $strongarm->value = 'Save and add fields';
+  $export['save_continue_os2web_kulturnaut_knactivity'] = $strongarm;
 
   return $export;
 }

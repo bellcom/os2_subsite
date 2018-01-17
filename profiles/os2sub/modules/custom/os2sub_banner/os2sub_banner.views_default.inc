@@ -104,7 +104,7 @@ function os2sub_banner_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Billede */
+  /* Field: Indholdselement: Billede */
   $handler->display->display_options['fields']['field_banner_billede']['id'] = 'field_banner_billede';
   $handler->display->display_options['fields']['field_banner_billede']['table'] = 'field_data_field_banner_billede';
   $handler->display->display_options['fields']['field_banner_billede']['field'] = 'field_banner_billede';
@@ -160,7 +160,7 @@ function os2sub_banner_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
-  /* Filter criterion: Content: Billede (field_banner_billede:fid) */
+  /* Filter criterion: Indholdselement: Billede (field_banner_billede:fid) */
   $handler->display->display_options['filters']['field_banner_billede_fid']['id'] = 'field_banner_billede_fid';
   $handler->display->display_options['filters']['field_banner_billede_fid']['table'] = 'field_data_field_banner_billede';
   $handler->display->display_options['filters']['field_banner_billede_fid']['field'] = 'field_banner_billede_fid';
@@ -195,7 +195,7 @@ function os2sub_banner_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Banner */
+  /* Field: Indholdselement: Banner */
   $handler->display->display_options['fields']['field_os2web_base_banner']['id'] = 'field_os2web_base_banner';
   $handler->display->display_options['fields']['field_os2web_base_banner']['table'] = 'field_data_field_os2web_base_banner';
   $handler->display->display_options['fields']['field_os2web_base_banner']['field'] = 'field_os2web_base_banner';

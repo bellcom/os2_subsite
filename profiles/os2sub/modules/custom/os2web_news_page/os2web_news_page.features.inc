@@ -24,65 +24,20 @@ function os2web_news_page_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_image_default_styles().
- */
-function os2web_news_page_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: os2web_base_style_news_big.
-  $styles['os2web_base_style_news_big'] = array(
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 214,
-          'height' => 116,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_big',
-  );
-
-  // Exported image style: os2web_base_style_news_medium.
-  $styles['os2web_base_style_news_medium'] = array(
-    'effects' => array(
-      4 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 180,
-          'height' => 140,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_medium',
-  );
-
-  // Exported image style: os2web_base_style_news_small.
-  $styles['os2web_base_style_news_small'] = array(
-    'effects' => array(
-      3 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 60,
-          'height' => 69,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_small',
-  );
-
-  return $styles;
-}
-
-/**
  * Implements hook_menu_position_default_menu_positions().
  */
 function os2web_news_page_menu_position_default_menu_positions() {
   $items = array(
-    'nyheder' => FALSE,
+    'nyheder' => array(
+      'admin_title' => 'Nyheder',
+      'enabled' => 1,
+      'conditions' => 'a:1:{s:12:"content_type";a:1:{s:12:"content_type";a:1:{s:16:"os2web_base_news";s:16:"os2web_base_news";}}}',
+      'menu_name' => 'main-menu',
+      'plid' => 509,
+      'mlid' => 734,
+      'weight' => 0,
+      'machine_name' => 'nyheder',
+    ),
   );
   return $items;
 }

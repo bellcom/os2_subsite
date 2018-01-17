@@ -43,13 +43,10 @@ function os2web_contact_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
-      'list' => array(
+      'os2sub_teaser_mini' => array(
         'custom_settings' => FALSE,
       ),
-      'list_advanced' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list_simple' => array(
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
     ),

@@ -23,129 +23,30 @@ function os2web_base_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function os2web_base_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function os2web_base_image_default_styles() {
   $styles = array();
 
-  // Exported image style: cropped_400_x_220.
-  $styles['cropped_400_x_220'] = array(
-    'label' => 'Cropped - 400x220',
+  // Exported image style: footer_branding.
+  $styles['footer_branding'] = array(
+    'label' => 'Footer branding',
     'effects' => array(
       2 => array(
-        'name' => 'epsacrop_crop',
+        'name' => 'image_scale',
         'data' => array(
-          'width' => 400,
-          'height' => 220,
-          'anchor' => 'center-center',
-          'disable_scale' => 0,
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 0,
-          ),
-        ),
-        'weight' => -10,
-      ),
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 400,
-          'height' => 220,
-        ),
-        'weight' => -9,
-      ),
-    ),
-  );
-
-  // Exported image style: cropped_400_x_320.
-  $styles['cropped_400_x_320'] = array(
-    'label' => 'Cropped - 400x320',
-    'effects' => array(
-      1 => array(
-        'name' => 'epsacrop_crop',
-        'data' => array(
-          'width' => 400,
-          'height' => 320,
-          'anchor' => 'center-center',
-          'disable_scale' => 0,
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
-        ),
-        'weight' => -10,
-      ),
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 400,
-          'height' => 320,
-        ),
-        'weight' => -9,
-      ),
-    ),
-  );
-
-  // Exported image style: os2sub_220x130.
-  $styles['os2sub_220x130'] = array(
-    'label' => 'Forside nyhed 4 spalter',
-    'effects' => array(
-      3 => array(
-        'name' => 'epsacrop_crop',
-        'data' => array(
-          'width' => 220,
-          'height' => 130,
-          'anchor' => 'center-center',
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
+          'width' => '',
+          'height' => 100,
+          'upscale' => 0,
         ),
         'weight' => 1,
-      ),
-      4 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 220,
-          'height' => 130,
-        ),
-        'weight' => 2,
-      ),
-    ),
-  );
-
-  // Exported image style: os2sub_300x175.
-  $styles['os2sub_300x175'] = array(
-    'label' => 'Forside nyhed 2 og 3 spalter',
-    'effects' => array(
-      1 => array(
-        'name' => 'epsacrop_crop',
-        'data' => array(
-          'width' => 300,
-          'height' => 175,
-          'anchor' => 'center-center',
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
-        ),
-        'weight' => 1,
-      ),
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 300,
-          'height' => 175,
-        ),
-        'weight' => 2,
       ),
     ),
   );
@@ -154,23 +55,19 @@ function os2web_base_image_default_styles() {
   $styles['os2sub_normal_imagesize'] = array(
     'label' => 'Normal billede',
     'effects' => array(
-      6 => array(
-        'name' => 'epsacrop_crop',
+      4 => array(
+        'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 848,
           'height' => 410,
-          'anchor' => 'center-center',
-          'disable_scale' => 0,
-          'jcrop_settings' => array(
-            'aspect_ratio' => '',
-            'bgcolor' => 'black',
-            'bgopacity' => 0.6,
-            'fallback' => 1,
-          ),
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 1,
+          'style_name' => 'os2sub_normal_imagesize',
         ),
-        'weight' => 1,
+        'weight' => 0,
       ),
-      7 => array(
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 848,
@@ -185,14 +82,15 @@ function os2web_base_image_default_styles() {
   $styles['os2sub_small_imagesize'] = array(
     'label' => 'Lille billede',
     'effects' => array(
-      3 => array(
-        'name' => 'epsacrop_crop_reuse',
+      13 => array(
+        'name' => 'manualcrop_reuse',
         'data' => array(
-          'jcrop_reuse' => 'os2sub_normal_imagesize',
+          'reuse_crop_style' => 'os2sub_normal_imagesize',
+          'apply_all_effects' => 1,
         ),
-        'weight' => 1,
+        'weight' => 0,
       ),
-      4 => array(
+      12 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 285,
@@ -201,101 +99,6 @@ function os2web_base_image_default_styles() {
         'weight' => 2,
       ),
     ),
-  );
-
-  // Exported image style: os2web_base_style_content.
-  $styles['os2web_base_style_content'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 460,
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => 1,
-      ),
-      2 => array(
-        'name' => 'image_crop',
-        'data' => array(
-          'width' => 460,
-          'height' => 260,
-          'anchor' => 'center-center',
-        ),
-        'weight' => 2,
-      ),
-    ),
-    'label' => 'os2web_base_style_content',
-  );
-
-  // Exported image style: os2web_base_style_image.
-  $styles['os2web_base_style_image'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 470,
-          'height' => 230,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_image',
-  );
-
-  // Exported image style: os2web_base_style_medium.
-  $styles['os2web_base_style_medium'] = array(
-    'effects' => array(
-      5 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 460,
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => 1,
-      ),
-      6 => array(
-        'name' => 'image_crop',
-        'data' => array(
-          'width' => 460,
-          'height' => 260,
-          'anchor' => 'center-center',
-        ),
-        'weight' => 2,
-      ),
-    ),
-    'label' => 'os2web_base_style_medium',
-  );
-
-  // Exported image style: os2web_base_style_rotating.
-  $styles['os2web_base_style_rotating'] = array(
-    'effects' => array(
-      1 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 460,
-          'height' => 260,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_rotating',
-  );
-
-  // Exported image style: os2web_base_style_rotating_small.
-  $styles['os2web_base_style_rotating_small'] = array(
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 161,
-          'height' => 65,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_rotating_small',
   );
 
   return $styles;
@@ -338,14 +141,6 @@ function os2web_base_node_info() {
       'title_label' => t('Kaldenavn'),
       'help' => '',
     ),
-    'webform' => array(
-      'name' => t('Webform'),
-      'base' => 'node_content',
-      'description' => t('Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
   );
   drupal_alter('node_info', $items);
   return $items;
@@ -356,14 +151,24 @@ function os2web_base_node_info() {
  */
 function os2web_base_paragraphs_info() {
   $items = array(
-    'os2sub_accordion' => array(
-      'name' => 'Harmonika',
-      'bundle' => 'os2sub_accordion',
+    'afsnit_billede' => array(
+      'name' => 'Afsnit',
+      'bundle' => 'afsnit_billede',
       'locked' => '1',
     ),
-    'os2sub_paragraph_text' => array(
-      'name' => 'Tekstafsnit',
-      'bundle' => 'os2sub_paragraph_text',
+    'afsnit_m_billede' => array(
+      'name' => 'Afsnit m billede',
+      'bundle' => 'afsnit_m_billede',
+      'locked' => '1',
+    ),
+    'galleri' => array(
+      'name' => 'Galleri',
+      'bundle' => 'galleri',
+      'locked' => '1',
+    ),
+    'harmonika' => array(
+      'name' => 'Harmonika',
+      'bundle' => 'harmonika',
       'locked' => '1',
     ),
   );

@@ -37,18 +37,6 @@ function os2sub_banner_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'list' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list_advanced' => array(
-        'custom_settings' => FALSE,
-      ),
-      'list_simple' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -65,18 +53,6 @@ function os2sub_banner_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '0',
-            'visible' => FALSE,
-          ),
-          'list' => array(
-            'weight' => '0',
-            'visible' => FALSE,
-          ),
-          'list_advanced' => array(
-            'weight' => '0',
-            'visible' => FALSE,
-          ),
-          'list_simple' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
