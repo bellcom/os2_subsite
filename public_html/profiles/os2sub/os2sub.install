@@ -65,7 +65,7 @@ function os2sub_install() {
 
   // Set admin theme on node/edit and node/add
   variable_set('node_admin_theme', '1');
-  module_disable(array('update'));
+
   // Set default TZ.
   variable_set('date_default_timezone', "Europe/Copenhagen");
   variable_set('date_first_day', "1");
@@ -91,4 +91,6 @@ function os2sub_install() {
     ->fields(array("enabled" => 0))
     ->condition("language", "en")
     ->execute();
+
+  module_disable(array('update'));
 }
