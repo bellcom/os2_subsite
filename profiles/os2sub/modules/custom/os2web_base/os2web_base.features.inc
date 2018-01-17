@@ -268,51 +268,6 @@ function os2web_base_image_default_styles() {
     'label' => 'os2web_base_style_medium',
   );
 
-  // Exported image style: os2web_base_style_news_big.
-  $styles['os2web_base_style_news_big'] = array(
-    'effects' => array(
-      2 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 214,
-          'height' => 116,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_big',
-  );
-
-  // Exported image style: os2web_base_style_news_medium.
-  $styles['os2web_base_style_news_medium'] = array(
-    'effects' => array(
-      4 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 180,
-          'height' => 140,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_medium',
-  );
-
-  // Exported image style: os2web_base_style_news_small.
-  $styles['os2web_base_style_news_small'] = array(
-    'effects' => array(
-      3 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 60,
-          'height' => 69,
-        ),
-        'weight' => 1,
-      ),
-    ),
-    'label' => 'os2web_base_style_news_small',
-  );
-
   // Exported image style: os2web_base_style_rotating.
   $styles['os2web_base_style_rotating'] = array(
     'effects' => array(
