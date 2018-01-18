@@ -6,7 +6,9 @@
 
         <!-- Begin - top -->
         <div class="col-xs-12">
-          <?php print $content['top']; ?>
+          <div class="panel-pane-region panel-pane-region--top">
+            <?php print $content['top']; ?>
+          </div>
         </div>
         <!-- End - top -->
 
@@ -16,13 +18,17 @@
 
         <!-- Begin - sidebar -->
         <div class="col-sm-5 col-sm-push-7 hidden-print">
-          <?php print $content['sidebar']; ?>
+          <div class="panel-pane-region panel-pane-region--sidebar">
+            <?php print $content['sidebar']; ?>
+          </div>
         </div>
         <!-- End - sidebar -->
 
         <!-- Begin - content -->
         <div class="col-sm-7 col-sm-pull-5">
-          <?php print $content['content']; ?>
+          <div class="panel-pane-region panel-pane-region--content">
+            <?php print $content['content']; ?>
+          </div>
         </div>
         <!-- End - content -->
 
@@ -30,9 +36,12 @@
 
         <!-- Begin - content -->
         <div class="col-xs-12">
-          <?php print $content['content']; ?>
+          <div class="panel-pane-region panel-pane-region--content">
+            <?php print $content['content']; ?>
+          </div>
         </div>
         <!-- End - content -->
+
 
       <?php endif ?>
 
@@ -40,7 +49,9 @@
 
         <!-- Begin - bottom -->
         <div class="col-xs-12">
-          <?php print $content['bottom']; ?>
+          <div class="panel-pane-region panel-pane-region--bottom">
+            <?php print $content['bottom']; ?>
+          </div>
         </div>
         <!-- End - bottom -->
 
