@@ -1,48 +1,51 @@
-<!-- content-with-right-sidebar-7-5.tpl.php -->
-<div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+  <div class="container">
+    <div class="row">
 
-    <?php if ($content['top']): ?>
+      <?php if ($content['top']): ?>
 
         <!-- Begin - top -->
         <div class="col-xs-12">
-            <?php print $content['top']; ?>
+          <?php print $content['top']; ?>
         </div>
         <!-- End - top -->
 
-    <?php endif; ?>
+      <?php endif; ?>
 
-    <?php if ($content['sidebar']): ?>
+      <?php if ($content['sidebar']): ?>
 
         <!-- Begin - sidebar -->
         <div class="col-sm-5 col-sm-push-7 hidden-print">
-            <?php print $content['sidebar']; ?>
+          <?php print $content['sidebar']; ?>
         </div>
         <!-- End - sidebar -->
 
         <!-- Begin - content -->
         <div class="col-sm-7 col-sm-pull-5">
-            <?php print $content['content']; ?>
+          <?php print $content['content']; ?>
         </div>
         <!-- End - content -->
 
-    <?php else: ?>
+      <?php else: ?>
 
         <!-- Begin - content -->
         <div class="col-xs-12">
-            <?php print $content['content']; ?>
+          <?php print $content['content']; ?>
         </div>
         <!-- End - content -->
 
-    <?php endif ?>
+      <?php endif ?>
 
-    <?php if ($content['bottom']): ?>
+      <?php if ($content['bottom']): ?>
 
         <!-- Begin - bottom -->
         <div class="col-xs-12">
-            <?php print $content['bottom']; ?>
+          <?php print $content['bottom']; ?>
         </div>
         <!-- End - bottom -->
 
-    <?php endif; ?>
+      <?php endif; ?>
 
+    </div>
+  </div>
 </div>
