@@ -21,7 +21,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'clean_url';
-  $strongarm->value = TRUE;
+  $strongarm->value = 0;
   $export['clean_url'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -280,7 +280,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
-  $strongarm->value = 'Europe/Berlin';
+  $strongarm->value = 'Europe/Copenhagen';
   $export['date_default_timezone'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -782,14 +782,14 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_admin_version';
-  $strongarm->value = '1.7';
+  $strongarm->value = '1.8';
   $export['jquery_update_jquery_admin_version'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_cdn';
-  $strongarm->value = 'google';
+  $strongarm->value = 'none';
   $export['jquery_update_jquery_cdn'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -824,7 +824,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_version';
-  $strongarm->value = '1.10';
+  $strongarm->value = '1.9';
   $export['jquery_update_jquery_version'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1337,7 +1337,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_mail';
-  $strongarm->value = 'balkom@balk.dk';
+  $strongarm->value = 'fs@bellcom.dk';
   $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1360,13 +1360,6 @@ function os2web_base_strongarm() {
   $strongarm->name = 'smtp_on';
   $strongarm->value = 1;
   $export['smtp_on'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'smtp_port';
-  $strongarm->value = '587';
-  $export['smtp_port'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

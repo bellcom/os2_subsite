@@ -5,6 +5,7 @@ package = OS2Web - Backend
 version = 7.x-1.1
 project = os2web_base
 dependencies[] = backstretch
+dependencies[] = bellcom_panel_layouts
 dependencies[] = contact
 dependencies[] = content_taxonomy
 dependencies[] = ctools
