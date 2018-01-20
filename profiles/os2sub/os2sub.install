@@ -96,7 +96,7 @@ function os2sub_install() {
   variable_set('jquery_update_jquery_migrate_plugin_migrate_trace', 1);
   variable_set('jquery_update_jquery_migrate_plugin_migrate_warnings', 1);
   variable_set('jquery_update_jquery_version', '1.9');
-
+  variable_set('clean_url','1');
   // Set default language.
   $langs = language_list();
   variable_set('language_default', $langs['da']);
