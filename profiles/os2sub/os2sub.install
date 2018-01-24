@@ -4,6 +4,11 @@
  * This file install the os2web profile.
  */
 
+/**
+  * To have project specific install tasks, some settings, modules and themes are possible to configure for each project using
+  * a file in a project specific folder from a different Git repo.
+  */
+
 if (file_exists(DRUPAL_ROOT . '/sites/all/profiles/os2subinstall/os2subinstall.install')) {
   require_once DRUPAL_ROOT . '/sites/all/profiles/os2subinstall/os2subinstall.install';
 }
