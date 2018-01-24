@@ -56,18 +56,9 @@ dependencies[] = photoswipe
 dependencies[] = respondjs
 dependencies[] = token
 dependencies[] = user
-dependencies[] = os2web_base
-dependencies[] = os2web_spotbox
-dependencies[] = os2sub_banner
-dependencies[] = os2web_aaa_index
+dependencies[] = publishcontent
 dependencies[] = l10n_update
 dependencies[] = globalredirect
-dependencies[] = os2sub_uses_and_tools
-dependencies[] = subsites_urls
-dependencies[] = os2sub_frontpage
-dependencies[] = os2web_contact
-dependencies[] = publishcontent
-
 dependencies[] = pps
 
 version = 2.0
