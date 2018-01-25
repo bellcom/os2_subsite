@@ -1,48 +1,77 @@
-<!-- content-with-left-sidebar-5-7.tpl.php -->
-<div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div <?php if (!empty($css_id)) {
+  print "id=\"$css_id\"";
+} ?>>
 
-    <?php if ($content['top']): ?>
+  <?php if ($content['top']): ?>
+    <!-- Begin - top -->
+    <div class="panels-pane-region panels-pane-region--top">
+      <?php print $content['top']; ?>
+    </div>
+    <!-- End - top -->
+  <?php endif ?>
 
-        <!-- Begin - top -->
-        <div class="col-xs-12">
-            <?php print $content['top']; ?>
+  <?php if ($content['top-container']): ?>
+    <!-- Begin - top container -->
+    <div class="container">
+      <div class="panels-pane-region panels-pane-region--top-container">
+        <?php print $content['top-container']; ?>
+      </div>
+    </div>
+    <!-- End - top container -->
+  <?php endif ?>
+
+  <div class="container">
+    <div class="row">
+
+      <?php if ($content['sidebar']): ?>
+
+        <!-- Begin - content -->
+        <div class="col-sm-7 col-sm-push-5 hidden-print">
+          <div class="panel-pane-region panel-pane-region--content">
+            <?php print $content['content']; ?>
+          </div>
         </div>
-        <!-- End - top -->
-
-    <?php endif; ?>
-
-    <?php if ($content['sidebar']): ?>
+        <!-- End - content -->
 
         <!-- Begin - sidebar -->
-        <div class="col-sm-5 hidden-print">
+        <div class="col-sm-5 col-sm-pull-7">
+          <div class="panel-pane-region panel-pane-region--sidebar">
             <?php print $content['sidebar']; ?>
+          </div>
         </div>
         <!-- End - sidebar -->
 
-        <!-- Begin - content -->
-        <div class="col-sm-7">
-            <?php print $content['content']; ?>
-        </div>
-        <!-- End - content -->
-
-    <?php else: ?>
+      <?php else: ?>
 
         <!-- Begin - content -->
         <div class="col-xs-12">
+          <div class="panel-pane-region panel-pane-region--content">
             <?php print $content['content']; ?>
+          </div>
         </div>
         <!-- End - content -->
 
-    <?php endif ?>
+      <?php endif ?>
 
-    <?php if ($content['bottom']): ?>
+    </div>
+  </div>
 
-        <!-- Begin - bottom -->
-        <div class="col-xs-12">
-            <?php print $content['bottom']; ?>
-        </div>
-        <!-- End - bottom -->
+  <?php if ($content['bottom']): ?>
+    <!-- Begin - bottom -->
+    <div class="panels-pane-region panels-pane-region--bottom">
+      <?php print $content['bottom']; ?>
+    </div>
+    <!-- End - bottom -->
+  <?php endif ?>
 
-    <?php endif; ?>
+  <?php if ($content['bottom-container']): ?>
+    <!-- Begin - bottom container -->
+    <div class="container">
+      <div class="panels-pane-region panels-pane-region--bottom-container">
+        <?php print $content['bottom-container']; ?>
+      </div>
+    </div>
+    <!-- End - bottom container -->
+  <?php endif ?>
 
 </div>

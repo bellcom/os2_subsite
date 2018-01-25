@@ -4,14 +4,16 @@
  */
 $plugin = array(
   'title' => t('Content with left sidebar (7/5)'),
-  'category' => t('OS2'),
+  'category' => t('Bellcom'),
   'icon' => 'content-with-left-sidebar-5-7.png',
   'theme' => 'content-with-left-sidebar-5-7',
   'css' => 'content-with-left-sidebar-5-7.css',
   'regions' => array(
-    'top' => t('Top'),
+    'top' => t('Top - full width'),
+    'top-container' => t('Top - with container'),
     'sidebar' => t('Sidebar'),
     'content' => t('Content'),
-    'bottom' => t('Bottom'),
+    'bottom-container' => t('Bottom - with container'),
+    'bottom' => t('Bottom - full width'),
   ),
 );

@@ -1,18 +1,27 @@
-<div <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div <?php if (!empty($css_id)) {
+  print "id=\"$css_id\"";
+} ?>>
+
+  <?php if ($content['top']): ?>
+    <!-- Begin - top -->
+    <div class="panels-pane-region panels-pane-region--top">
+      <?php print $content['top']; ?>
+    </div>
+    <!-- End - top -->
+  <?php endif ?>
+
+  <?php if ($content['top-container']): ?>
+    <!-- Begin - top container -->
+    <div class="container">
+      <div class="panels-pane-region panels-pane-region--top-container">
+        <?php print $content['top-container']; ?>
+      </div>
+    </div>
+    <!-- End - top container -->
+  <?php endif ?>
+
   <div class="container">
     <div class="row">
-
-      <?php if ($content['top']): ?>
-
-        <!-- Begin - top -->
-        <div class="col-xs-12">
-          <div class="panel-pane-region panel-pane-region--top">
-            <?php print $content['top']; ?>
-          </div>
-        </div>
-        <!-- End - top -->
-
-      <?php endif; ?>
 
       <?php if ($content['sidebar']): ?>
 
@@ -42,21 +51,27 @@
         </div>
         <!-- End - content -->
 
-
       <?php endif ?>
-
-      <?php if ($content['bottom']): ?>
-
-        <!-- Begin - bottom -->
-        <div class="col-xs-12">
-          <div class="panel-pane-region panel-pane-region--bottom">
-            <?php print $content['bottom']; ?>
-          </div>
-        </div>
-        <!-- End - bottom -->
-
-      <?php endif; ?>
 
     </div>
   </div>
+
+  <?php if ($content['bottom']): ?>
+    <!-- Begin - bottom -->
+    <div class="panels-pane-region panels-pane-region--bottom">
+      <?php print $content['bottom']; ?>
+    </div>
+    <!-- End - bottom -->
+  <?php endif ?>
+
+  <?php if ($content['bottom-container']): ?>
+    <!-- Begin - bottom container -->
+    <div class="container">
+      <div class="panels-pane-region panels-pane-region--bottom-container">
+        <?php print $content['bottom-container']; ?>
+      </div>
+    </div>
+    <!-- End - bottom container -->
+  <?php endif ?>
+
 </div>
