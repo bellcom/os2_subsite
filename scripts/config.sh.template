@@ -9,6 +9,9 @@ SITEADMIN=
 BASEDIR="/var/www/$SUBSITENAME"
 SERVERIP=""
 PROFILE="os2sub"
+#This is the main email for site
+EMAILSITE="drupal@bellcom.dk"
+#This is the admin email
 EMAIL="drupal@bellcom.dk"
 SCRIPTDIR="$(dirname "$0")"
 #ADMINPASS=
