@@ -25,14 +25,6 @@
 
       <?php if ($content['sidebar']): ?>
 
-        <!-- Begin - content -->
-        <div class="col-sm-7 hidden-print">
-          <div class="panel-pane-region panel-pane-region--content">
-            <?php print $content['content']; ?>
-          </div>
-        </div>
-        <!-- End - content -->
-
         <!-- Begin - sidebar -->
         <div class="col-sm-5">
           <div class="panel-pane-region panel-pane-region--sidebar">
@@ -40,6 +32,14 @@
           </div>
         </div>
         <!-- End - sidebar -->
+
+        <!-- Begin - content -->
+        <div class="col-sm-7 hidden-print">
+          <div class="panel-pane-region panel-pane-region--content">
+            <?php print $content['content']; ?>
+          </div>
+        </div>
+        <!-- End - content -->
 
       <?php else: ?>
 
