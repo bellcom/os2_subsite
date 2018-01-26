@@ -60,5 +60,6 @@ dependencies[] = publishcontent
 dependencies[] = l10n_update
 dependencies[] = globalredirect
 dependencies[] = pps
+dependencies[] = bellcom_view_modes
 
 version = 2.0

@@ -1,0 +1,73 @@
+<?php
+
+/*
+* Implements hook_entity_info_alter().
+*/
+function bellcom_view_modes_entity_info_alter(&$entity_info) {
+
+  // List - simple
+  $entity_info['node']['view modes']['list_simple'] = [
+    'label' => t('List - simple'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['taxonomy_term']['view modes']['list_simple'] = [
+    'label' => t('List - simple'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['user']['view modes']['list_simple'] = [
+    'label' => t('List - simple'),
+    'custom settings' => TRUE,
+  ];
+
+  // List - default
+  $entity_info['node']['view modes']['list'] = [
+    'label' => t('List - default'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['taxonomy_term']['view modes']['list'] = [
+    'label' => t('List - default'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['user']['view modes']['list'] = [
+    'label' => t('List - default'),
+    'custom settings' => TRUE,
+  ];
+
+  // List - advanced
+  $entity_info['node']['view modes']['list_advanced'] = [
+    'label' => t('List - advanced'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['taxonomy_term']['view modes']['list_advanced'] = [
+    'label' => t('List - advanced'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['user']['view modes']['list_advanced'] = [
+    'label' => t('List - advanced'),
+    'custom settings' => TRUE,
+  ];
+
+  // Embedded
+  $entity_info['node']['view modes']['embedded'] = [
+    'label' => t('Embedded'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['taxonomy_term']['view modes']['embedded'] = [
+    'label' => t('Embedded'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['user']['view modes']['embedded'] = [
+    'label' => t('Embedded'),
+    'custom settings' => TRUE,
+  ];
+
+  // Teaser
+  $entity_info['taxonomy_term']['view modes']['teaser'] = [
+    'label' => t('Teaser'),
+    'custom settings' => TRUE,
+  ];
+  $entity_info['user']['view modes']['teaser'] = [
+    'label' => t('Teaser'),
+    'custom settings' => TRUE,
+  ];
+}

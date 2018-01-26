@@ -1,0 +1,4 @@
+name = 'Bellcom view modes'
+description = 'Enables teaser, list simple, list (default), list advanced and embedded view modes for node-, user- and taxonomy term entities.'
+core = 7.x
+package = 'Bellcom'
