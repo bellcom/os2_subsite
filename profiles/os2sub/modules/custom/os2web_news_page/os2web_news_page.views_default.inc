@@ -229,8 +229,8 @@ function os2web_news_page_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'clearfix';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'list';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indholdselement: Primære billede */
@@ -294,42 +294,6 @@ function os2web_news_page_views_default_views() {
     'trim_length' => '200',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['id'] = 'field_os2web_news_page_type_tid';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['table'] = 'field_data_field_os2web_news_page_type';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['field'] = 'field_os2web_news_page_type_tid';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['ui_name'] = 'Indhold: Nyhedstype (all for alle)';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['validate_options']['vocabularies'] = array(
-    'os2web_news_page_newstypes' => 'os2web_news_page_newstypes',
-  );
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid']['validate']['fail'] = 'empty';
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['id'] = 'field_os2web_news_page_type_tid_1';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['table'] = 'field_data_field_os2web_news_page_type';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['field'] = 'field_os2web_news_page_type_tid';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['ui_name'] = 'Indhold: Nyhedstype (exclude - none for ingen)';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['exception']['value'] = 'none';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['validate_options']['vocabularies'] = array(
-    'os2web_news_page_newstypes' => 'os2web_news_page_newstypes',
-  );
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['field_os2web_news_page_type_tid_1']['validate']['fail'] = 'empty';
   /* Contextual filter: Indhold: Portalkategori (med dybde) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
@@ -385,6 +349,41 @@ function os2web_news_page_views_default_views() {
       'label' => 'Indhold: Portalkategori (med dybde)',
     ),
   );
+
+  /* Display: Nyheder simple */
+  $handler = $view->new_display('panel_pane', 'Nyheder simple', 'panel_pane_3');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_type'] = 'div';
+  $handler->display->display_options['fields']['created']['element_class'] = 'dato';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'os2web_base_date_only';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'os2web_base_date_only';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $translatables['os2web_news_lists'] = array(
     t('Master'),
     t('mere'),
@@ -400,6 +399,8 @@ function os2web_news_page_views_default_views() {
     t('Os2web'),
     t('Content Pane'),
     t('Oversigt over nyheder filter v. Kategori og type'),
+    t('Nyheder simple'),
+    t('View panes'),
   );
   $export['os2web_news_lists'] = $view;
 
