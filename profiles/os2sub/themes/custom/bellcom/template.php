@@ -67,7 +67,6 @@ function bellcom_preprocess_node(&$variables) {
   $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode);
   $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode . '--' . $content_type);
 
-  $variables['classes_array'][] = drupal_html_class('view-mode-' . $view_mode);
   $variables['classes_array'][] = drupal_html_class('node--' . $content_type . '--' . $view_mode);
 
   // Add node--view_mode.tpl.php suggestions.
@@ -133,14 +132,31 @@ function bellcom_preprocess_taxonomy_term(&$variables) {
   $vocabulary_machine_name = $variables['vocabulary_machine_name'];
   $view_mode = $variables['view_mode'];
 
-  // Add node--view_mode.tpl.php suggestions.
+  // Add taxonomy-term--view_mode.tpl.php suggestions.
   $variables['theme_hook_suggestions'][] = 'taxonomy-term__' . $view_mode;
 
   // Entity variables
   $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode);
   $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode . '--' . $vocabulary_machine_name);
 
-  $variables['classes_array'][] = 'view-mode-' . $view_mode;
+  $variables['classes_array'][] = drupal_html_class('taxonomy-term--' . $vocabulary_machine_name . '--' . $view_mode);
+}
+
+/*
+ * Implements template_preprocess_paragraphs_items().
+ */
+function bellcom_preprocess_paragraphs_items(&$variables, $hook) {
+  $field_name = $variables['element']['#field_name'];
+  $view_mode = $variables['element']['#view_mode'];
+
+  // Add paragraphs-items--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'paragraphs_items__' . $view_mode;
+
+  // Entity variables
+  $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode);
+  $variables['classes_array'][] = drupal_html_class('entity-' . $view_mode . '--' . $field_name);
+
+  $variables['classes_array'][] = drupal_html_class('paragraphs-items--' . $field_name . '--' . $view_mode);
 }
 
 /*
