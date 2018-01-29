@@ -1323,7 +1323,7 @@ function os2web_base_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_fromname';
-  $strongarm->value = 'info@balk.dk';
+  $strongarm->value = 'ballerup-dk@balk.dk';
   $export['smtp_fromname'] = $strongarm;
 
   $strongarm = new stdClass();
