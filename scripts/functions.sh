@@ -237,7 +237,8 @@ create_vhost() {
 install_drupal() {
   debug "Installing drupal ($SITENAME)"
   # Do a drush site install
-  drush -y -r $MULTISITE site-install $PROFILE --locale=da --db-url="mysql://$DBUSER:$DBPASS@localhost/$DBNAME" --sites-subdir="$SITENAME" --account-mail="$EMAIL" --site-mail="$EMAIL" --site-name="$SITENAME" --account-pass="$ADMINPASS"
+  drush -y -r $MULTISITE site-install $PROFILE --locale=da --db-url="mysql://$DBUSER:$DBPASS@localhost/$DBNAME" --sites-subdir="$SITENAME" --account-mail="$EMAIL" --site-mail="$EMAILSITE" --site-name="$SITENAME" --account-pass="$ADMINPASS"
+  debug "drush install complete"
 
   # Set tmp
   drush -y -r "$MULTISITE" --uri="$SITENAME" vset file_temporary_path "$TMPDIR"
@@ -253,6 +254,7 @@ install_drupal() {
   #drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update-refresh
   #drush -q -y -r "$MULTISITE" --uri="$SITENAME" l10n-update
   drush -y -r "$MULTISITE" --uri="$SITENAME" dis update
+  debug "drupal installation complete"
 }
 
 set_permissions() {
@@ -282,6 +284,7 @@ mail_status() {
 }
 
 add_subsiteadmin() {
+  echo "starting add_subsiteadmin"
   debug "Create subsiteadmin user with email ($USEREMAIL)"
   # Create user with email specified in subsitecreator.
   drush -q -y -r "$MULTISITE" --uri="$SITENAME" user-create subsiteadmin --mail="$USEREMAIL"
