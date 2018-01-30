@@ -1,4 +1,5 @@
-<div class="row balkfp" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+
+<div class="row" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <?php if ($content['top']): ?>
     <div class="col-md-12">
       <?php print $content['top']; ?>
@@ -14,7 +15,7 @@
       <div class="col-sm-8">
         <?php print $content['sidebar-left']; ?>
       </div>
-    <?php endif; ?>    	    
+    <?php endif; ?>
     <div class="col-sm-4">
       <?php print $content['sidebar-right']; ?>
     </div>
