@@ -36,7 +36,7 @@ function os2sub_install() {
   $full_html_format = array(
     'format' => 'full_html',
     'name' => 'HTML',
-    'weight' => 1,
+    'weight' => -10,
     'filters' => array(
       // URL filter.
       'filter_url' => array(
