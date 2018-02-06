@@ -32,11 +32,16 @@ function os2sub_install_tasks($install_state) {
 function os2sub_install() {
   include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
 
+  // Themes
+  theme_enable(['adminimal']);
+  variable_set('admin_theme', 'adminimal');
+  theme_disable(['rubik', 'seven']);
+
   // Add text formats.
   $full_html_format = array(
     'format' => 'full_html',
-    'name' => 'HTML',
-    'weight' => -10,
+    'name' => 'Full HTML',
+    'weight' => 1,
     'filters' => array(
       // URL filter.
       'filter_url' => array(
@@ -79,7 +84,6 @@ function os2sub_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-
   // Set admin theme on node/edit and node/add
   variable_set('node_admin_theme', '1');
 
@@ -88,6 +92,7 @@ function os2sub_install() {
   variable_set('date_first_day', "1");
   variable_set('configurable_timezones', "0");
   variable_set('site_default_country', "DK");
+
   variable_set('clean_url','1');
 
   // Set default language.

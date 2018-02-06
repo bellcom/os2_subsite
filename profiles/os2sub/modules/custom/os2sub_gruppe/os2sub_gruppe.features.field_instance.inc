@@ -53,19 +53,6 @@ function os2sub_gruppe_field_default_field_instances() {
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'email' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'plain_text' => array(
-              'weight' => -8,
-            ),
-          ),
-        ),
       ),
       'display_summary' => 1,
       'linkit' => array(
