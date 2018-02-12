@@ -22,13 +22,3 @@ function os2web_news_page_ctools_plugin_api($module = NULL, $api = NULL) {
 function os2web_news_page_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
-
-/**
- * Implements hook_menu_position_default_menu_positions().
- */
-function os2web_news_page_menu_position_default_menu_positions() {
-  $items = array(
-    'nyheder' => FALSE,
-  );
-  return $items;
-}
