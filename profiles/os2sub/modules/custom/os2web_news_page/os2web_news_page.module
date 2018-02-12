@@ -51,31 +51,6 @@ function os2web_news_page_form_os2web_base_news_node_form_alter(&$form, $form_st
  * Implements hook_permission().
  */
 function os2web_news_page_permission() {
-  $vocabulary = taxonomy_vocabulary_machine_name_load('os2web_news_page_newstypes');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
-
-  // A news all types administration permission.
-  $permissions['administer all news type'] = array('title' => t('Administer alle nyhedstyper'));
-
-  // Foreach news type term, there is a permission.
-  foreach ($terms as $tid => $term) {
-    $permissions['administer news type-' . $term->tid] = array(
-      'title' => t('Administer ') . $term->name . t(' nyhedstype'),
-    );
-  }
-  $vocabulary = taxonomy_vocabulary_machine_name_load('os2web_base_tax_promoteto');
-  $terms = taxonomy_get_tree($vocabulary->vid, 0, 1);
-
-  // A admin permission to promote news to all the place.
-  $permissions['promote to all the place'] = array('title' => t('Forfrem til alle sted'));
-
-  // Foreach promoting place, there is a permission.
-  foreach ($terms as $tid => $term) {
-    $permissions['promote to-' . $term->tid] = array(
-      'title' => t('Forfrem til ') . $term->name,
-    );
-  }
-  return $permissions;
 }
 
 function os2web_news_page_menu() {
