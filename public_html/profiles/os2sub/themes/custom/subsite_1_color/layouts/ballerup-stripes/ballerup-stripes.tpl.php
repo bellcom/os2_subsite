@@ -4,7 +4,7 @@
 		  <?php print $content['top']; ?>
 		</div>
 	<?php endif ?>
-  <div class="content-area <?php if ($content['sidebar-right']): ?>col-sm-8<?php else: ?>col-sm-12<?php endif ?>">
+  <div class="content-area <?php if ($content['sidebar-right']): ?>col-sm-8<?php else: ?>col-sm-12 wide<?php endif ?>">
     <?php print $content['content']; ?>
   </div>
   <?php if ($content['sidebar-right']): ?>
