@@ -20,6 +20,13 @@ function os2web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'clean_url';
+  $strongarm->value = TRUE;
+  $export['clean_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_media';
   $strongarm->value = 0;
   $export['comment_anonymous_media'] = $strongarm;
@@ -760,6 +767,13 @@ function os2web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'file_temporary_path';
+  $strongarm->value = '../tmp/';
+  $export['file_temporary_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_compression_type';
   $strongarm->value = 'min';
   $export['jquery_update_compression_type'] = $strongarm;
@@ -1315,9 +1329,156 @@ function os2web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_os2web_base_contentpage';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_os2web_base_news';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_os2web_base_contentpage';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_enable_os2web_base_news';
+  $strongarm->value = 1;
+  $export['scheduler_publish_enable_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_os2web_base_contentpage';
+  $strongarm->value = 'error';
+  $export['scheduler_publish_past_date_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_os2web_base_news';
+  $strongarm->value = 'error';
+  $export['scheduler_publish_past_date_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_os2web_base_contentpage';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_os2web_base_news';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_os2web_base_contentpage';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_revision_os2web_base_news';
+  $strongarm->value = 0;
+  $export['scheduler_publish_revision_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_os2web_base_contentpage';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_os2web_base_news';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_os2web_base_contentpage';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_enable_os2web_base_news';
+  $strongarm->value = 1;
+  $export['scheduler_unpublish_enable_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_os2web_base_contentpage';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_os2web_base_news';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_os2web_base_contentpage';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_revision_os2web_base_news';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_revision_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_os2web_base_contentpage';
+  $strongarm->value = '1';
+  $export['scheduler_use_vertical_tabs_os2web_base_contentpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_os2web_base_news';
+  $strongarm->value = '1';
+  $export['scheduler_use_vertical_tabs_os2web_base_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_default_country';
   $strongarm->value = 'DK';
   $export['site_default_country'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_mail';
+  $strongarm->value = 'balkom@balk.dk';
+  $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1339,13 +1500,6 @@ function os2web_base_strongarm() {
   $strongarm->name = 'smtp_on';
   $strongarm->value = 1;
   $export['smtp_on'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'smtp_port';
-  $strongarm->value = '587';
-  $export['smtp_port'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
