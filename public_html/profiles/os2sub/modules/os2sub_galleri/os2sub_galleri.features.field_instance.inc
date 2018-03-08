@@ -32,7 +32,7 @@ function os2sub_galleri_field_default_field_instances() {
           'random' => 0,
         ),
         'type' => 'backstretch',
-        'weight' => 7,
+        'weight' => 2,
       ),
       'spotbox' => array(
         'label' => 'above',

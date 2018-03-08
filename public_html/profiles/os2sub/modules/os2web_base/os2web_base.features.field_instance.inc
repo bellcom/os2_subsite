@@ -1712,9 +1712,10 @@ function os2web_base_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -1793,7 +1794,7 @@ function os2web_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'related_block' => array(
         'label' => 'above',
@@ -1851,7 +1852,7 @@ function os2web_base_field_default_field_instances() {
           'photoswipe_view_mode' => 'default',
         ),
         'type' => 'photoswipe',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'related_block' => array(
         'label' => 'above',
