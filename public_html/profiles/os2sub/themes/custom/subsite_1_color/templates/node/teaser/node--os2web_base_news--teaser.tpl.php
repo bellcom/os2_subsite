@@ -23,13 +23,13 @@
                   <?php print $node->title; ?>
                 </span>
                 <span class="nyheder-summary" style="display: block;">
-                  <?php if (!isset($content['field_os2web_base_field_summary'])) : 
+                  <?php if (!isset($content['field_os2web_base_field_summary'])) :
                      print render($content['body']); endif; ?>
                   <?php print render($content['field_os2web_base_field_summary']); ?>
                 </span>
                 <span class="date-in-parts" style="display: block;">
                    <span class="day"><?php  echo date("j", $node->created); ?>. </span>
-                   <span class="month"><?php echo date("F", $node->created); ?></span>
+                   <span class="month"><?php echo t(date("F", $node->created)); ?></span>
                    <span class="year"><?php echo date("Y", $node->created); ?></span>
                 </span>
 
@@ -42,7 +42,7 @@
                 <?php print render($content['field_os2web_base_field_summary']); ?>
                 <span class="date-in-parts" style="display: block;">
                    <span class="day"><?php  echo date("j", $node->created); ?>. </span>
-                   <span class="month"><?php echo date("F", $node->created); ?></span>
+                   <span class="month"><?php echo t(date("F", $node->created)); ?></span>
                    <span class="year"><?php echo date("Y", $node->created); ?></span>
                 </span>
               </span>
