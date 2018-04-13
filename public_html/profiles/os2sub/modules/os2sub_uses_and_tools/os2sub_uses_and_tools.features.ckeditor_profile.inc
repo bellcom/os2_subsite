@@ -33,7 +33,7 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
     [\'Source\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\',\'Scayt\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Media\',\'Image\',\'MediaEmbed\',\'Table\',\'HorizontalRule\',\'SpecialChar\',\'Iframe\'],
+    [\'Image\',\'Table\',\'HorizontalRule\'],
     \'/\',
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\'],
@@ -47,7 +47,7 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
         'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
-        'uicolor' => 'custom',
+        'uicolor' => 'default',
         'uicolor_user' => '#14EC96',
         'width' => '100%',
         'lang' => 'da',
@@ -106,18 +106,6 @@ function os2sub_uses_and_tools_ckeditor_profile_defaults() {
                 'icon' => 'icons/linkit.png',
               ),
             ),
-          ),
-          'media' => array(
-            'name' => 'media',
-            'desc' => 'Plugin for embedding files using Media CKEditor',
-            'path' => '%base_path%profiles/os2sub/modules/contrib/media_ckeditor/js/plugins/media/',
-            'buttons' => array(
-              'Media' => array(
-                'icon' => 'icons/media.png',
-                'label' => 'Add media',
-              ),
-            ),
-            'default' => 'f',
           ),
           'mediaBrowser' => array(
             'name' => 'mediaBrowser',
