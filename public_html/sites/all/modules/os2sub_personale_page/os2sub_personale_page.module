@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OS2Sub Personale Page feature.
+ */
+
+include_once 'os2sub_personale_page.features.inc';
