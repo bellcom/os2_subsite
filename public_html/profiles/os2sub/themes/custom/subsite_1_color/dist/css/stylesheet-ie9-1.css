@@ -11080,6 +11080,9 @@ span.expandmore__button.js-expandmore-button .toggle-wrap .accordion__toggle spa
 .page-taxonomy-term .content .content-area .os2sub-box {
   background-color: #f5f3ef;
 }
+.page-taxonomy-term .content .content-area {
+  margin-bottom: 40px;
+}
 
 .os2sub-calendar {
   width: 40px;
