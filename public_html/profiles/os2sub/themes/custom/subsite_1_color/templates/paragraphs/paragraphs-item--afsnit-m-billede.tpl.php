@@ -37,6 +37,10 @@
       <?php print render($content['field_paragraph_header']); ?>
     </h2>    
     <div class="js-to_expand">
+      <a class="accordion__anchor" href="#be9da58c-26ac-4a91-acbe-81afd166a24f-522">
+        <span class="icon fa fa-link" aria-hidden="true"></span>
+      </a>
+
       <?php print render($content['field_image']); ?>
       <?php print render($content['field_paragraph_text']); ?>
     </div>  

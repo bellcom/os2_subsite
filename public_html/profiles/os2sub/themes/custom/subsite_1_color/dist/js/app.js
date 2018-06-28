@@ -3601,12 +3601,14 @@ jQuery(document).ready(function($) {
                 $to_expand.removeClass('is-opened').removeAttr(attr_hidden);
             }
 
+            // Bellcom additional functionality: anchor
+            $this.attr('id', 'header_expand_' + index_lisible);
+            var accordion_anchor = $to_expand.children('.accordion__anchor');
+            accordion_anchor.attr('href', '#header_expand_' + index_lisible);
 
         });
 
-
     }
-
 
     $body.on('click', '.js-expandmore-button', function(event) {
         var $this = $(this),
@@ -3677,6 +3679,16 @@ jQuery(document).ready(function($) {
 
     });
 
+    // Bellcom additional functionality: opening tab on page load
+    var identifier = window.location.hash;
+    if (identifier.length) {
+        // identifier looks like this: #header_expand_1
+        var $expandmore_header = $(identifier);
+        if ($expandmore_header.length) {
+            $button_in = $expandmore_header.find('.js-expandmore-button');
+            $button_in.trigger('click');
+        }
+    }
 
 });
 
