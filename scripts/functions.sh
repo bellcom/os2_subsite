@@ -311,7 +311,9 @@ delete_db() {
   DBUSER=$(echo "$DBNAME" | cut -c 1-16)
   debug "Backing up, then deleting database ($DBNAME) and database user ($DBUSER)"
   # backup first, just in case
-  /usr/local/sbin/mysql_backup.sh "$DBNAME"
+  if [ -f /usr/local/sbin/mysql_backup.sh ]; then
+    /usr/local/sbin/mysql_backup.sh "$DBNAME"
+  fi
 #  /usr/bin/mysql -u lev_bellcom -e "DROP DATABASE $DBNAME;"
   /usr/bin/mysql -u $SQLADMIN -e "DROP DATABASE $DBNAME;"
 #  /usr/bin/mysql -u lev_bellcom -e "DROP USER $DBUSER@localhost";
