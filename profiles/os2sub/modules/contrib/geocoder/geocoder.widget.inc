@@ -297,22 +297,27 @@ function geocoder_field_attach_presave($entity_type, $entity) {
   // Loop over any geofield using our geocode widget
   foreach ($instances as $field_name => $instance) {
     if ($instance['widget']['type'] === 'geocoder'
-      && !empty($entity->{$field_name})
       && ($geocoded_value = geocoder_widget_get_field_value($entity_type, $instance, $entity))) {
-      foreach ($entity->{$field_name} as $langcode => $items) {
-        if (empty($items)) {
-          $entity->{$field_name} = $geocoded_value;
-          break;
-        }
-        foreach ($items as $delta => $item) {
-          // Check the entity value.
-          if (!(isset($entity->geocoder_overridden)
-            && isset($entity->geocoder_overridden[$field_name])
-            && isset($entity->geocoder_overridden[$field_name][$langcode])
-            && !empty($entity->geocoder_overridden[$field_name][$langcode][$delta]))) {
-            $entity->{$field_name}[$langcode][$delta] = $geocoded_value[$langcode][$delta];
+
+      if (!empty($entity->{$field_name})) {
+        foreach ($entity->{$field_name} as $langcode => $items) {
+          if (empty($items)) {
+            $entity->{$field_name} = $geocoded_value;
+            break;
+          }
+          foreach ($items as $delta => $item) {
+            // Check the entity value.
+            if (!(isset($entity->geocoder_overridden)
+              && isset($entity->geocoder_overridden[$field_name])
+              && isset($entity->geocoder_overridden[$field_name][$langcode])
+              && !empty($entity->geocoder_overridden[$field_name][$langcode][$delta]))) {
+              $entity->{$field_name}[$langcode][$delta] = $geocoded_value[$langcode][$delta];
+            }
           }
         }
+      }
+      else {
+        $entity->{$field_name} = $geocoded_value;
       }
     }
   }
