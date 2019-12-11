@@ -1,0 +1,14 @@
+{
+    "name": "bellcom/os2subsites",
+    "type": "drupal-core",
+    "description": "Drupal 7 core with os2subsite profile onboard",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "EUPL-1.2",
+    "repositories": {
+        "assets": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    }
+}
