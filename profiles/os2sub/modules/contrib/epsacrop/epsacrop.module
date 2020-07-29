@@ -668,8 +668,7 @@ function epsacrop_element_process($element, $form_state, $form) {
 
   if ($element['#type'] == 'media') {
     //for media, need to include the media elements even if the file is not defined, because it's not defined when file initially selected
-    //$element['#attached']['js'][] = array('type' => 'setting', 'data' => array( 'epsacrop_dialog' => array($element['#id'] => $setting)));
-    $element['#attached']['js'][] = array('type' => 'setting', 'data' => array( 'epsacrop_dialog' => array($element['#id'] . '--widget' => $setting)));
+    $element['#attached']['js'][] = array('type' => 'setting', 'data' => array( 'epsacrop_dialog' => array($element['#id'] => $setting)));
     $element['#attached']['js'][] = drupal_get_path('module', 'epsacrop') . '/js/epsacrop-media.js';
     $element['epsacrop'] = array(
       '#type' => 'link',
@@ -883,19 +882,19 @@ function _epsacrop_include_header_html() {
  * @return void
  */
 function _epsacrop_jcrop_get_version() {
-  $version = "0.9.8";
-//  $filepath = libraries_get_path('Jcrop') . '/js/jquery.Jcrop.js';
-//  if (file_exists($filepath)) {
-//    $lines = file($filepath);
-//    array_shift($lines); // First line is simple comment
-//    if (preg_match('/v(.*)/', array_shift($lines), $matches)) {
-//      $version = $matches[1];
-//    }
-//    else {
-//      drupal_set_message(t('Could be give the version of Jcrop %path, check your install.', array('%path' => $filepath)), 'error');
-//      $version = 0;
-//    }
-//  }
+  $version = 0;
+  $filepath = libraries_get_path('Jcrop') . '/js/jquery.Jcrop.js';
+  if (file_exists($filepath)) {
+    $lines = file($filepath);
+    array_shift($lines); // First line is simple comment
+    if (preg_match('/v(.*)/', array_shift($lines), $matches)) {
+      $version = $matches[1];
+    }
+    else {
+      drupal_set_message(t('Could be give the version of Jcrop %path, check your install.', array('%path' => $filepath)), 'error');
+      $version = 0;
+    }
+  }
   return $version;
 }
 
@@ -907,7 +906,6 @@ function _epsacrop_jcrop_get_version() {
  * @return void
  */
 function _epsacrop_is_json2_exists($display_message = FALSE) {
-  return true;
   $filepath = libraries_get_path('json2') . '/json2.js';
   if (file_exists($filepath)) {
     return TRUE;
