@@ -5,6 +5,8 @@ Provides Beautiful Animated Marker Clustering functionality for [Leaflet](http:/
 
 *Requires Leaflet 1.0.0*
 
+![cluster map example](example/map.png)
+
 For a Leaflet 0.7 compatible version, [use the leaflet-0.7 branch](https://github.com/Leaflet/Leaflet.markercluster/tree/leaflet-0.7)<br>
 For a Leaflet 0.5 compatible version, [Download b128e950](https://github.com/Leaflet/Leaflet.markercluster/archive/b128e950d8f5d7da5b60bd0aa9a88f6d3dd17c98.zip)<br>
 For a Leaflet 0.4 compatible version, [Download the 0.2 release](https://github.com/Leaflet/Leaflet.markercluster/archive/0.2.zip)
@@ -16,6 +18,8 @@ removed link to h1 and indented back 2 spaces all links.
 -->
 ## Table of Contents
   * [Using the plugin](#using-the-plugin)
+    * [Building, testing and linting scripts](#building-testing-and-linting-scripts)
+    * [Examples](#examples)
     * [Usage](#usage)
   * [Options](#options)
     * [Defaults](#defaults)
@@ -43,13 +47,26 @@ removed link to h1 and indented back 2 spaces all links.
 
 
 ## Using the plugin
+Include the plugin CSS and JS files on your page after Leaflet files, using your method of choice:
+* [Download the `v1.4.1` release](https://github.com/Leaflet/Leaflet.markercluster/archive/v1.4.1.zip)
+* Use unpkg CDN: `https://unpkg.com/leaflet.markercluster@1.4.1/dist/`
+* Install with npm: `npm install leaflet.markercluster`
 
-Install with npm: `npm install leaflet.markercluster`
+In each case, use files in the `dist` folder:
+* `MarkerCluster.css`
+* `MarkerCluster.Default.css` (not needed if you use your own `iconCreateFunction` instead of the default one)
+* `leaflet.markercluster.js` (or `leaflet.markercluster-src.js` for the non-minified version)
 
+### Building, testing and linting scripts
+Install jake `npm install -g jake` then run `npm install`
+* To check the code for errors and build Leaflet from source, run `jake`.
+* To run the tests, run `jake test`.
+
+### Examples
 See the included examples for usage.
 
-The [realworld example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.388.html) is a good place to start, it uses all of the defaults of the clusterer.
-Or check out the [custom example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html) for how to customise the behaviour and appearance of the clusterer
+The [realworld example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.388.html) is a good place to start, it uses all of the defaults of the clusterer.
+Or check out the [custom example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html) for how to customise the behaviour and appearance of the clusterer
 
 ### Usage
 Create a new MarkerClusterGroup, add your markers to it, then add it to the map
@@ -92,7 +109,7 @@ var markers = L.markerClusterGroup({
 	}
 });
 ```
-Check out the [custom example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html) for an example of this.
+Check out the [custom example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html) for an example of this.
 
 If you need to update the clusters icon (e.g. they are based on markers real-time data), use the method [refreshClusters()](#refreshing-the-clusters-icon).
 
@@ -106,13 +123,14 @@ If you need to update the clusters icon (e.g. they are based on markers real-tim
 
 #### Other options
 * **animateAddingMarkers**: If set to true (and `animate` option is also true) then adding individual markers to the MarkerClusterGroup after it has been added to the map will add the marker and animate it into the cluster. Defaults to false as this gives better performance when bulk adding markers. addLayers does not support this, only addLayer with individual Markers.
-* **disableClusteringAtZoom**: If set, at this zoom level and below, markers will not be clustered. This defaults to disabled. [See Example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld-maxzoom.388.html). Note: you may be interested in disabling `spiderfyOnMaxZoom` option when using `disableClusteringAtZoom`.
+* **disableClusteringAtZoom**: If set, at this zoom level and below, markers will not be clustered. This defaults to disabled. [See Example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld-maxzoom.388.html). Note: you may be interested in disabling `spiderfyOnMaxZoom` option when using `disableClusteringAtZoom`.
 * **maxClusterRadius**: The maximum radius that a cluster will cover from the central marker (in pixels). Default 80. Decreasing will make more, smaller clusters. You can also use a function that accepts the current map zoom and returns the maximum cluster radius in pixels.
 * **polygonOptions**: Options to pass when creating the L.Polygon(points, options) to show the bounds of a cluster. Defaults to empty, which lets Leaflet use the [default Path options](http://leafletjs.com/reference.html#path-options).
 * **singleMarkerMode**: If set to true, overrides the icon for all added markers to make them appear as a 1 size cluster. Note: the markers are not replaced by cluster objects, only their icon is replaced. Hence they still react to normal events, and option `disableClusteringAtZoom` does not restore their previous icon (see [#391](https://github.com/Leaflet/Leaflet.markercluster/issues/391)).
 * **spiderLegPolylineOptions**: Allows you to specify [PolylineOptions](http://leafletjs.com/reference.html#polyline-options) to style spider legs. By default, they are `{ weight: 1.5, color: '#222', opacity: 0.5 }`.
 * **spiderfyDistanceMultiplier**: Increase from 1 to increase the distance away from the center that spiderfied markers are placed. Use if you are using big marker icons (Default: 1).
-* **iconCreateFunction**: Function used to create the cluster icon [See default as example](https://github.com/Leaflet/Leaflet.markercluster/blob/15ed12654acdc54a4521789c498e4603fe4bf781/src/MarkerClusterGroup.js#L542).
+* **iconCreateFunction**: Function used to create the cluster icon. See [the default implementation](https://github.com/Leaflet/Leaflet.markercluster/blob/15ed12654acdc54a4521789c498e4603fe4bf781/src/MarkerClusterGroup.js#L542) or the [custom example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-custom.html).
+* **clusterPane**: Map pane where the cluster icons will be added. Defaults to L.Marker's default (currently 'markerPane'). [See the pane example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-pane.html).
 
 #### Chunked addLayers options
 Options for the [addLayers](#bulk-adding-and-removing-markers) method. See [#357](https://github.com/Leaflet/Leaflet.markercluster/issues/357) for explanation on how the chunking works.
@@ -217,7 +235,7 @@ markers.on('clusterclick', function (a) {
 ```
 
 You can also query for the bounding convex polygon.
-See [example/marker-clustering-convexhull.html](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-convexhull.html) for a working example.
+See [example/marker-clustering-convexhull.html](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-convexhull.html) for a working example.
 ```javascript
 markers.on('clusterclick', function (a) {
 	map.addLayer(L.polygon(a.layer.getConvexHull()));
@@ -227,23 +245,25 @@ markers.on('clusterclick', function (a) {
 #### Zooming to the bounds of a cluster
 When you receive an event from a cluster you can zoom to its bounds in one easy step.
 If all of the markers will appear at a higher zoom level, that zoom level is zoomed to instead.
-See [marker-clustering-zoomtobounds.html](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-zoomtobounds.html) for a working example.
+`zoomToBounds` takes an optional argument to pass [options to the resulting `fitBounds` call](http://leafletjs.com/reference.html#map-fitboundsoptions).
+
+See [marker-clustering-zoomtobounds.html](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-zoomtobounds.html) for a working example.
 ```javascript
 markers.on('clusterclick', function (a) {
-	a.layer.zoomToBounds();
+	a.layer.zoomToBounds({padding: [20, 20]});
 });
 ```
 
 #### Other clusters methods
 * **getChildCount**: Returns the total number of markers contained within that cluster.
-* **getAllChildMarkers**: Returns the array of total markers contained within that cluster.
+* **getAllChildMarkers(storage: array | undefined, ignoreDraggedMarker: boolean | undefined)**: Returns an array of all markers contained within this cluster (storage will be used if provided). If ignoreDraggedMarker is true and there is currently a marker dragged, the dragged marker will not be included in the array.
 * **spiderfy**: Spiderfies the child markers of this cluster
 * **unspiderfy**: Unspiderfies a cluster (opposite of spiderfy)
 
 ## Handling LOTS of markers
 The Clusterer can handle 10,000 or even 50,000 markers (in chrome). IE9 has some issues with 50,000.
-- [realworld 10,000 example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.10000.html)
-- [realworld 50,000 example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.50000.html)
+- [realworld 10,000 example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.10000.html)
+- [realworld 50,000 example](https://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.50000.html)
 
 Note: these two examples use the `chunkedLoading` option set to true in order to avoid locking the browser for a long time.
 
@@ -268,3 +288,5 @@ Check also the below sub-plugins:
 | [Leaflet.FeatureGroup.SubGroup](https://github.com/ghybs/Leaflet.FeatureGroup.SubGroup) | Creates a Feature Group that adds its child layers into a parent group when added to a map (e.g. through L.Control.Layers). Typical usage is to dynamically add/remove groups of markers from Marker Cluster. | [ghybs](https://github.com/ghybs) |
 | [Leaflet.MarkerCluster.LayerSupport](https://github.com/ghybs/Leaflet.MarkerCluster.LayerSupport) | Brings compatibility with L.Control.Layers and other Leaflet plugins. I.e. everything that uses direct calls to map.addLayer and map.removeLayer. | [ghybs](https://github.com/ghybs) |
 | [Leaflet.MarkerCluster.Freezable](https://github.com/ghybs/Leaflet.MarkerCluster.Freezable) | Adds the ability to freeze clusters at a specified zoom. E.g. freezing at maxZoom + 1 makes as if clustering was programmatically disabled. | [ghybs](https://github.com/ghybs) |
+| [Leaflet.MarkerCluster.PlacementStrategies](https://github.com/adammertel/Leaflet.MarkerCluster.PlacementStrategies) | Implements new strategies to position clustered markers (eg: clock, concentric circles, ...). Recommended to use with circleMarkers. [Demo](https://adammertel.github.io/Leaflet.MarkerCluster.PlacementStrategies/demo/demo1.html) | [adammertel](https://github.com/adammertel) / [UNIVIE](http://carto.univie.ac.at/) |
+| [Leaflet.MarkerCluster.List](https://github.com/adammertel/Leaflet.MarkerCluster.List) | Displays child elements in a list. Suitable for mobile devices. [Demo](https://adammertel.github.io/Leaflet.MarkerCluster.List/demo/demo1.html) | [adammertel](https://github.com/adammertel) / [UNIVIE](http://carto.univie.ac.at/) |

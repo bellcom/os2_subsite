@@ -1,67 +1,39 @@
 ﻿describe('events', function() {
-
-	/**
-	 * Avoid as much as possible creating and destroying objects for each test.
-	 * Instead, try re-using them, except for the ones under test of course.
-	 * PhantomJS does not perform garbage collection for the life of the page,
-	 * i.e. during the entire test process (Karma runs all tests in a single page).
-	 * http://stackoverflow.com/questions/27239708/how-to-get-around-memory-error-with-karma-phantomjs
-	 *
-	 * The `beforeEach` and `afterEach do not seem to cause much issue.
-	 * => they can still be used to initialize some setup between each test.
-	 * Using them keeps a readable spec/index.
-	 *
-	 * But refrain from re-creating div and map every time. Re-use those objects.
-	 */
-
 	/////////////////////////////
 	// SETUP FOR EACH TEST
 	/////////////////////////////
+	var div, map, group;
 
 	beforeEach(function () {
-
-		//
-
+		div = document.createElement('div');
+		div.style.width = '200px';
+		div.style.height = '200px';
+		document.body.appendChild(div);
+	
+		map = L.map(div, { maxZoom: 18, trackResize: false });
+	
+		// Corresponds to zoom level 8 for the above div dimensions.
+		map.fitBounds(new L.LatLngBounds([
+			[1, 1],
+			[2, 2]
+		]));
 	});
 
 	afterEach(function () {
-
 		if (group instanceof L.MarkerClusterGroup) {
 			group.removeLayers(group.getLayers());
 			map.removeLayer(group);
 		}
 
-		// group must be thrown away since we are testing it with a potentially
-		// different configuration at each test.
-		group = null;
+		map.remove();
+		div.remove();
 
+		div = map = group = null;
 	});
-
-
-	/////////////////////////////
-	// PREPARATION CODE
-	/////////////////////////////
-
-	var div, map, group;
-
-	div = document.createElement('div');
-	div.style.width = '200px';
-	div.style.height = '200px';
-	document.body.appendChild(div);
-
-	map = L.map(div, { maxZoom: 18 });
-
-	// Corresponds to zoom level 8 for the above div dimensions.
-	map.fitBounds(new L.LatLngBounds([
-		[1, 1],
-		[2, 2]
-	]));
-
 
 	/////////////////////////////
 	// TESTS
 	/////////////////////////////
-
 	it('is fired for a single child marker', function () {
 		var callback = sinon.spy();
 
@@ -191,6 +163,192 @@
 
 			expect(callback.called).to.be(true);
 		});
+
+		//layeradd
+		it('fires layeradd when markers are added while not on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layeradd', callback);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayer(marker);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layeradd when vectors are added while not on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layeradd', callback);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayer(polygon);
+
+			expect(callback.callCount).to.be(1);
+		});
+		
+		it('fires layeradd when markers are added while on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layeradd', callback);
+			map.addLayer(group);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayer(marker);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layeradd when vectors are added while on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layeradd', callback);
+			map.addLayer(group);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayer(polygon);
+
+			expect(callback.callCount).to.be(1);
+		});
+		
+		it('fires layeradd when markers are added using addLayers while on the map with chunked loading', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup({ chunkedLoading: true });
+			group.on('layeradd', callback);
+			map.addLayer(group);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayers([marker]);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layeradd when vectors are added using addLayers while on the map with chunked loading', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup({ chunkedLoading: true });
+			group.on('layeradd', callback);
+			map.addLayer(group);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayers([polygon]);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		//layerremove
+		it('fires layerremove when a marker is removed while not on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layerremove', callback);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayer(marker);
+			group.removeLayer(marker);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layerremove when a vector is removed while not on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layerremove', callback);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayer(polygon);
+			group.removeLayer(polygon);
+
+			expect(callback.callCount).to.be(1);
+		});
+		
+		it('fires layerremove when a marker is removed while on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layerremove', callback);
+			map.addLayer(group);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayer(marker);
+			group.removeLayer(marker);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layerremove when a vector is removed while on the map', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup();
+			group.on('layerremove', callback);
+			map.addLayer(group);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayer(polygon);
+			group.removeLayer(polygon);
+
+			expect(callback.callCount).to.be(1);
+		});
+		
+		it('fires layerremove when a marker is removed using removeLayers while on the map with chunked loading', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup({ chunkedLoading: true });
+			group.on('layerremove', callback);
+			map.addLayer(group);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayers([marker]);
+			group.removeLayers([marker]);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layerremove when a vector is removed using removeLayers while on the map with chunked loading', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup({ chunkedLoading: true });
+			group.on('layerremove', callback);
+			map.addLayer(group);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayers([polygon]);
+			group.removeLayers([polygon]);
+
+			expect(callback.callCount).to.be(1);
+		});
+		
+		it('fires layerremove when a marker is removed using removeLayers while not on the map with chunked loading', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup({ chunkedLoading: true });
+			group.on('layerremove', callback);
+
+			var marker = new L.Marker([1.5, 1.5]);
+			group.addLayers([marker]);
+			group.removeLayers([marker]);
+
+			expect(callback.callCount).to.be(1);
+		});
+
+		it('fires layerremove when a vector is removed using removeLayers while not on the map with chunked loading', function() {
+			var callback = sinon.spy();
+
+			group = new L.MarkerClusterGroup({ chunkedLoading: true });
+			group.on('layerremove', callback);
+
+			var polygon = new L.Polygon([[1.5, 1.5], [2.0, 1.5], [2.0, 2.0], [1.5, 2.0]]);
+			group.addLayers([polygon]);
+			group.removeLayers([polygon]);
+
+			expect(callback.callCount).to.be(1);
+		});
 	});
 
 	/*
@@ -212,12 +370,4 @@
 		expect(callback.called).to.be(true);
 	});
 	*/
-
-
-	/////////////////////////////
-	// CLEAN UP CODE
-	/////////////////////////////
-
-	map.remove();
-	document.body.removeChild(div);
 });
